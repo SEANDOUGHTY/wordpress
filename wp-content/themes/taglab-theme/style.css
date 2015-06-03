@@ -1,0 +1,230 @@
+/*
+Theme Name: TAGlab Theme
+Author: TAGlab
+Author URI: https://wordpress.org/
+Description: TAGlabs Website NEW theme
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: black, blue, gray, pink, purple, white, yellow, dark, light, two-columns, left-sidebar, fixed-layout, responsive-layout, accessibility-ready, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, microformats, post-formats, rtl-language-support, sticky-post, threaded-comments, translation-ready
+
+*/
+
+/* COLOUR GUIDE 
+
+White: #FFF;
+Black: #000;
+Grey: #f2f2f2; *used for backgrounds*
+Medium Grey: #cccccc; *potentially used for buttons* *still testing*
+
+Blue: #0082d4;
+Red: #ff6a63;
+
+Footer Blue: #263542;
+
+*/
+
+/* SHADOW GUIDE 
+
+Just for the navigation bar
+	-webkit-box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.15);
+	-moz-box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.15);
+	box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.15);
+
+For all other boxes (mainly card elements)
+	-webkit-box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.12);
+	-moz-box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.12);
+	box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.12);
+
+
+*/
+
+
+/* RADIUS BORDER GUIDE
+
+//Rounded buttons
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+
+//Box Cards
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+
+
+*/
+
+.Title {
+	font-family: Open Sans;
+	text-align: center;
+}
+
+.Title h3 {
+	font-size: 45px;
+	font-family: Open Sans;
+	font-weight: none;
+	line-height: 100px;
+	opacity: 87%;	
+}
+
+.Title p {
+	font-size: 24px;
+	font-weight: 300;
+	margin-left: 7%;
+	margin-right: 7%;
+	line-height: 32px;
+	opacity: 45%;
+
+}
+
+.People {
+	padding: 25px;
+	background-color: #F3F5F4;
+	min-height: 800px;
+	margin-bottom: -40px;
+}
+
+.Person {
+	text-align: left;
+	background-color: white;
+	font-family: Open Sans;
+	padding-bottom: 15px;
+	min-height:700px;
+}
+
+.Person p {
+	margin: 20px;
+}
+
+.Person p:nth-child(1) {
+	margin: 0px;
+}
+
+.Person img {
+	min-width: 100%;
+}
+
+.Person p:nth-child(2) {
+	font-size: 20px;
+	font-weight: 400;
+	line-height:18px;
+}
+
+.Person p:nth-child(3) {
+	font-weight: 600;
+	font-size: 14px;
+	line-height: 18px;
+	color: #0082d4;
+	margin-bottom: -20px;
+}
+
+.Person p:nth-child(4) {
+	font-size: 13px;
+	font-weight: 400;
+	line-height: 18px;
+	color: #808080;
+}
+
+.Person p:nth-child(5) {
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 18px;
+	opacity: 87%;
+}
+
+
+.Projects {
+	padding: 25px;
+	background-color: #F3F5F4;
+	margin-bottom: -40px;
+}
+
+.Project {
+	text-align: center;
+	background-color: white;
+	font-family: Open Sans;
+	padding-bottom: 10px;
+}
+
+.Project img {
+	min-width: 100%;
+}
+
+.Project p:nth-child(2) {
+	font-size: 20px;
+	font-weight: 600;
+	line-height:18px;
+}
+
+.Project p:nth-child(3) {
+
+}
+
+
+.Project p:nth-child(4) {
+	background-color: #CCCCCC;
+	color: white;
+	margin-left: 220px;
+	margin-right: 220px;
+	line-height: 35px;
+}
+
+.home-header {
+	background-color: #0082d4;
+	height: 75%;
+	padding: 8em 10em;
+	margin-bottom: 5em;
+	min-width: 100%;
+}
+
+	h1 span {
+		color: #FFF;
+		font-size: 8rem;
+	}
+
+	h2 span {
+		color: #FFF;
+	}
+
+.paragraph {
+	text-align: center;
+	margin: 5em;
+}
+
+.paragraph-title {
+	margin-top: 5%;
+	margin-bottom: 5%;
+}
+
+.paragraph-content {
+	opacity: .5;
+}
+
+.page-header{
+	background-color:white;
+
+}
+
+.footer-wrap{
+	background-color: #263542;
+	padding: 2em;
+}
+
+.social-icon{
+	background-color: white;
+	height: 2em;
+	width: 2em;
+	opacity: 70%;
+	padding: 1em;
+	border-radius: 50%;
+}
+
+.footer-text{
+	color: white;
+	font-weight:400; 
+}
+
+.row {
+	min-width: 100%;
+	background-color: white;
+}
