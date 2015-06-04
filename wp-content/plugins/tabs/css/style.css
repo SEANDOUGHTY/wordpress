@@ -1,0 +1,65 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+/*Admin CSS*/
+
+#tabs_metabox ul.tabs_bg_img_list{}
+
+#tabs_metabox ul.tabs_bg_img_list li {
+  display: inline-block;
+  margin: 5px;
+}
+#tabs_metabox ul.tabs_bg_img_list li.bg-selected {}
+
+#tabs_metabox ul.tabs_bg_img_list li img{border: 2px solid #ffffff;}
+
+#tabs_metabox ul.tabs_bg_img_list li.bg-selected img{
+  border: 2px solid #ff5a11;
+}
+
+
+
+#tabs_metabox .tabs-content tr{
+
+}
+
+#tabs_metabox .tabs-content td {
+  background: none repeat scroll 0 0 rgb(245, 245, 245);
+  border-left: 3px solid rgb(255, 255, 255);
+  padding-bottom: 15px;
+}
+
+#tabs_metabox .tabs-content input, #tabs_metabox .tabs-content textarea {
+  margin-left: 10px;
+  width: 95%;
+}
+
+
+#tabs_metabox .tabs-content .removeTabs {
+  background: none repeat scroll 0 0 rgb(221, 221, 221);
+  border: 1px solid rgb(255, 255, 255);
+  cursor: pointer;
+  margin: 3px;
+  padding: 1px 5px;
+  position: absolute;
+}
+
+#tabs_metabox .tabs-content .removeTabs:hover {
+  background: none repeat scroll 0 0 rgb(255, 134, 87);
+}
+
+#tabs_metabox .tabs-content .tab-new {
+  background: none repeat scroll 0 0 #a3dbff;
+}
+
+
+/*CSS front page*/
+
+.tabs-container {
+  margin: 50px 0;
+  overflow: hidden;
+  padding: 30px;
+  position: relative;
+  text-align: center;
+}
