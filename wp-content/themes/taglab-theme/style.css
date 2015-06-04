@@ -126,52 +126,41 @@ For all other boxes (mainly card elements)
 .People {
 	padding: 25px;
 	background-color: #F3F5F4;
-	min-height: 800px;
-	margin-bottom: -40px;
+	max-height: 450px;
 }
 
-.Person {
+
+.Pdescription {
 	text-align: left;
 	background-color: white;
 	font-family: Open Sans;
 	padding-bottom: 15px;
-	min-height:700px;
+	padding-top: 15px;
+	height:300px;
 }
 
-.Person p {
-	margin: 20px;
-}
 
-.Person p:nth-child(1) {
-	margin: 0px;
-}
-
-.Person img {
-	min-width: 100%;
-}
-
-.Person p:nth-child(2) {
-	font-size: 20px;
+.Pdescription h3 {
+	font-size: 24px;
 	font-weight: 400;
 	line-height:18px;
 }
 
-.Person p:nth-child(3) {
+.Pdescription p:nth-child(1) {
 	font-weight: 600;
 	font-size: 14px;
-	line-height: 18px;
+	line-height: 0px;
 	color: #0082d4;
-	margin-bottom: -20px;
 }
 
-.Person p:nth-child(4) {
+.Pdescription p:nth-child(2) {
 	font-size: 13px;
 	font-weight: 400;
-	line-height: 18px;
+	line-height: 0px;
 	color: #808080;
 }
 
-.Person p:nth-child(5) {
+.Pdescription p:nth-child(3) {
 	font-size: 14px;
 	font-weight: 400;
 	line-height: 18px;
