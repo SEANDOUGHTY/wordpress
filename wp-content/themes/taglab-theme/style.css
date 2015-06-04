@@ -2,11 +2,8 @@
 Theme Name: TAGlab Theme
 Author: TAGlab
 Author URI: https://wordpress.org/
-Description: TAGlabs Website NEW theme
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: black, blue, gray, pink, purple, white, yellow, dark, light, two-columns, left-sidebar, fixed-layout, responsive-layout, accessibility-ready, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, microformats, post-formats, rtl-language-support, sticky-post, threaded-comments, translation-ready
-
 */
 
 /* COLOUR GUIDE 
@@ -54,29 +51,78 @@ For all other boxes (mainly card elements)
 
 */
 
-.Title {
-	font-family: Open Sans;
+/*** SKELETON ***/
+
+/* LAYOUT */
+.paragraph {
+	text-align: center;
+	margin-bottom: 12em;
+}
+
+.paragraph-title {
+	margin-top: 5%;
+}
+
+.paragraph-content {
+}
+
+.card {
+	background-color: #FFF;
+	padding: 3em 2em;
+	text-align: left;
+	margin-top: .8em;
+	margin-bottom: 5em;
+	box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.12);
+		-webkit-box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.12);
+		-moz-box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.12);	
+}
+	.card p {
+		margin-bottom: 3em;}
+
+/* FOOTER */
+.footer-wrap{
+	background-color: #263542;
+	padding-top: 4em;
+	padding-bottom: 2em;
+}
+
+.social-icon{
+	background-color: white;
+	height: 4em;
+	width: 4em;
+	opacity: 70%;
+	padding: 1em;
+	border-radius: 50%;
+	margin-bottom: 20%;
+}
+
+.footer-text{
+	color: white;
+}
+
+
+/*** CHANGES BY PAGE ***/
+
+/* HOME PAGE */
+.home-header {
+	background-color: #0082d4;
+	height: 75%;
+	padding: 8em 12em;
+	margin-bottom: 5em;
+	min-width: 100%;
+}
+
+.home-header h4,
+.home-header h5 {
+	color: #FFF;
+}
+
+.highlights {
 	text-align: center;
 }
 
-.Title h3 {
-	font-size: 45px;
-	font-family: Open Sans;
-	font-weight: none;
-	line-height: 100px;
-	opacity: 87%;	
-}
 
-.Title p {
-	font-size: 24px;
-	font-weight: 300;
-	margin-left: 7%;
-	margin-right: 7%;
-	line-height: 32px;
-	opacity: 45%;
-
-}
-
+/* PROJECTS */
 .People {
 	padding: 25px;
 	background-color: #F3F5F4;
@@ -169,62 +215,25 @@ For all other boxes (mainly card elements)
 	line-height: 35px;
 }
 
-.home-header {
-	background-color: #0082d4;
-	height: 75%;
-	padding: 8em 10em;
-	margin-bottom: 5em;
-	min-width: 100%;
-}
-
-	h1 span {
-		color: #FFF;
-		font-size: 8rem;
-	}
-
-	h2 span {
-		color: #FFF;
-	}
-
-.paragraph {
+.Title {
+	font-family: Open Sans;
 	text-align: center;
-	margin: 5em;
 }
 
-.paragraph-title {
-	margin-top: 5%;
-	margin-bottom: 5%;
+.Title h3 {
+	font-size: 45px;
+	font-family: Open Sans;
+	font-weight: none;
+	line-height: 100px;
+	opacity: 87%;	
 }
 
-.paragraph-content {
-	opacity: .5;
-}
+.Title p {
+	font-size: 24px;
+	font-weight: 300;
+	margin-left: 7%;
+	margin-right: 7%;
+	line-height: 32px;
+	opacity: 45%;
 
-.page-header{
-	background-color:white;
-
-}
-
-.footer-wrap{
-	background-color: #263542;
-	padding: 2em;
-}
-
-.social-icon{
-	background-color: white;
-	height: 2em;
-	width: 2em;
-	opacity: 70%;
-	padding: 1em;
-	border-radius: 50%;
-}
-
-.footer-text{
-	color: white;
-	font-weight:400; 
-}
-
-.row {
-	min-width: 100%;
-	background-color: white;
 }
