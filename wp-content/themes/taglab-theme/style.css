@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*
 Theme Name: TAGlab Theme
 Author: TAGlab
@@ -226,3 +227,251 @@ For all other boxes (mainly card elements)
 	opacity: 45%;
 
 }
+=======
+/*
+Theme Name: TAGlab Theme
+Author: TAGlab
+Author URI: https://wordpress.org/
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+*/
+
+/* COLOUR GUIDE 
+
+White: #FFF;
+Black: #000;
+Grey: #f2f2f2; *used for backgrounds*
+Medium Grey: #cccccc; *potentially used for buttons* *still testing*
+
+Blue: #0082d4;
+Red: #ff6a63;
+
+Footer Blue: #263542;
+
+*/
+
+/* SHADOW GUIDE 
+
+Just for the navigation bar
+	-webkit-box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.15);
+	-moz-box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.15);
+	box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.15);
+
+For all other boxes (mainly card elements)
+	-webkit-box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.12);
+	-moz-box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.12);
+	box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.12);
+
+
+*/
+
+
+/* RADIUS BORDER GUIDE
+
+//Rounded buttons
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+
+//Box Cards
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+
+
+*/
+
+/*** SKELETON ***/
+
+/* LAYOUT */
+.yellow {
+	background-color: yellow;
+	height: 5em;
+}
+
+.paragraph {
+	text-align: center;
+	margin-bottom: 12em;
+}
+
+.paragraph-title {
+	margin-top: 5%;
+}
+
+.paragraph-content {
+}
+
+.card {
+	background-color: #FFF;
+	padding: 3em 2em;
+	text-align: left;
+	margin-top: .8em;
+	margin-bottom: 5em;
+	/*min-height: 28em;*/
+	border-radius: 3px;
+	box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.12);
+		-webkit-box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.12);
+		-moz-box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.12);	
+}
+	.card p {
+		margin-bottom: 3em;}
+
+/* FOOTER */
+.footer-wrap{
+	background-color: #263542;
+	padding-top: 4em;
+	padding-bottom: 2em;
+}
+
+.social-icon{
+	background-color: white;
+	height: 4em;
+	width: 4em;
+	opacity: 70%;
+	padding: 1em;
+	border-radius: 50%;
+	margin-bottom: 20%;
+}
+
+.footer-text{
+	color: white;
+}
+
+
+/*** CHANGES BY PAGE ***/
+
+/* HOME PAGE */
+.home-header {
+	background-color: #0082d4;
+	height: 75%;
+	padding: 8em 12em;
+	margin-bottom: 5em;
+	min-width: 100%;
+}
+
+.home-header h4,
+.home-header h5 {
+	color: #FFF;
+}
+
+.highlights {
+	text-align: center;
+}
+
+
+/* PROJECTS */
+.People {
+	padding: 25px;
+	background-color: #F3F5F4;
+	min-height: 800px;
+	margin-bottom: -40px;
+}
+
+.Person {
+	text-align: left;
+	background-color: white;
+	font-family: Open Sans;
+	padding-bottom: 15px;
+	min-height:700px;
+}
+
+.Person p {
+	margin: 20px;
+}
+
+.Person p:nth-child(1) {
+	margin: 0px;
+}
+
+.Person img {
+	min-width: 100%;
+}
+
+.Person p:nth-child(2) {
+	font-size: 20px;
+	font-weight: 400;
+	line-height:18px;
+}
+
+.Person p:nth-child(3) {
+	font-weight: 600;
+	font-size: 14px;
+	line-height: 18px;
+	color: #0082d4;
+	margin-bottom: -20px;
+}
+
+.Person p:nth-child(4) {
+	font-size: 13px;
+	font-weight: 400;
+	line-height: 18px;
+	color: #808080;
+}
+
+.Person p:nth-child(5) {
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 18px;
+	opacity: 87%;
+}
+
+
+.Projects {
+	padding: 25px;
+	background-color: #F3F5F4;
+	margin-bottom: -40px;
+}
+
+.Project {
+	text-align: center;
+	background-color: white;
+	font-family: Open Sans;
+	padding-bottom: 10px;
+}
+
+.Project img {
+	min-width: 100%;
+}
+
+.Project p:nth-child(2) {
+	font-size: 20px;
+	font-weight: 600;
+	line-height:18px;
+}
+
+.Project p:nth-child(3) {
+
+}
+
+
+.Project p:nth-child(4) {
+	background-color: #CCCCCC;
+	color: white;
+	margin-left: 220px;
+	margin-right: 220px;
+	line-height: 35px;
+}
+
+.Title {
+	font-family: Open Sans;
+	text-align: center;
+}
+
+.Title h3 {
+	font-size: 45px;
+	font-family: Open Sans;
+	font-weight: none;
+	line-height: 100px;
+	opacity: 87%;	
+}
+
+.Title p {
+	font-size: 24px;
+	font-weight: 300;
+	margin-left: 7%;
+	margin-right: 7%;
+	line-height: 32px;
+	opacity: 45%;
+
+}
+>>>>>>> eb58cc10ae9221ba84e1885d6d6cb969259d8e4f
