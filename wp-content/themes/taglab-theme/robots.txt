@@ -1,11 +1,4 @@
-<<<<<<< HEAD
 # www.robotstxt.org/
 # www.google.com/support/webmasters/bin/answer.py?hl=en&answer=156449
 
 User-agent: *
-=======
-# www.robotstxt.org/
-# www.google.com/support/webmasters/bin/answer.py?hl=en&answer=156449
-
-User-agent: *
->>>>>>> 82e6b885aa9a64416e387a031783a9a9feb92831

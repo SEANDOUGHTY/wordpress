@@ -54,6 +54,11 @@ For all other boxes (mainly card elements)
 /*** SKELETON ***/
 
 /* LAYOUT */
+.yellow {
+	background-color: yellow;
+	height: 5em;
+}
+
 .paragraph {
 	text-align: center;
 	margin-bottom: 12em;
@@ -72,6 +77,8 @@ For all other boxes (mainly card elements)
 	text-align: left;
 	margin-top: .8em;
 	margin-bottom: 5em;
+	/*min-height: 28em;*/
+	border-radius: 3px;
 	box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.12);
 		-webkit-box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.12);
 		-moz-box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.12);	

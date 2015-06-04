@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /* Foundation was made by ZURB, an interaction design and design strategy firm in Campbell, CA */
 /* zurb.com */
 /* humanstxt.org */
@@ -7,13 +6,3 @@
   Standards: HTML5, CSS3
   Components: jQuery, Orbit, Reveal
   Software: Sublime, Git, Sass
-=======
-/* Foundation was made by ZURB, an interaction design and design strategy firm in Campbell, CA */
-/* zurb.com */
-/* humanstxt.org */
-
-/* SITE */
-  Standards: HTML5, CSS3
-  Components: jQuery, Orbit, Reveal
-  Software: Sublime, Git, Sass
->>>>>>> 82e6b885aa9a64416e387a031783a9a9feb92831
