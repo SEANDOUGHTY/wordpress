@@ -133,13 +133,15 @@ eight: 75%;
 .People {
 	padding: 25px;
 	background-color: #F3F5F4;
-	width: 100%;
+/*	width: 100%;*/
 }
 
 .Person {
 	text-align: left;
 	background-color: white;
 	font-family: Open Sans;
+	padding-bottom: 15px;
+	width: 90%;
 }
 
 .Person p {
@@ -214,9 +216,8 @@ eight: 75%;
 .Project p:nth-child(4) {
 	background-color: #CCCCCC;
 	color: white;
-	margin-left: 220px;
-	margin-right: 220px;
 	line-height: 35px;
+	background-size: contain;
 }
 
 .Title {
@@ -242,4 +243,7 @@ eight: 75%;
 	opacity: 45%;
 
 }
+
+
+
 
