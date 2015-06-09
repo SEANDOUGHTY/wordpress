@@ -61,7 +61,7 @@ body {
   background: #fff;
   color: #222222;
   cursor: auto;
-  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
   font-style: normal;
   font-weight: normal;
   line-height: 1.5;
@@ -1699,7 +1699,7 @@ meta.foundation-mq-topbar {
 /* Wrapped around .top-bar to contain to grid width */
 .contain-to-grid {
   width: 100%;
-  background: #333333; }
+  background: #FFF; }
   .contain-to-grid .top-bar {
     margin-bottom: 0; }
 
@@ -1726,6 +1726,7 @@ meta.foundation-mq-topbar {
   background: #FFFFFF;
   height: 3.8rem;
   line-height: 2.8125rem;
+	padding: 0 2em;
   margin-bottom: 0;
   overflow: hidden;
   position: relative;
@@ -1780,7 +1781,7 @@ meta.foundation-mq-topbar {
     right: 0;
     top: 0; }
     .top-bar .toggle-topbar a {
-      color: #FFFFFF;
+      color: #333;
       display: block;
       font-size: 1rem;
       font-weight: bold;
@@ -1794,7 +1795,7 @@ meta.foundation-mq-topbar {
       margin-top: -16px;
       top: 50%; }
       .top-bar .toggle-topbar.menu-icon a {
-        color: #FFFFFF;
+        color: #0082d4;
         height: 34px;
         line-height: 33px;
         padding: 0 2.5rem 0 1.8rem;
@@ -1815,9 +1816,9 @@ meta.foundation-mq-topbar {
     background: transparent;
     height: auto; }
     .top-bar.expanded .title-area {
-      background: #333333; }
+      background: #FFF; }
     .top-bar.expanded .toggle-topbar a {
-      color: #888888; }
+      color: #0082d4; }
       .top-bar.expanded .toggle-topbar a span::after {
         box-shadow: 0 0 0 1px #888888, 0 7px 0 1px #888888, 0 14px 0 1px #888888; }
     @media screen and (-webkit-min-device-pixel-ratio: 0) {
@@ -1869,9 +1870,10 @@ meta.foundation-mq-topbar {
 					-moz-border-radius: 6px;
 					border-radius: 6px;}
         .top-bar-section ul li > a.button:hover, .top-bar-section ul li > a.button:focus {
-          background-color: #0068aa; }
+          background-color: #ff261c; }
         .top-bar-section ul li > a.button:hover, .top-bar-section ul li > a.button:focus {
-          color: #0082d4; }
+          color: #FFF;
+					text-decoration: none;}
       .top-bar-section ul li > a.button.secondary {
         background-color: #f2f2f2;
         border-color: #c2c2c2;
@@ -1966,14 +1968,15 @@ meta.foundation-mq-topbar {
           color: #0082d4; }
     .top-bar-section ul li:hover:not(.has-form) > a {
       background-color: #FFFFFF;
-      color: #333333;
-      background: #222222; }
+      color: #FFF;
+      background: #0082d4;
+			text-decoration: none;}
     .top-bar-section ul li.active > a {
-      background: #ff6a63;
-      color: #FFFFFF; }
+      background: #FFF;
+      color: #0082d4; }
       .top-bar-section ul li.active > a:hover {
-        background: #0070b6;
-        color: #FFFFFF; }
+        background: #FFF;
+        color: #0082d4; }
   .top-bar-section .has-form {
     padding: 1.8rem;
 		padding-top: .5rem;}
@@ -2105,19 +2108,30 @@ meta.foundation-mq-topbar {
       background: #FFF;
       line-height: 2.8125rem;
       padding: 0 1.8rem;
-			padding-top: .5rem;}
+			padding-top: .5rem;
+			text-decoration: none;
+				transition: all 300ms;
+				-webkit-transition: all 300ms;
+				-moz-transition: all 300ms;
+				-ms-transition: all 300ms;
+				-o-transition: all 300ms;
+		}
       .top-bar-section li:not(.has-form) a:not(.button):hover {
         background-color: #FFF;
-        background: #FFF; }
+        background: #FFF;
+				color: #0082d4;
+				opacity: .5;}
     .top-bar-section li.active:not(.has-form) a:not(.button) {
-      background: #ff6a63;
-      color: #FFFFFF;
+      background: #FFF;
+      color: #0082d4;
       line-height: 2.8125rem;
       padding: 0 1.8rem;
 			padding-top: .5rem;}
       .top-bar-section li.active:not(.has-form) a:not(.button):hover {
-        background: #0070b6;
-        color: #FFFFFF; }
+        background: #FFF;
+        color: #0082d4;
+				cursor: default;
+				opacity: 1;}
     .top-bar-section .has-dropdown > a {
       padding-right: 2.1875rem !important; }
       .top-bar-section .has-dropdown > a:after {
