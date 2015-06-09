@@ -54,9 +54,10 @@ For all other boxes (mainly card elements)
 /*** SKELETON ***/
 
 /* LAYOUT */
-.yellow {
-	background-color: yellow;
-	height: 5em;
+.logo {
+	height: 3.2em;
+	padding-top: .5em;
+	z-index: 999;
 }
 
 .paragraph {
