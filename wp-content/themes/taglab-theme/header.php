@@ -12,27 +12,6 @@
 		<title><?php wp_title(''); ?></title> 
 		<!--Loading the CSS and the spceified JS from the functions.php-->
 		<?php wp_head();?>
-		<?php 
-
-    $defaults = array(
-      	'theme_location' => 'primary-menu', 
-      	'menu_class' => 'nav-menu', 
-      	'menu_id' => 'primary-menu',
-      	'menu'            => '',
-      	'container'       => '',
-      	'container_class' => '',
-      	'container_id'    => '',
-    	'echo'            => true,
-    	'fallback_cb'     => 'wp_nav_menu',
-    	'before'          => '',
-      	'after'           => '',
-      	'link_before'     => '',
-     	'link_after'      => '',
-     	'items_wrap'      => '<ul class="%2$s" role="navigation">%3$s</ul>',
-    	'depth'           => 0,
-	    'walker'          => new p2p_foundation_walker()
-    	);
-      ?>
 	</head>
 	<body class='f-topbar-fixed'>
 		<!--The Navigaion Bar-->
@@ -52,7 +31,7 @@
 						<!--Right Nav Section-->
 						<ul class="right">
 							<!--The Menu Buttons-->
-							<li><?php wp_nav_menu( $defaults ); ?></li>
+							<li><?php wp_nav_menu( array( 'theme_location' => 'primary-menu', 'menu_class' => 'nav-menu', 'menu_id' => 'primary-menu' ) ); ?></li>
 							<!--The DONATE Button-->
 							<li class="has-form"> <a href="#" class='button'>Donate</a> </li>
 						</ul>
