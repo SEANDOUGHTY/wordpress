@@ -210,11 +210,6 @@ eight: 75%;
 }
 
 .Project p:nth-child(3) {
-
-}
-
-
-.Project p:nth-child(4) {
 	color: #0082d4;
 	line-height: 35px;
 }
