@@ -78,3 +78,14 @@ if ( !defined('ABSPATH') )
 
 /** Sets up WordPress vars and included files. */
 require_once(ABSPATH . 'wp-settings.php');
+
+$_SERVER['HTTP_HOST'] = $_SERVER['HTTP_X_FORWARDED_HOST'];
+define('WP_HOME','http://www.cs.toronto.edu/~seandoughty/taglab');
+define('WP_SITEURL','http://www.cs.toronto.edu/~seandoughty/taglab');
+
+$_SERVER['REQUEST_URI'] = 
+	str_replace("wordpress", "~seandoughty/taglab", $_SERVER['REQUEST_URI']);
+
+
+
+
