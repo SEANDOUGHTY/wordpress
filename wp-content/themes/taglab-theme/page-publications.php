@@ -1,7 +1,7 @@
 <!--The Name of the Template-->
 <?php
 /*
-	Template Name: News Page
+	Template Name: Publications Page
 */
 ?>
 <!--Loading the header.php above each file-->
@@ -14,11 +14,11 @@
 				<div id="primary" class="content-area">
 					<div id="content" class="site-content" role="main">
 						<div class="small-12 small-centered columns news" data-equalizer>
-							<!--The Title of the News Page-->
+							<!--The Title of the Publications Page-->
 							<h1><?php the_title();?> </h1>
 							<div class="small-10 small-centered columns" >
 								<!--Looping the posts of the News Page-->
-								<?php $args = array( 'post_type' => 'news_feed'); ?>
+								<?php $args = array( 'post_type' => 'Publications'); ?>
 								<?php $loop = new WP_Query( $args ); ?>
 								<?php if ( $loop -> have_posts() ) : while ( $loop -> have_posts()) : $loop -> the_post(); ?>
 									<div class='small-12 medium-4 columns end' data-equalizer-watch>
@@ -60,8 +60,8 @@
 								<?php else : ?>
 									<?php get_template_part( 'content', 'none' ); ?>
 								<?php endif; ?>
-							</div><!-- #content -->
-						</div><!-- #primary -->
+							</div>
+						</div>
 					</div>
 				</div>
 			</center>

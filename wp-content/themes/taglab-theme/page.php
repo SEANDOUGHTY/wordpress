@@ -1,9 +1,12 @@
+<!--Loading the header.php above each file-->
 <?php get_header(); ?>
+<!--The Content on Each Page-->
 <div class="content">
 	<section class='row'>
 		<div class='small-9 small-centered columns page-header'><center>
 			<div id="primary" class="content-area">
 				<div id="content" class="site-content" role="main">
+					<!--Loop to get the Title and Content from each Post-->
 					<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 						<h1> <?php the_title();?> </h1>
 						<p> <?php the_content();?> </p>
@@ -20,5 +23,5 @@
 		</div>
 	</section>
 </div>
-
+<!--Loading the footer.php above each file-->
 <?php get_footer(); ?>

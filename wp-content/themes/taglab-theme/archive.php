@@ -1,9 +1,15 @@
+<!--This is the Archive page for the Blog page-->
+<!--This is accessed by selecting one of the categories/tags on the blog page-->
+
+<!--The Name of the Template-->
 <?php
 /*
 	Template Name: Blog Page
 */
 ?>
+<!--Loading the header.php above each file-->
 <?php get_header(); ?>
+<!--The Content on Each Page-->
 <div class="content">
 	<section class='row'>
 		<div class='small-9 small-centered columns page-header'><center>
@@ -11,12 +17,15 @@
 				<div id="content" class="site-content" role="main">
 					<div class="small-12 small-centered columns news" data-equalizer>
 						<h1><?php wp_title(''); ?></h1>
-						<div class="small-10 small-centered columns" >
+						<div class="small-10 small-centered columns">
+							<!--Loop for getting each Blog Post-->
 							<?php if ( have_posts() ) : while ( have_posts()) : the_post(); ?>
 								<div class='small-12 medium-4 columns end' data-equalizer-watch>
 									<div class="small-11 small-centered columns card">
 										<article class="post">
+										<!--The Title-->
 										<h2> <?php the_title();?> </h2>
+										<!--The Content-->
 										<p> <?php
 											if (is_sticky()) {
   												global $more;    // Declare global $more (before the loop).
@@ -50,8 +59,8 @@
 							<?php else : ?>
 								<?php get_template_part( 'content', 'none' ); ?>
 							<?php endif; ?>
-						</div><!-- #content -->
-					</div><!-- #primary -->
+						</div>
+					</div>
 				</div>
 			</div>
 		</center></div>

@@ -1,13 +1,7 @@
 <?php
-
+//Allowing the Theme to support menus
 add_theme_support('menus');
-add_theme_support('post-thumbnails');
-
-function wp_excerpt_length($length){
-	return 16;
-}
-
-add_filter('excerpt_length','wp_excerpt_length',999);
+//Registering the Menus
 function register_theme_menus(){
 	register_nav_menus(
 		array(
@@ -15,8 +9,16 @@ function register_theme_menus(){
 		)
 	);
 }
-
+//To add the register_theme_menus() function to the init() function
 add_action('init','register_theme_menus');
+//Allowing the theme to support thumbnails
+add_theme_support('post-thumbnails');
+//Sets the length of an exerpt
+function wp_excerpt_length($length){
+  return 16;
+}
+//To add the wp_excerpt_length() function to the excerpt_length() function
+add_filter('excerpt_length','wp_excerpt_length',999);
 
 function wp_theme_styles() {
 	wp_enqueue_style('foundation_css', get_template_directory_uri() . '/css/foundation.css');
@@ -24,19 +26,88 @@ function wp_theme_styles() {
 	wp_enqueue_style('main_css', get_template_directory_uri() . '/style.css');
 	wp_enqueue_style('typography_css', get_template_directory_uri() . '/css/typography.css');
 }
-
+//To add the wp_theme_styles() function to the wp_enqueue_scripts() function
 add_action('wp_enqueue_scripts', 'wp_theme_styles');
 
 function wp_theme_js(){
 	wp_enqueue_script('modernizr_js', get_template_directory_uri().'/js/vendor/modernizr.js','','',false);
-	wp_enqueue_script('jquery_js', get_template_directory_uri().'/js/vendor/jquery.js','','',true);
 	wp_enqueue_script('foundation_min_js', get_template_directory_uri().'/js/foundaion.js',array('jquery'),'',false);
+	wp_enqueue_script('jquery_js', get_template_directory_uri().'/js/vendor/jquery.js','','',true);
 	wp_enqueue_script('foundation_js', get_template_directory_uri().'/js/foundation/foundation.js',array('jquery_js'),'',true);
 	wp_enqueue_script('topbar_js', get_template_directory_uri().'/js/foundation/foundation.topbar.js','','',true);
+	wp_enqueue_script('equalizer_js', get_template_directory_uri().'/js/foundation/foundation.equalizer.js','','',true);
 	wp_enqueue_script('fastclick_js', get_template_directory_uri().'/js/vendor/fastclick.js','','',true);
 	wp_enqueue_script('main_js', get_template_directory_uri().'/js/app.js','','',true);
 }
 
-
+//To add the wp_theme_js() function to the wp_enqueue_scripts() function
 add_action('wp_enqueue_scripts','wp_theme_js');
+//To add the create_post_type() function to the init() function
+add_action( 'init', 'create_post_type' );
+
+/**To create new post type (i.e. News Feed, Publications, etc)
+  *To create a new post type add to the end of the function the following,
+  *register_post_type("name of post variable", 
+  *   array('labels'=>__("Name which appears on the Dashboard"),'singular_name'=>__("The name of single post(i.e. Article)"))
+  *         'public'=>true,
+  *         'has_archive'=>true/false Depends if you would like an archive for tags)
+  *);
+  */
+function create_post_type() {
+  register_post_type( 'news_feed',
+    array(
+      'labels' => array('name' => __( 'News Blog' ), 'singular_name' => __( 'Article' )),
+      'public' => true,
+      'has_archive' => false,
+    )
+  );
+  register_post_type( 'Publications',
+    array(
+      'labels' => array('name' => __( 'Publications' ), 'singular_name' => __( 'Publication' )),
+      'public' => true,
+      'has_archive' => false,
+    )
+  );
+}
+
+/**
+ * Embassy_Walker_Nav_Menu class.
+ * 
+ * @extends Walker_Nav_Menu
+ */
+class Embassy_Walker_Nav_Menu extends Walker_Nav_Menu {
+
+  function start_lvl( &$output, $depth = 0, $args = array() ) {
+    $indent = str_repeat("\t", $depth);
+    $output .= "\n$indent<ul class=\"dropdown\">\n";
+  }
+}
+
+add_filter( 'wp_nav_menu_objects', 'embassy_menu_parent_class' );
+
+/**
+ * embassy_menu_parent_class function.
+ * 
+ * @access public
+ * @param mixed $items
+ * @return void
+ */
+function embassy_menu_parent_class( $items ) {
+
+  $parents = array();
+  foreach ( $items as $item ) {
+    if ( $item->menu_item_parent && $item->menu_item_parent > 0 ) {
+      $parents[] = $item->menu_item_parent;
+    }
+  }
+
+  foreach ( $items as $item ) {
+    if ( in_array( $item->ID, $parents ) ) {
+      $item->classes[] = 'has-dropdown'; 
+    }
+  }
+
+  return $items;    
+}
+
 ?>
