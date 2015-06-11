@@ -75,39 +75,48 @@ function create_post_type() {
  * 
  * @extends Walker_Nav_Menu
  */
-class Embassy_Walker_Nav_Menu extends Walker_Nav_Menu {
+class p2p_foundation_walker extends Walker_Nav_Menu{
 
-  function start_lvl( &$output, $depth = 0, $args = array() ) {
-    $indent = str_repeat("\t", $depth);
-    $output .= "\n$indent<ul class=\"dropdown\">\n";
-  }
-}
+  function start_el(&$output, $item, $depth, $args){
 
-add_filter( 'wp_nav_menu_objects', 'embassy_menu_parent_class' );
+   global $wp_query;
+   $indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
 
-/**
- * embassy_menu_parent_class function.
- * 
- * @access public
- * @param mixed $items
- * @return void
- */
-function embassy_menu_parent_class( $items ) {
+  $class_names = $value = '';
 
-  $parents = array();
-  foreach ( $items as $item ) {
-    if ( $item->menu_item_parent && $item->menu_item_parent > 0 ) {
-      $parents[] = $item->menu_item_parent;
+  $classes = empty( $item->classes ) ? array() : (array) $item->classes;
+
+  $current_indicators = array('current-menu-item', 'current-menu-parent', 'current_page_item', 'current_page_parent');
+
+  $newClasses = array('button');
+
+        foreach($classes as $el){
+        //add button class and check if it's indicating the current page.
+                if (in_array($el, $current_indicators)){
+                        array_push($newClasses, $el);
+                }
+        }
+
+    $class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $newClasses), $item ) );
+    if($class_names!='') $class_names = ' class="'. esc_attr( $class_names ) . '"';
+
+
+    $output .= $indent . '<li>';
+
+    $attributes  = ! empty( $item->attr_title ) ? ' title="'  . esc_attr( $item->attr_title ) .'"' : '';
+    $attributes .= ! empty( $item->target )     ? ' target="' . esc_attr( $item->target     ) .'"' : '';
+    $attributes .= ! empty( $item->xfn )        ? ' rel="'    . esc_attr( $item->xfn        ) .'"' : '';
+    $attributes .= ! empty( $item->url )        ? ' href="'   . esc_attr( $item->url        ) .'"' : '';
+
+
+    $item_output = $args->before;
+    $item_output .= '<a'. $attributes . $class_names .'>';
+    $item_output .= $args->link_before .apply_filters( 'the_title', $item->title, $item->ID );
+    $item_output .= '</a>';
+    $item_output .= $args->after;
+
+    $output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
     }
-  }
-
-  foreach ( $items as $item ) {
-    if ( in_array( $item->ID, $parents ) ) {
-      $item->classes[] = 'has-dropdown'; 
-    }
-  }
-
-  return $items;    
 }
 
 ?>
