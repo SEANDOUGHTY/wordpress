@@ -143,6 +143,7 @@ eight: 75%;
 	font-family: Open Sans;
 	padding-bottom: 15px;
 	width: 90%;
+	min-height: 70%;
 }
 
 .Person p {
@@ -153,8 +154,8 @@ eight: 75%;
 	margin: 0px;
 }
 
-.Person img {
-	min-width: 100%;
+.Person img{
+	width: 100%;
 }
 
 .Person p:nth-child(2) {
@@ -237,7 +238,4 @@ eight: 75%;
 	opacity: 45%;
 
 }
-
-
-
 
