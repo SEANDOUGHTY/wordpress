@@ -36,16 +36,10 @@
   												$more = 0;
   												the_content('Read the rest of this entry »');
 											}
-										?></p>	<a>Read the full article</a>
+										?></p>	<a href='<?php the_permalink();?>'>Read the full article</a>
 										<ul class='post-meta no-bullet'>
-											<li class='author'>
-												<span class='wp-author small'>
-													<?php echo get_avatar(get_the_author_meta('ID'),24); ?>	
-												</span>
-												by <?php the_author_posts_link(); ?>
-											</li>
-											<li class='category'>in <?php the_category(', '); ?></li>
-											<li class='date'>on <?php the_time('F j, Y'); ?></li>	
+											<li class='category'>Related Links: <?php the_terms( $post->ID, 'connection', '', ', ', ' ' ); ?></li>
+											<!--<li class='date'>on <?php the_time('F j, Y'); ?></li>-->	
 										</ul>
 										<?php if (get_the_post_thumbnail()) : ?>
 										<div class='img-container'>

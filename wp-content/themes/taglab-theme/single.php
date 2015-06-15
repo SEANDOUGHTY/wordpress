@@ -30,7 +30,7 @@
 												}
 											?></p>
 											<ul class='post-meta no-bullet'>
-												<li class='category'>Related Links: <?php the_category(', '); ?></li>
+												<li class='category'>Related Links: <?php the_terms( $post->ID, 'connection', '', ', ', ' ' ); ?></li>
 												<!-- <li class='date'>on <?php the_time('F j, Y'); ?></li> -->	
 											</ul>
 											<?php if (get_the_post_thumbnail()) : ?>

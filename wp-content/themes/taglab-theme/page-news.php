@@ -27,9 +27,10 @@
 												<!--The Title-->
 												<h2> <?php the_title(); ?></h2>
 												<!--The Content-->
-												<p> <?php the_excerpt(); ?></p>	<a href='<?php the_permalink();?>'>Read the full article</a>
+												<p> <?php the_excerpt(); ?></p>
+												<a href='<?php the_permalink();?>'>Read the full article</a>
 												<ul class='post-meta no-bullet'>
-													<li class='category'>Related Links: <?php the_category(', '); ?></li>
+													<li class='category'>Related Links: <?php the_terms( $post->ID, 'connection', '', ', ', ' ' ); ?></li>
 													<!-- <li class='date'>on <?php the_time('F j, Y'); ?></li> -->	
 												</ul>
 												<?php if (get_the_post_thumbnail()) : ?>
