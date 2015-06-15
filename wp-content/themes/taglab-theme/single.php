@@ -28,7 +28,7 @@
   													$more = 0;
   													the_content('Read the rest of this entry »');
 												}
-											?></p>	<a href='<?php echo get_permalink();?>'>Read the full article</a>
+											?></p>
 											<ul class='post-meta no-bullet'>
 												<li class='category'>Related Links: <?php the_category(', '); ?></li>
 												<!-- <li class='date'>on <?php the_time('F j, Y'); ?></li> -->	
