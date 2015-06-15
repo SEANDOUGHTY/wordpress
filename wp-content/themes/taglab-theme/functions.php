@@ -10,7 +10,7 @@ function register_theme_menus(){
 	);
 }
 
-wp_nav_menu('walker'=> 'Top_Bar_Walker');
+wp_nav_menu(array('walker'=> 'Top_Bar_Walker'));
 
 //To add the register_theme_menus() function to the init() function
 add_action('init','register_theme_menus');
