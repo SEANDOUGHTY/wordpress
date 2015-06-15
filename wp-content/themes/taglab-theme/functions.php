@@ -5,7 +5,8 @@ add_theme_support('menus');
 function register_theme_menus(){
 	register_nav_menus(
 		array(
-			'primary-menu' => __('Primary Menu')
+			'primary-menu' => __('Primary Menu'),
+      'walker'=> 'Top_Bar_Walker'
 		)
 	);
 }
@@ -69,45 +70,72 @@ function create_post_type() {
     )
   );
 }
-
 /**
- * Embassy_Walker_Nav_Menu class.
- * 
- * @extends Walker_Nav_Menu
+ * Top Bar Walker
+ *
+ * @since 1.0.0
  */
-class Embassy_Walker_Nav_Menu extends Walker_Nav_Menu {
-
-  function start_lvl( &$output, $depth = 0, $args = array() ) {
-    $indent = str_repeat("\t", $depth);
-    $output .= "\n$indent<ul class=\"dropdown\">\n";
-  }
-}
-
-add_filter( 'wp_nav_menu_objects', 'embassy_menu_parent_class' );
-
-/**
- * embassy_menu_parent_class function.
- * 
- * @access public
- * @param mixed $items
- * @return void
- */
-function embassy_menu_parent_class( $items ) {
-
-  $parents = array();
-  foreach ( $items as $item ) {
-    if ( $item->menu_item_parent && $item->menu_item_parent > 0 ) {
-      $parents[] = $item->menu_item_parent;
+class Top_Bar_Walker extends Walker_Nav_Menu {
+  /**
+    * @see Walker_Nav_Menu::start_lvl()
+   * @since 1.0.0
+   *
+   * @param string $output Passed by reference. Used to append additional content.
+   * @param int $depth Depth of page. Used for padding.
+  */
+    function start_lvl( &$output, $depth = 0, $args = array() ) {
+        $output .= "\n<ul class=\"sub-menu dropdown\">\n";
     }
-  }
 
-  foreach ( $items as $item ) {
-    if ( in_array( $item->ID, $parents ) ) {
-      $item->classes[] = 'has-dropdown'; 
+    /**
+     * @see Walker_Nav_Menu::start_el()
+     * @since 1.0.0
+     *
+     * @param string $output Passed by reference. Used to append additional content.
+     * @param object $item Menu item data object.
+     * @param int $depth Depth of menu item. Used for padding.
+     * @param object $args
+     */
+
+    function start_el( &$output, $object, $depth = 0, $args = array(), $current_object_id = 0 ) {
+        $item_html = '';
+        parent::start_el( $item_html, $object, $depth, $args );  
+
+        $output .= ( $depth == 0 ) ? '<li class="divider"></li>' : '';
+
+        $classes = empty( $object->classes ) ? array() : ( array ) $object->classes;  
+
+        if ( in_array('label', $classes) ) {
+            $item_html = preg_replace( '/<a[^>]*>( .* )<\/a>/iU', '<label>$1</label>', $item_html );
+        }
+
+    if ( in_array('divider', $classes) ) {
+      $item_html = preg_replace( '/<a[^>]*>( .* )<\/a>/iU', '', $item_html );
     }
-  }
 
-  return $items;    
+        $output .= $item_html;
+    }
+
+  /**
+     * @see Walker::display_element()
+     * @since 1.0.0
+   * 
+   * @param object $element Data object
+   * @param array $children_elements List of elements to continue traversing.
+   * @param int $max_depth Max depth to traverse.
+   * @param int $depth Depth of current element.
+   * @param array $args
+   * @param string $output Passed by reference. Used to append additional content.
+   * @return null Null on failure with no changes to parameters.
+   */
+    function display_element( $element, &$children_elements, $max_depth, $depth=0, $args, &$output ) {
+        $element->has_children = !empty( $children_elements[$element->ID] );
+        $element->classes[] = ( $element->current || $element->current_item_ancestor ) ? 'active' : '';
+        $element->classes[] = ( $element->has_children ) ? 'has-dropdown' : '';
+
+        parent::display_element( $element, $children_elements, $max_depth, $depth, $args, $output );
+    }
+
 }
 
 ?>
