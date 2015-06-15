@@ -6,10 +6,12 @@ function register_theme_menus(){
 	register_nav_menus(
 		array(
 			'primary-menu' => __('Primary Menu'),
-      'walker'=> 'Top_Bar_Walker'
 		)
 	);
 }
+
+wp_nav_menu('walker'=> 'Top_Bar_Walker');
+
 //To add the register_theme_menus() function to the init() function
 add_action('init','register_theme_menus');
 //Allowing the theme to support thumbnails
