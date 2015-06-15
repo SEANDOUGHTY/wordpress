@@ -8,6 +8,8 @@
 ?>
 <html>
 	<head>
+		<meta name="viewport" content="width=device-width">
+		<meta charset="utf-8">
 		<!--The title found in the tabs on the browser-->	
 		<title><?php wp_title(''); ?></title> 
 		<!--Loading the CSS and the spceified JS from the functions.php-->
