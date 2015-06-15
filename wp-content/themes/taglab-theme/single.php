@@ -31,7 +31,7 @@
 											?></p>	<a href='<?php echo get_permalink();?>'>Read the full article</a>
 											<ul class='post-meta no-bullet'>
 												<li class='category'>Related Links: <?php the_category(', '); ?></li>
-												<li class='date'>on <?php the_time('F j, Y'); ?></li>	
+												<!-- <li class='date'>on <?php the_time('F j, Y'); ?></li> -->	
 											</ul>
 											<?php if (get_the_post_thumbnail()) : ?>
 											<div class='img-container'>
