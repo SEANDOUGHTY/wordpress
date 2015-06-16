@@ -27,7 +27,17 @@
 												<!--The Title-->
 												<h2> <?php the_title(); ?></h2>
 												<!--The Content-->
-												<p> <?php the_excerpt(); ?></p>
+												<p> <?php
+													if (is_sticky()) {
+  														global $more;    // Declare global $more (before the loop).
+  														$more = 1;       // Set (inside the loop) to display all content, including text below more.
+  														the_content();
+													} else {
+  														global $more;
+  														$more = 0;
+  														the_content('Read the rest of this entry »');
+													}
+												?> </p>
 												<a href='<?php the_permalink();?>'>Read the full article</a>
 												<ul class='post-meta no-bullet'>
 												<li class='category'>Related Links: <?php the_terms( $post->ID, 'connection', '', ', ', ' ' ); ?></li>

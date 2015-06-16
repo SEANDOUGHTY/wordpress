@@ -15,7 +15,9 @@
 					<div id="content" class="site-content" role="main">
 						<div class="small-12 small-centered columns news" data-equalizer>
 							<!--The Title of the News Page-->
-							<h1><?php the_title();?> </h1>
+							<div class='Title'>
+								<h3><?php the_title();?> </h3>
+							</div>
 							<div class="small-10 small-centered columns" >
 								<!--Looping the posts of the News Page-->
 								<?php $args = array( 'post_type' => 'news_feed'); ?>

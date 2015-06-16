@@ -34,9 +34,7 @@
 						<!--Right Nav Section-->
 						<ul class="right">
 							<!--The Menu Buttons-->
-							<li><?php wp_nav_menu( array( 'theme_location' => 'primary-menu', 'menu_class' => 'nav-menu', 'menu_id' => 'primary-menu' ) ); ?></li>
-							<!--The DONATE Button-->
-							<li class="has-form"> <a href="#" class='button'>Donate</a> </li>
+							<li><?php wp_nav_menu( array( 'theme_location' => 'primary-menu', 'menu_class' => 'nav-menu', 'menu_id' => 'primary-menu', 'walker' => new button_walker()) ); ?></li>
 						</ul>
 					</section>
 				</nav>

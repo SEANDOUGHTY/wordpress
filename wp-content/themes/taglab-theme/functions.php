@@ -1,15 +1,4 @@
 <?php
-//Allowing the Theme to support menus
-add_theme_support('menus');
-//Registering the Menus
-function register_theme_menus(){
-  register_nav_menus(
-    array(
-      'primary-menu' => __('Primary Menu')
-    )
-  );
-}
-
 //To add the register_theme_menus() function to the init() function
 add_action('init','register_theme_menus');
 //Allowing the theme to support thumbnails
@@ -39,6 +28,17 @@ function wp_theme_js(){
   wp_enqueue_script('equalizer_js', get_template_directory_uri().'/js/foundation/foundation.equalizer.js','','',true);
   wp_enqueue_script('fastclick_js', get_template_directory_uri().'/js/vendor/fastclick.js','','',true);
   wp_enqueue_script('main_js', get_template_directory_uri().'/js/app.js','','',true);
+}
+
+//Allowing the Theme to support menus
+add_theme_support('menus');
+//Registering the Menus
+function register_theme_menus(){
+  register_nav_menus(
+    array(
+      'primary-menu' => __('Primary Menu')
+    )
+  );
 }
 
 //To add the wp_theme_js() function to the wp_enqueue_scripts() function
@@ -85,4 +85,40 @@ function category_init() {
  }
 add_action( 'init', 'category_init' );
 
+class button_walker extends Walker_Nav_Menu {
+  function start_el(&$output, $item, $depth, $args) {
+    global $wp_query;
+    $indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
+    $class_names = $value = '';
+
+    $classes = empty( $item->classes ) ? array() : (array) $item->classes;
+
+    $class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item ) );
+    if($item->title=='DONATE'){
+       $class_names = ' class="'. esc_attr( $class_names ) . ' has-form"';   
+    } else {
+      $class_names = ' class="'. esc_attr( $class_names ) . '"';
+    }
+
+    $output .= $indent . '<li id="menu-item-'. $item->ID . '"' . $value . $class_names .'>';
+
+    $attributes  = ! empty( $item->attr_title ) ? ' title="'  . esc_attr( $item->attr_title ) .'"' : '';
+    $attributes .= ! empty( $item->target )     ? ' target="' . esc_attr( $item->target     ) .'"' : '';
+    $attributes .= ! empty( $item->xfn )        ? ' rel="'    . esc_attr( $item->xfn        ) .'"' : '';
+    $attributes .= ! empty( $item->url )        ? ' href="'   . esc_attr( $item->url        ) .'"' : '';
+
+    $item_output = $args->before;
+    if($item->title=='DONATE'){
+      $item_output .= '<a class="button"'. $attributes .'>';
+    } else {
+      $item_output .= '<a '. $attributes .'>';
+    }
+    $item_output .= $args->link_before .$prepend.apply_filters( 'the_title', $item->title, $item->ID ).$append;
+    $item_output .= $description.$args->link_after;
+    $item_output .= '</a>';
+    $item_output .= $args->after;
+
+    $output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
+  }
+}
 ?>
