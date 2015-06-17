@@ -62,7 +62,7 @@ For all other boxes (mainly card elements)
 
 .paragraph {
 	text-align: center;
-	margin-bottom: 12em;
+	margin-bottom: 4em;
 }
 
 .paragraph-title {
@@ -90,6 +90,11 @@ For all other boxes (mainly card elements)
 	margin-bottom: 3em;
 }
 
+ p.date{
+	margin-bottom: 0; 
+	opacity: 0.4;
+}
+
 .card a{
 	font-size: 0.8rem;
 	margin-bottom: 3em;
@@ -108,7 +113,7 @@ For all other boxes (mainly card elements)
 	background-color: white;
 	height: 4em;
 	width: 4em;
-	opacity: 70%;
+	opacity: 0.70;
 	padding: 1em;
 	border-radius: 50%;
 	margin-bottom: 20%;
@@ -124,7 +129,7 @@ For all other boxes (mainly card elements)
 /* HOME PAGE */
 .home-header {
 	background-color: #0082d4;
-eight: 75%;
+	height: 75%;
 	padding: 8em 12em;
 	margin-bottom: 5em;
 	min-width: 100%;
@@ -193,7 +198,7 @@ eight: 75%;
 	font-size: 14px;
 	font-weight: 400;
 	line-height: 18px;
-	opacity: 87%;
+	opacity: 0.87;
 }
 
 
@@ -237,7 +242,7 @@ eight: 75%;
 	font-family: Open Sans;
 	font-weight: none;
 	line-height: 50px;
-	opacity: 87%;	
+	opacity: 0.87;	
 }
 
 .Title h3 {
@@ -245,7 +250,7 @@ eight: 75%;
 	font-family: Open Sans;
 	font-weight: none;
 	line-height: 100px;
-	opacity: 87%;	
+	opacity: 0.87;	
 }
 
 .Title p {
@@ -254,7 +259,7 @@ eight: 75%;
 	margin-left: 7%;
 	margin-right: 7%;
 	line-height: 32px;
-	opacity: 45%;
+	opacity: 0.45;
 }
 
 .Title p > a{
@@ -263,6 +268,4 @@ eight: 75%;
 	margin-left: 7%;
 	margin-right: 7%;
 	line-height: 32px;
-	opacity: 45%;
 }
-

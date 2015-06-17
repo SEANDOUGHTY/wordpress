@@ -1,47 +1,58 @@
 <!--The Name of the Template-->
 <?php
 /*
-	Template Name: Publications Page
+	Template Name: Publication Page
 */
 ?>
 <!--Loading the header.php above each file-->
 <?php get_header(); ?>
 <!--The Content on Each Page-->
 <div class="content">
+	<!--The Title Banner-->
 	<section class='row'>
-		<div class='small-9 small-centered columns page-header'>
+		<div class='small-9 small-centered columns page-header Title'>
+			<center>
+				<!--Loop to get the Title and Content from each Post-->
+				<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+					<h3 style='margin-top: 20px;'> <?php the_title();?> </h3>
+					<p> <?php the_content();?> </p>
+				<?php endwhile; ?>
+				<!--If the page is blank-->
+				<?php else : ?>
+					<?php get_template_part( 'content', 'none' ); ?>
+				<?php endif; ?>
+			</center>
+		</div>
+	</section>
+	<!--The Content-->
+	<section class='row'>
+		<div class='small-9 small-centered columns page-content'>
 			<center>
 				<div id="primary" class="content-area">
 					<div id="content" class="site-content" role="main">
-						<div class="small-12 small-centered columns news" data-equalizer>
-							<!--The Title of the Publications Page-->
-							<div class='Title'><h3><?php the_title();?> </h3></div>
-							<div class="small-10 small-centered columns" >
-								<!--Looping the posts of the News Page-->
-								<?php $args = array( 'post_type' => 'Publications'); ?>
+						<!--The Grid of Posts-->
+						<div class="row">
+							<div class="small-10 small-centered columns"  data-equalizer='grid'>
+								<!--Loop to get the Title and Content from each Post-->
+								<?php $args = array( 'post_type' => 'publications'); ?>
 								<?php $loop = new WP_Query( $args ); ?>
 								<?php if ( $loop -> have_posts() ) : while ( $loop -> have_posts()) : $loop -> the_post(); ?>
-									<div class='small-12 medium-6 large-4 columns end' >
-										<div class="small-11 small-centered columns card" data-equalizer-watch>
-											<article class="post">
+									<!--Card Container-->
+									<div class='small-12 medium-6 large-4 columns end'>
+										<div class="small-11 small-centered columns card panel"  data-equalizer-watch='grid'>
+											<article class="post panel"  data-equalizer-watch='grid'>
+												<!--The Date-->
+												<p class='date'> <?php the_time('F Y'); ?> </p>
 												<!--The Title-->
-												<h2> <?php the_title(); ?></h2>
+												<h6> <?php the_title(); ?></h6>
 												<!--The Content-->
 												<p> <?php the_excerpt(); ?></p>
 												<a href='<?php the_permalink();?>'>Read the full article</a>
-												<ul class='post-meta no-bullet'>
-												<li class='category'>Related Links: <?php the_terms( $post->ID, 'connection', '', ', ', ' ' ); ?></li>
-														<!-- <li class='date'>on <?php the_time('F j, Y'); ?></li> -->	
-												</ul>
-												<?php if (get_the_post_thumbnail()) : ?>
-												<div class='img-container'>
-													<?php the_post_thumbnail('large'); ?>
-												</div>
-												<?php endif; ?>
 											</article>
 										</div>
-									</div>		
+									</div>	
 								<?php endwhile; ?>
+								<!--If the page is blank-->
 								<?php else : ?>
 									<?php get_template_part( 'content', 'none' ); ?>
 								<?php endif; ?>

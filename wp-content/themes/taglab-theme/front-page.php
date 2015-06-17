@@ -25,35 +25,34 @@
 			
 		<!-- Highlights Content -->
 		<div class="row">	
-			<div class="small-12 small-centered columns highlights" data-equalizer>
+			<div class="small-12 small-centered columns highlights" data-equalizer='reel'>
 				<h1>Highlights</h1>
-				<h2>This is header 2</h2>
-				<h3>This is header 3</h3>
-				<h4>This is header 4</h4>
-				<h5>This is header 5</h5>
-				<h6>This is header 6</h6>
 				<div class="small-10 small-centered columns" >
-					<!--Looping the posts of the News Page-->
+					<!--Looping the posts of the News and Publication Page-->
 					<?php $args = array( 'post_type' => array('news_feed','publications')); ?>
 					<?php $loop = new WP_Query( $args ); ?>
 					<?php $c = 0; ?>
+					<!--At most 3 Hightlights-->
 					<?php if ($loop -> have_posts() ) : while ( $loop -> have_posts() && $c < 3) : $loop -> the_post(); ?>
+						<!--If the News Article or Publication is a Highlight then Display-->
 						<?php if(has_term('highlight','connection')): ?>
 							<?php $c = $c + 1; ?> 
-							<div class="small-12 medium-4 columns end" data-equalizer-watch>
-								<div class="small-11 small-centered columns card">
-									<h2> <?php the_title();?> </h2>
-									<p> <?php
-											if (is_sticky()) {
-  												global $more;    // Declare global $more (before the loop).
-  												$more = 1;       // Set (inside the loop) to display all content, including text below more.
-  												the_content();
-											} else {
-  												global $more;
-  												$more = 0;
-  												the_content('Read the rest of this entry »');
-											}
-									?></p>	<a href='<?php the_permalink();?>'>Read the full article</a>
+							<div class="small-12 medium-4 columns end">
+								<div class="small-11 small-centered columns card" data-equalizer-watch='reel'>
+									<!--If there is a thumbnail for the post-->
+									<article class='post' data-equalizer-watch='reel'>
+										<?php if (has_post_thumbnail()) : ?>
+											<div class='img-container'>
+												<?php the_post_thumbnail('small'); ?>
+											</div>
+										<?php endif; ?>
+										<p class='date'> <?php the_time('F Y'); ?> </p>
+										<!--The Title-->
+										<h6> <?php the_title();?> </h6>
+										<!--The Content-->
+										<p> <?php the_excerpt(); ?></p>
+										<a href='<?php the_permalink();?>'>Read Full Article</a>
+									</article>
 								</div>
 							</div>
 						<?php endif; ?>
