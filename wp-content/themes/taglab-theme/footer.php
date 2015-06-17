@@ -14,7 +14,7 @@
 				<div class='row'>
 					<!--Copyright Information-->
 					<div class='small-12 medium-4 small-centered columns footer-text'>
-						<center>Copyright</center>
+						<center>40 St. George St. Toronto ON M5S 2E4 | inquiries@taglab.ca</center>
 					</div>
 				</div>
 			</div>

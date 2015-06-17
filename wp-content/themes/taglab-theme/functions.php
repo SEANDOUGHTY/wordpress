@@ -1,8 +1,6 @@
 <?php
 //To add the register_theme_menus() function to the init() function
 add_action('init','register_theme_menus');
-//Allowing the theme to support thumbnails
-add_theme_support('post-thumbnails');
 //Sets the length of an exerpt
 function wp_excerpt_length($length){
   return 16;
@@ -11,23 +9,23 @@ function wp_excerpt_length($length){
 add_filter('excerpt_length','wp_excerpt_length',999);
 
 function wp_theme_styles() {
-  wp_enqueue_style('foundation_css', get_template_directory_uri() . '/css/foundation.css');
-  wp_enqueue_style('fonts_css', 'http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,600italic,700italic,800,800italic,400italic,300,300italic');
-  wp_enqueue_style('main_css', get_template_directory_uri() . '/style.css');
-  wp_enqueue_style('typography_css', get_template_directory_uri() . '/css/typography.css');
+	wp_enqueue_style('foundation_css', get_template_directory_uri() . '/css/foundation.css');
+	wp_enqueue_style('fonts_css', 'http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,600italic,700italic,800,800italic,400italic,300,300italic');
+	wp_enqueue_style('main_css', get_template_directory_uri() . '/style.css');
+	wp_enqueue_style('typography_css', get_template_directory_uri() . '/css/typography.css');
 }
 //To add the wp_theme_styles() function to the wp_enqueue_scripts() function
 add_action('wp_enqueue_scripts', 'wp_theme_styles');
 
 function wp_theme_js(){
-  wp_enqueue_script('modernizr_js', get_template_directory_uri().'/js/vendor/modernizr.js','','',false);
-  wp_enqueue_script('foundation_min_js', get_template_directory_uri().'/js/foundaion.js',array('jquery'),'',false);
-  wp_enqueue_script('jquery_js', get_template_directory_uri().'/js/vendor/jquery.js','','',true);
-  wp_enqueue_script('foundation_js', get_template_directory_uri().'/js/foundation/foundation.js',array('jquery_js'),'',true);
-  wp_enqueue_script('topbar_js', get_template_directory_uri().'/js/foundation/foundation.topbar.js','','',true);
-  wp_enqueue_script('equalizer_js', get_template_directory_uri().'/js/foundation/foundation.equalizer.js','','',true);
-  wp_enqueue_script('fastclick_js', get_template_directory_uri().'/js/vendor/fastclick.js','','',true);
-  wp_enqueue_script('main_js', get_template_directory_uri().'/js/app.js','','',true);
+	wp_enqueue_script('modernizr_js', get_template_directory_uri().'/js/vendor/modernizr.js','','',false);
+	wp_enqueue_script('foundation_min_js', get_template_directory_uri().'/js/foundaion.js',array('jquery'),'',false);
+	wp_enqueue_script('jquery_js', get_template_directory_uri().'/js/vendor/jquery.js','','',true);
+	wp_enqueue_script('foundation_js', get_template_directory_uri().'/js/foundation/foundation.js',array('jquery_js'),'',true);
+	wp_enqueue_script('topbar_js', get_template_directory_uri().'/js/foundation/foundation.topbar.js','','',true);
+	wp_enqueue_script('equalizer_js', get_template_directory_uri().'/js/foundation/foundation.equalizer.js','','',true);
+	wp_enqueue_script('fastclick_js', get_template_directory_uri().'/js/vendor/fastclick.js','','',true);
+	wp_enqueue_script('main_js', get_template_directory_uri().'/js/app.js','','',true);
 }
 
 //Allowing the Theme to support menus
@@ -60,6 +58,7 @@ function create_post_type() {
       'labels' => array('name' => __( 'News Blog' ), 'singular_name' => __( 'Article' )),
       'public' => true,
       'has_archive' => false,
+      'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt'),
     )
   );
   register_post_type( 'publications',
@@ -70,6 +69,8 @@ function create_post_type() {
     )
   );
 }
+//Allowing the theme to support thumbnails
+add_theme_support('post-thumbnails', array('post','news_feed','publications'));
 
 function category_init() {
   // create a new taxonomy
@@ -94,7 +95,7 @@ class button_walker extends Walker_Nav_Menu {
     $classes = empty( $item->classes ) ? array() : (array) $item->classes;
 
     $class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item ) );
-    if($item->title=='DONATE'){
+    if($item->title=='Donate'){
        $class_names = ' class="'. esc_attr( $class_names ) . ' has-form"';   
     } else {
       $class_names = ' class="'. esc_attr( $class_names ) . '"';
@@ -108,7 +109,7 @@ class button_walker extends Walker_Nav_Menu {
     $attributes .= ! empty( $item->url )        ? ' href="'   . esc_attr( $item->url        ) .'"' : '';
 
     $item_output = $args->before;
-    if($item->title=='DONATE'){
+    if($item->title=='Donate'){
       $item_output .= '<a class="button"'. $attributes .'>';
     } else {
       $item_output .= '<a '. $attributes .'>';

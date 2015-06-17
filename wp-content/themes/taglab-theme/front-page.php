@@ -13,9 +13,8 @@
 		<!-- Page Content -->
 		<div class="row">
 			<div class="small-12 small-centered columns paragraph">
-				<div class="small-12 medium-8 small-centered columns">
+				<div class="small-12 medium-8 small-centered columns Title">
 					<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-						<h1 class="small-12 paragraph-title"><?php the_title(); ?></h1>
 						<div class="small-12 medium-9 small-centered columns paragraph-content">
 							<p><?php the_content(); ?></p>
 						</div>
@@ -28,7 +27,11 @@
 		<div class="row">	
 			<div class="small-12 small-centered columns highlights" data-equalizer>
 				<h1>Highlights</h1>
-				
+				<h2>This is header 2</h2>
+				<h3>This is header 3</h3>
+				<h4>This is header 4</h4>
+				<h5>This is header 5</h5>
+				<h6>This is header 6</h6>
 				<div class="small-10 small-centered columns" >
 					<!--Looping the posts of the News Page-->
 					<?php $args = array( 'post_type' => array('news_feed','publications')); ?>

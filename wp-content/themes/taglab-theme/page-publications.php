@@ -15,29 +15,19 @@
 					<div id="content" class="site-content" role="main">
 						<div class="small-12 small-centered columns news" data-equalizer>
 							<!--The Title of the Publications Page-->
-							<h1><?php the_title();?> </h1>
+							<div class='Title'><h3><?php the_title();?> </h3></div>
 							<div class="small-10 small-centered columns" >
 								<!--Looping the posts of the News Page-->
 								<?php $args = array( 'post_type' => 'Publications'); ?>
 								<?php $loop = new WP_Query( $args ); ?>
 								<?php if ( $loop -> have_posts() ) : while ( $loop -> have_posts()) : $loop -> the_post(); ?>
-									<div class='small-12 medium-4 columns end' data-equalizer-watch>
-										<div class="small-11 small-centered columns card">
+									<div class='small-12 medium-6 large-4 columns end' >
+										<div class="small-11 small-centered columns card" data-equalizer-watch>
 											<article class="post">
 												<!--The Title-->
 												<h2> <?php the_title(); ?></h2>
 												<!--The Content-->
-												<p> <?php
-													if (is_sticky()) {
-  														global $more;    // Declare global $more (before the loop).
-  														$more = 1;       // Set (inside the loop) to display all content, including text below more.
-  														the_content();
-													} else {
-  														global $more;
-  														$more = 0;
-  														the_content('Read the rest of this entry »');
-													}
-												?> </p>
+												<p> <?php the_excerpt(); ?></p>
 												<a href='<?php the_permalink();?>'>Read the full article</a>
 												<ul class='post-meta no-bullet'>
 												<li class='category'>Related Links: <?php the_terms( $post->ID, 'connection', '', ', ', ' ' ); ?></li>

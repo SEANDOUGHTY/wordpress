@@ -80,10 +80,10 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 0.5rem;
   margin-top: 0.2rem;
   text-rendering: optimizeLegibility; }
-  h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
-    color: #000;
-    font-size: 60%;
-    line-height: 0; }
+h1 small, h2 small, h3 small, h4 small, h5 small{
+  color: #000;
+  font-size: 60%;
+  line-height: 0; }
 
 h1 {
   font-size: 2.125rem;
@@ -120,6 +120,9 @@ h5 {
 	opacity: 54%;
 }
 
+h6{
+  font-weight: 400;
+}
 .subheader {
   line-height: 1.4;
   color: #6f6f6f;
@@ -286,3 +289,7 @@ blockquote p {
 
   h6 {
     font-size: 1rem; } }
+
+h6 {
+  font-size: 1rem;
+}

@@ -84,8 +84,18 @@ For all other boxes (mainly card elements)
 		-webkit-box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.12);
 		-moz-box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.12);	
 }
-	.card p {
-		margin-bottom: 3em;}
+
+.card p {
+	font-size: 0.8rem;
+	margin-bottom: 3em;
+}
+
+.card a{
+	font-size: 0.8rem;
+	margin-bottom: 3em;
+	position: absolute;
+	bottom: 0;
+}
 
 /* FOOTER */
 .footer-wrap{
@@ -221,6 +231,15 @@ eight: 75%;
 	background-color: white;
 }
 
+
+.Title h2 {
+	font-size: 32px;
+	font-family: Open Sans;
+	font-weight: none;
+	line-height: 50px;
+	opacity: 87%;	
+}
+
 .Title h3 {
 	font-size: 45px;
 	font-family: Open Sans;
@@ -236,6 +255,14 @@ eight: 75%;
 	margin-right: 7%;
 	line-height: 32px;
 	opacity: 45%;
+}
 
+.Title p > a{
+	font-size: 28px;
+	font-weight: 300;
+	margin-left: 7%;
+	margin-right: 7%;
+	line-height: 32px;
+	opacity: 45%;
 }
 
