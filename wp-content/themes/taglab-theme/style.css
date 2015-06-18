@@ -86,7 +86,7 @@ For all other boxes (mainly card elements)
 }
 
 .card p {
-	font-size: 0.8rem;
+	font-size: 1rem;
 	margin-bottom: 3em;
 }
 
@@ -96,7 +96,7 @@ For all other boxes (mainly card elements)
 }
 
 .card a{
-	font-size: 0.8rem;
+	font-size: 1rem;
 	margin-bottom: 3em;
 	position: absolute;
 	bottom: 0;
