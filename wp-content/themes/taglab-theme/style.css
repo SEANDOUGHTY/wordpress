@@ -74,40 +74,66 @@ For all other boxes (mainly card elements)
 
 .card {
 	background-color: #FFF;
-	padding: 3em 2em;
+	background-image: linear-gradient(rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 65%, rgba(100, 100, 100, 0.03) 100%);
+	padding: 2em 0em;
 	text-align: left;
 	margin-top: .8em;
-	margin-bottom: 5em;
+	margin-bottom: 1.5em;
 	/*min-height: 28em;*/
-	border-radius: 3px;
-	box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.12);
-		-webkit-box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.12);
-		-moz-box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.12);	
+	border-radius: 6px;
+	box-shadow: 2px 7px 29px 0 rgba(25, 25, 25, 0.1);
+		-webkit-box-shadow: 2px 7px 29px 0 rgba(25, 25, 25, 0.1);
+		-moz-box-shadow: 2px 7px 29px 0 rgba(25, 25, 25, 0.1);	}
+	.card p {
+		color: #828b90;
+		margin-bottom: 3em;}
+	.card a{
+		font-size: .9rem;
+		margin-bottom: 3em;
+		position: absolute;
+		bottom: 0;}
+
+.card-content {
+	padding: 1.2em 2em;}
+
+.card-thumbnail {
+	width: 100%;
+	height: 12em;
+}
+	.card-thumbnail-img {
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+
+.tb-intouch {
+	background-image: url(img/ipad_2474245b.jpg);
+	height: 12em;
 }
 
-.card p {
-	font-size: 1rem;
-	margin-bottom: 3em;
+.tb-monument {
+	background-image: url(img/monument-valley.jpg);
+	height: 12em;
 }
+	
 
  p.date{
-	margin-bottom: 0; 
+	margin-bottom: 1rem; 
 	opacity: 0.4;
 }
 
-.card a{
-	font-size: 1rem;
-	margin-bottom: 3em;
-	position: absolute;
-	bottom: 0;
-}
 
 /* FOOTER */
 .footer-wrap{
 	background-color: #263542;
+	margin-top: 3em;
 	padding-top: 4em;
 	padding-bottom: 2em;
 }
+	.footer-wrap p {
+		color: #FFF;
+		opacity: .65;
+		font-size: .8rem;
+	}
 
 .social-icon{
 	background-color: white;
@@ -119,10 +145,6 @@ For all other boxes (mainly card elements)
 	margin-bottom: 20%;
 }
 
-.footer-text{
-	color: white;
-}
-
 
 /*** CHANGES BY PAGE ***/
 
@@ -130,10 +152,13 @@ For all other boxes (mainly card elements)
 .home-header {
 	background-color: #0082d4;
 	height: 75%;
-	padding: 8em 12em;
+	padding: 5em 12em;
 	margin-bottom: 5em;
 	min-width: 100%;
 }
+	.home-header img {
+		height: 16em;
+	}
 
 .home-header h4,
 .home-header h5 {
