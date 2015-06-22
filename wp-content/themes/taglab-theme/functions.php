@@ -68,6 +68,13 @@ function create_post_type() {
       'has_archive' => false,
     )
   );
+  register_post_type( 'people',
+    array(
+      'labels' => array('name' => __( 'People' ), 'singular_name' => __( 'Person' )),
+      'public' => true,
+      'has_archive' => false,
+      )
+  );
 }
 //Allowing the theme to support thumbnails
 add_theme_support('post-thumbnails', array('post','news_feed','publications'));
