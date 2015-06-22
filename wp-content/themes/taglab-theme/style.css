@@ -255,8 +255,9 @@ For all other boxes (mainly card elements)
 	line-height: 35px;
 }
 
+/*
 .Title {
-	font-family: Open Sans;
+	font-family: inherit;
 	text-align: center;
 	background-color: white;
 }
@@ -293,4 +294,4 @@ For all other boxes (mainly card elements)
 	margin-left: 7%;
 	margin-right: 7%;
 	line-height: 32px;
-}
+}*/
