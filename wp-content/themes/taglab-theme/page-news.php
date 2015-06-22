@@ -26,13 +26,13 @@
 	</section>
 	<!--The Content-->
 	<section class='row'>
-		<div class='small-9 small-centered columns page-content'>
+		<div class='small-12 small-centered columns page-content'>
 			<center>
 				<div id="primary" class="content-area">
 					<div id="content" class="site-content" role="main">
 						<!--The Grid of Posts-->
 						<div class="row">
-							<div class="small-10 small-centered columns"  data-equalizer='grid'>
+							<div class="small-12 medium-10 small-centered columns"  data-equalizer='grid'>
 								<!--Loop to get the Title and Content from each Post-->
 								<?php $args = array( 'post_type' => 'news_feed'); ?>
 								<?php $loop = new WP_Query( $args ); ?>

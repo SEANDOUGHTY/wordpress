@@ -34,7 +34,7 @@ a {
   color: #0082d4;
 	font-size: .9rem;
 	font-weight: 500;
-	line-height: 1.5;
+	line-height: 1.7;
   text-decoration: none;
 	transition: all .3s;
 		-webkit-transition: all .3s;
@@ -53,14 +53,14 @@ p {
   font-family: "Open Sans", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
   font-size: 1rem;
   font-weight: 400;
-  line-height: 1.5;
+  line-height: 1.7;
   margin-bottom: 1.25rem;
   text-rendering: optimizeLegibility;
 	color: #333;
 	opacity: 54%;}
   p.lead {
     font-size: 1.21875rem;
-    line-height: 1.6; }
+    line-height: 1.7; }
   p aside {
     font-size: 0.875rem;
     font-style: italic;
@@ -76,7 +76,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "Open Sans", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
   font-style: normal;
   font-weight: normal;
-  line-height: 1.4;
+  line-height: 1.7;
   margin-bottom: 0.5rem;
   margin-top: 0.2rem;
   text-rendering: optimizeLegibility; }
@@ -88,7 +88,7 @@ h1 small, h2 small, h3 small, h4 small, h5 small, h6 small{
 h1 {
   font-size: 2.125rem;
 	font-weight: 300;
-	line-height: 1.412;
+	line-height: 1.7;
 	opacity: 87%;
 	margin-bottom: 2.5rem;
 }
@@ -96,14 +96,14 @@ h1 {
 h2 {
   font-size: 1.25rem;
 	font-weight: 400;
-	line-height: 1.4;
+	line-height: 1.7;
 	opacity: 100%;
 	margin-bottom: 2.3rem;}
 
 h3 {
   font-size: 1.25rem;
 	font-weight: 600;
-	line-height: 1.4;
+	line-height: 1.7;
 	opacity: 100%;
 	margin-bottom: 1.4rem;}
 
@@ -116,7 +116,7 @@ h4 {
 h5 {
 	font-size: 3.5rem;
 	font-weight: 400;
-	line-height: 1.6;
+	line-height: 1.7;
 	opacity: 54%;
 }
 
@@ -124,7 +124,7 @@ h6{
   font-weight: 400;
 }
 .subheader {
-  line-height: 1.4;
+  line-height: 1.7;
   color: #6f6f6f;
   font-weight: normal;
   margin-top: 0.2rem;
@@ -168,7 +168,7 @@ ol,
 dl {
   font-family: inherit;
   font-size: 1rem;
-  line-height: 1.6;
+  line-height: 1.7;
   list-style-position: outside;
   margin-bottom: 1.25rem; }
 

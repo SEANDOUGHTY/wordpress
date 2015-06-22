@@ -264,7 +264,7 @@ For all other boxes (mainly card elements)
 
 .Title h2 {
 	font-size: 32px;
-	font-family: Open Sans;
+	font-family: inherit;
 	font-weight: none;
 	line-height: 50px;
 	opacity: 0.87;	
@@ -272,7 +272,7 @@ For all other boxes (mainly card elements)
 
 .Title h3 {
 	font-size: 45px;
-	font-family: Open Sans;
+	font-family: inherit;
 	font-weight: none;
 	line-height: 100px;
 	opacity: 0.87;	
