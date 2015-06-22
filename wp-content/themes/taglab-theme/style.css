@@ -169,6 +169,21 @@ For all other boxes (mainly card elements)
 	text-align: center;
 }
 
+/* ABOUT */
+.about-intro p {
+	font-size: 1.25rem;
+	color: #828b90;
+}
+
+.about-content  {
+	margin-top: 6em;}
+	.about-content p {
+		text-align: left;
+	}
+
+.about-img-block {
+	margin-top: 3em;
+}
 
 /* PROJECTS */
 .People {

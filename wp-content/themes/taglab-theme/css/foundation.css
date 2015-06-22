@@ -2986,7 +2986,7 @@ ul.pagination {
     display: block;
     float: left;
     height: auto;
-    padding: 0 0.625rem 1.25rem; }
+    /*padding: 0 0.625rem 1.25rem;*/ }
 
 @media only screen {
   .small-block-grid-1 > li {
