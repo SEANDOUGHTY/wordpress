@@ -23,7 +23,8 @@ function wp_theme_js(){
 	wp_enqueue_script('jquery_js', get_template_directory_uri().'/js/vendor/jquery.js','','',true);
 	wp_enqueue_script('foundation_js', get_template_directory_uri().'/js/foundation/foundation.js',array('jquery_js'),'',true);
 	wp_enqueue_script('topbar_js', get_template_directory_uri().'/js/foundation/foundation.topbar.js','','',true);
-	wp_enqueue_script('equalizer_js', get_template_directory_uri().'/js/foundation/foundation.equalizer.js','','',true);
+	wp_enqueue_script('accordion_js', get_template_directory_uri().'/js/foundation/foundation.accordion.js','','',true);
+  wp_enqueue_script('equalizer_js', get_template_directory_uri().'/js/foundation/foundation.equalizer.js','','',true);
 	wp_enqueue_script('fastclick_js', get_template_directory_uri().'/js/vendor/fastclick.js','','',true);
 	wp_enqueue_script('main_js', get_template_directory_uri().'/js/app.js','','',true);
 }
@@ -66,6 +67,7 @@ function create_post_type() {
       'labels' => array('name' => __( 'Publications' ), 'singular_name' => __( 'Publication' )),
       'public' => true,
       'has_archive' => false,
+      'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt'),
     )
   );
   register_post_type( 'people',
@@ -73,6 +75,7 @@ function create_post_type() {
       'labels' => array('name' => __( 'People' ), 'singular_name' => __( 'Person' )),
       'public' => true,
       'has_archive' => false,
+      'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt'),
       )
   );
 }
@@ -93,6 +96,9 @@ function category_init() {
  }
 add_action( 'init', 'category_init' );
 
+/**IMPORTANT: If any menu item of the navigation bar is required to be an action button
+  *           then add the button to the below code (Follow steps 1 and 2 below)
+  */
 class button_walker extends Walker_Nav_Menu {
   function start_el(&$output, $item, $depth, $args) {
     global $wp_query;
@@ -102,7 +108,11 @@ class button_walker extends Walker_Nav_Menu {
     $classes = empty( $item->classes ) ? array() : (array) $item->classes;
 
     $class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item ) );
-    if($item->title=='Donate'){
+
+    /**STEP 1:  Add/Change the following code,
+      *         if($item->title=='Menu Name Here' (OPTIONAL && $item->title=='Second Menu Name Here'...)){...}
+      */
+    if($item->title=='Contact'){
        $class_names = ' class="'. esc_attr( $class_names ) . ' has-form"';   
     } else {
       $class_names = ' class="'. esc_attr( $class_names ) . '"';
@@ -116,7 +126,11 @@ class button_walker extends Walker_Nav_Menu {
     $attributes .= ! empty( $item->url )        ? ' href="'   . esc_attr( $item->url        ) .'"' : '';
 
     $item_output = $args->before;
-    if($item->title=='Donate'){
+    
+      /**STEP 2:  Add/Change the following code,
+        *         if($item->title=='Menu Name Here' (OPTIONAL && $item->title=='Second Menu Name Here'...)){...}
+        */
+    if($item->title=='Contact'){
       $item_output .= '<a class="button"'. $attributes .'>';
     } else {
       $item_output .= '<a '. $attributes .'>';

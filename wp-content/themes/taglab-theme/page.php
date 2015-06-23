@@ -1,3 +1,8 @@
+<?php
+/*	Name: Page
+ *	Purpose: To build the DEFAULT Page of the website 
+ */
+?>
 <!--Loading the header.php above each file-->
 <?php get_header(); ?>
 <!--The Content on Each Page-->

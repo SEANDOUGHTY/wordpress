@@ -1,4 +1,8 @@
-<!--The Name of the Template-->
+<?php
+/**	Name: Home
+ *	Purpose: To build the DEFAULT blog page for the website 
+ */
+?>
 <?php
 /*
 	Template Name: Blog Page

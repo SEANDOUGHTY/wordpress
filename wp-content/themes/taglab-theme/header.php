@@ -1,8 +1,6 @@
 <?php
-/**
- *	The header for the TAGlab theme
- *	Displays the <head> section and everything untll <div id="content">
- *
+/**	Name: Header
+ *	Purpose: To build the navigation bar for all pages of the website 
  *	@package taglab
  */
 ?>

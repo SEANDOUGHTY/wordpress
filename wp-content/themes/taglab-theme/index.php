@@ -1,3 +1,8 @@
+<?php
+/*	Name: Index
+ *	Purpose: To build the DEFAULT Page/Post template of the website if Page or Home Do Not Exist 
+ */
+?>
 <!--Loading the header.php above each file-->
 <?php get_header(); ?>
 <!--The Content on Each Page-->
