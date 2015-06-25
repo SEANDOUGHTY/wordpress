@@ -67,6 +67,7 @@ For all other boxes (mainly card elements)
 
 .paragraph-title {
 	margin-top: 5%;
+	text-align: center;
 }
 
 .paragraph-content {
@@ -92,6 +93,9 @@ For all other boxes (mainly card elements)
 		margin-bottom: 3em;
 		position: absolute;
 		bottom: 0;}
+	.card h2 {
+		font-size: 1.3rem;
+	}
 
 .card-content {
 	padding: 1.2em 2em;}
@@ -107,6 +111,7 @@ For all other boxes (mainly card elements)
 
 .tb-intouch {
 	background-image: url(img/ipad_2474245b.jpg);
+
 	height: 12em;
 }
 
@@ -117,8 +122,10 @@ For all other boxes (mainly card elements)
 	
 
  p.date{
-	margin-bottom: 1rem; 
 	opacity: 0.4;
+	padding: 1.2em 2em;
+	 padding-bottom: 0;
+	 margin-bottom: 0;
 }
 
 
@@ -182,7 +189,7 @@ For all other boxes (mainly card elements)
 	}
 
 .about-img-block {
-	margin-top: 3em;
+	margin-top: 3.5em;
 }
 
 /* PROJECTS */
