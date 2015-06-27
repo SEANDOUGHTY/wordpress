@@ -58,7 +58,7 @@ function create_post_type() {
     array(
       'labels' => array('name' => __( 'News Blog' ), 'singular_name' => __( 'Article' )),
       'public' => true,
-      'has_archive' => false,
+      'has_archive' => true,
       'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt'),
     )
   );
@@ -96,6 +96,13 @@ function category_init() {
  }
 add_action( 'init', 'category_init' );
 
+
+function my_custom_post_type_archive_where($where,$args){  
+    $post_type  = isset($args['post_type'])  ? $args['post_type']  : 'post';  
+    $where = "WHERE post_type = '$post_type' AND post_status = 'publish'";
+    return $where;  
+}
+add_filter( 'getarchives_where','my_custom_post_type_archive_where',10,2);
 /**IMPORTANT: If any menu item of the navigation bar is required to be an action button
   *           then add the button to the below code (Follow steps 1 and 2 below)
   */

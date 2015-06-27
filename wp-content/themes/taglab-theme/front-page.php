@@ -73,16 +73,14 @@
 										<!--CARD CONTENT-->
 										<!--Purpose: If there exists content display the content as an excerpt-->
 										<div class='card-content'>
-											<!--The Date-->
-											<p class='date'> <?php the_time('F Y'); ?> </p>
 											<!--The Title-->
 											<h2> <?php the_title();?> </h2>
 											<!--The Content-->
 											<p> <?php the_excerpt(); ?></p>
+											<!--CARD LINK-->
+											<!--Purpose: Give the link to the full article-->
+											<a href='<?php the_permalink();?>'>Read Full Article</a>
 										</div>
-										<!--CARD LINK-->
-										<!--Purpose: Give the link to the full article-->
-										<a href='<?php the_permalink();?>'>Read Full Article</a>
 									</article>
 								</div>
 							</div>

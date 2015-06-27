@@ -1,4 +1,9 @@
-		<!--The Fiiter Section of the Webpage-->
+<?php
+/**	Name: Footer
+ *	Purpose: To build the footer area for all pages of the website 
+ *	@package taglab
+ */
+?>		
 		<footer>
 			<div class='footer-wrap'>
 				<div class='row'>
@@ -14,7 +19,7 @@
 				<div class='row'>
 					<!--Copyright Information-->
 					<div class='small-12 medium-4 small-centered columns footer-text'>
-						<center>40 St. George St. Toronto ON M5S 2E4 | inquiries@taglab.ca</center>
+						<center style='color: white';>40 St. George St. Toronto ON M5S 2E4 | inquiries@taglab.ca</center>
 					</div>
 				</div>
 			</div>
