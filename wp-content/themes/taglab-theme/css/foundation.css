@@ -1805,10 +1805,10 @@ meta.foundation-mq-topbar {
           display: block;
           height: 0;
           position: absolute;
-          margin-top: -8px;
+          margin-top: 0px;
           top: 50%;
           right: 0;
-          box-shadow: 0 0 0 1px #FFFFFF, 0 7px 0 1px #FFFFFF, 0 14px 0 1px #FFFFFF;
+          box-shadow: 0 0 0 1.2px #0082d4, 0 7px 0 1.2px #0082d4, 0 14px 0 1.2px #0082d4;
           width: 16px; }
         .top-bar .toggle-topbar.menu-icon a span:hover:after {
           box-shadow: 0 0 0 1px "", 0 7px 0 1px "", 0 14px 0 1px ""; }
@@ -1818,9 +1818,9 @@ meta.foundation-mq-topbar {
     .top-bar.expanded .title-area {
       background: #FFF; }
     .top-bar.expanded .toggle-topbar a {
-      color: #0082d4; }
+      color: #FFF; }
       .top-bar.expanded .toggle-topbar a span::after {
-        box-shadow: 0 0 0 1px #888888, 0 7px 0 1px #888888, 0 14px 0 1px #888888; }
+        box-shadow: 0 0 0 1.2px #ccc, 0 7px 0 1.2px #ccc, 0 14px 0 1.2px #ccc; }
     @media screen and (-webkit-min-device-pixel-ratio: 0) {
       .top-bar.expanded .top-bar-section .has-dropdown.moved > .dropdown,
       .top-bar.expanded .top-bar-section .dropdown {
@@ -1872,7 +1872,7 @@ meta.foundation-mq-topbar {
         .top-bar-section ul li > a.button:hover, .top-bar-section ul li > a.button:focus {
           background-color: #ff261c; }
         .top-bar-section ul li > a.button:hover, .top-bar-section ul li > a.button:focus {
-          color: #FFF;
+          color: #0082d4;
 					text-decoration: none;}
       .top-bar-section ul li > a.button.secondary {
         background-color: #f2f2f2;
@@ -1968,8 +1968,8 @@ meta.foundation-mq-topbar {
           color: #0082d4; }
     .top-bar-section ul li:hover:not(.has-form) > a {
       background-color: #FFFFFF;
-      color: #FFF;
-      background: #0082d4;
+      color: #0082d4;
+      background: #fafafa;
 			text-decoration: none;}
     .top-bar-section ul li.active > a {
       background: #FFF;
