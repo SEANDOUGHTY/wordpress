@@ -158,6 +158,9 @@ For all other boxes (mainly card elements)
 /* HOME PAGE */
 .home-header {
 	background-color: #0082d4;
+	background-image: url(img/TAGlab_Header_Art-04.png);
+	background-size: cover;
+	background-repeat: no-repeat;
 	height: 75%;
 	padding: 5em 12em;
 	margin-bottom: 5em;
