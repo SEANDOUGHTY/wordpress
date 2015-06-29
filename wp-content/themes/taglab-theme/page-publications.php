@@ -71,9 +71,6 @@
   														the_content('Read the rest of this entry »');
 													}
 											?></p>
-											<!--CARD LINK-->
-											<!--Purpose: Give the link to the full article-->
-											<a href='<?php the_permalink();?>'>Read Full Article</a>
 										</div>
 										</article>
 									</div>
