@@ -16,7 +16,7 @@
 					<!--The Title-->
 					<h1 class="small-12 paragraph-title"><?php the_title(); ?></h1>
 					<!--The Paragraph-->
-					<div class="small-12 medium-9 small-centered columns paragraph-content">
+					<div class="small-12 large-9 small-centered columns paragraph-content">
 						<p><?php the_content(); ?></p>
 					</div>
 				<?php endwhile; endif;?>
@@ -28,7 +28,7 @@
 				<div id="primary" class="content-area">
 					<div id="content" class="site-content" role="main">
 						<!--The Grid of Posts-->
-						<div class="small-10 small-centered columns"  data-equalizer='grid'>
+						<div class="small-11 large-10 small-centered columns"  data-equalizer='grid'>
 							<!--Accessing the Posts from news_feed-->
 							<?php $args = array( 'post_type' => 'news_feed'); ?>
 							<?php $loop = new WP_Query( $args ); ?>
@@ -38,7 +38,7 @@
 							<a href='<?php echo $loop->get_year_link( 2014 ); ?>'>2015</a> 
 							<?php if ( $loop -> have_posts() ) : while ( $loop -> have_posts()) : $loop -> the_post(); ?>
 								<!--Card Container-->
-								<div class="small-12 medium-4 columns end">
+								<div class="small-12 medium-6 large-4 columns end">
 									<div class="small-11 small-centered columns card" data-equalizer-watch='grid'>
 										<article class='post' data-equalizer-watch='grid'>
 										<!--THUMBNAIL-->
@@ -63,7 +63,17 @@
 											<!--The Title-->
 											<h2> <?php the_title();?> </h2>
 											<!--The Content-->
-											<p> <?php the_excerpt(); ?></p>
+											<p> <?php
+													if (is_sticky()) {
+  														global $more;    // Declare global $more (before the loop).
+  														$more = 1;       // Set (inside the loop) to display all content, including text below more.
+  														the_content();
+													} else {
+  														global $more;
+  														$more = 0;
+  														the_content('Read the rest of this entry »');
+													}
+											?></p>
 											<!--CARD LINK-->
 											<!--Purpose: Give the link to the full article-->
 											<a href='<?php the_permalink();?>'>Read Full Article</a>

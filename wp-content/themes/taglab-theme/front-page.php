@@ -5,31 +5,23 @@
 ?>
 <!--Get the code from the header.php file-->
 <?php get_header(); ?>
+<!--HOME HEADER-->
+<!--Purpose: Displays the HOME page banner with the TAGlab logo and name-->
+<div class="home-header"></div>
+		
 <div class="content">
 	<section class='row'>
-		<!--HOME HEADER-->
-		<!--Purpose: Displays the HOME page banner with the TAGlab logo and name-->
-		<div class="home-header">
-			<div class='row'>
-				<div class="small-12 columns">
-					<!--The Logo-->
-					<img src="<?php echo get_template_directory_uri() . '/img/Logo/taglab_logo.png'?>">
-					<!--The Name-->
-					<h5>Technologies for Aging Gracefully</h5>
-				</div>
-			</div>
-		</div>
 		
 		<!--HOMEPAGE CONTENT-->
 		<!--Purpose: Displays a small blurb about TAGlab-->
 		<div class="row">
 			<div class="small-12 small-centered columns paragraph">
-				<div class="small-12 medium-8 small-centered columns">
+				<div class="small-11 medium-10 large-8 small-centered columns">
 					<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 						<!--The Title-->
 						<h1 class="small-12 paragraph-title"><?php the_title(); ?></h1>
 						<!--The Paragraph-->
-						<div class="small-12 medium-9 small-centered columns paragraph-content">
+						<div class="small-12 large-9 small-centered columns paragraph-content">
 							<p><?php the_content(); ?></p>
 						</div>
 					<?php endwhile; endif;?>
@@ -40,10 +32,10 @@
 		<!--HIGHLIGHT REEL-->
 		<!--Purpose: Displays at most 3 highlights from TAGlab (Articles or Publications)-->
 		<div class="row">	
-			<div class="small-12 small-centered columns highlights" data-equalizer='reel'>
+			<div class="small-11 small-centered columns highlights" data-equalizer='reel'>
 				<!--HIGHLIGHTS TITLE-->
 				<h1>Highlights</h1>
-				<div class="small-10 small-centered columns" >
+				<div class="small-12 large-10 small-centered columns" >
 					<!--Accessing the Posts from news_feed and publications-->
 					<?php $args = array( 'post_type' => array('news_feed','publications')); ?>
 					<?php $loop = new WP_Query( $args ); ?>
@@ -55,7 +47,7 @@
 						<!--If the Post is a Highlight then Display-->
 						<?php if(has_term('highlight','connection')): ?>
 							<?php $c = $c + 1; ?> 
-							<div class="small-12 medium-4 columns end">
+							<div class="small-12 medium-6 large-4 columns end">
 								<div class="small-11 small-centered columns card" data-equalizer-watch='reel'>
 									<article class='post' data-equalizer-watch='reel'>
 										<!--THUMBNAIL-->
