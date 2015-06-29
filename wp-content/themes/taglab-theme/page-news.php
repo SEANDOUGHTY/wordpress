@@ -29,32 +29,32 @@
 					<div id="content" class="site-content" role="main">
 						<!--The Grid of Posts-->
 						<div class="small-11 large-10 small-centered columns"  data-equalizer='grid'>
+							<!--Depending the URL posts of a certain year will be displayed-->
 							<?php
-// check the founding query string for 'YYYY' year value passed as 'page' query var
-global $wp_query;
-if (!empty($wp_query->query_vars['page'])) {
-	$the_year_page = $wp_query->query_vars['page'];
-}
-
-if ( $the_year_page != '' ) : // Query for YEARS PAST archive
-	$args = array(
-		'post_type' => 'news_feed',
-		'orderby' => 'date',
-		'order' => 'ASC',
-		'year' => $the_year_page,
-		'posts_per_page' => '-1'
-	);
-
-else : // Query for CURRENT year archive
-	$today = getdate(); /* we will only want to get current year */
-	$args = array(
-		'post_type' => 'news_feed',
-		'orderby' => 'date',
-		'order' => 'ASC',
-		'year' => $today['year'],
-		'posts_per_page' => '-1'
-	);
-endif;
+							global $wp_query;
+							if (!empty($wp_query->query_vars['page'])) {
+								$the_year_page = $wp_query->query_vars['page'];
+							}
+							//There exists a year ('YYYY') in the url
+							if ( $the_year_page != '' ) : 
+								$args = array(
+									'post_type' => 'news_feed',
+									'orderby' => 'date',
+									'order' => 'ASC',
+									'year' => $the_year_page,
+									'posts_per_page' => '-1'
+								);
+							//There is no year in the URL so we defult to the current year
+							else : 
+								$today = getdate(); /* we will only want to get current year */
+								$args = array(
+									'post_type' => 'news_feed',
+									'orderby' => 'date',
+									'order' => 'ASC',
+									'year' => $today['year'],
+									'posts_per_page' => '-1'
+								);
+							endif;
 							?>
 							<!--Accessing the Posts from news_feed-->
 							<?php $loop = new WP_Query( $args ); ?>
@@ -114,6 +114,16 @@ endif;
 						</div>
 					</div>
 				</div>
+			</div>
+		</div>
+		<div class='row'>
+			<div class="small-11 large-10 small-centered columns">
+				<ul>
+					<?php $years = $wpdb->get_col("SELECT DISTINCT YEAR(post_date) FROM $wpdb->posts WHERE post_type = 'news_feed' AND post_status = 'publish' ORDER BY post_date DESC");?>
+					<?php foreach($years as $year) : ?>
+						<li><a href="<?php echo get_site_url() . '/news/' . $year; ?>"><?php echo $year; ?></a></li>
+					<?php endforeach; ?>
+				</ul>
 			</div>
 		</div>
 	</section>
