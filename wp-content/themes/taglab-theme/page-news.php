@@ -9,7 +9,7 @@
 <div class="content">
 	<section class='row'>
 		<!--PAGE CONTENT-->
-		<!--Purpose: Displays a small blurb about TAGlab-->
+		<!--Purpose: Displays a small blurb about the Page-->
 		<div class="row">
 			<div class="small-12 small-centered columns paragraph">
 				<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>

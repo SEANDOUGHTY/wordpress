@@ -58,7 +58,7 @@ function create_post_type() {
     array(
       'labels' => array('name' => __( 'News Blog' ), 'singular_name' => __( 'Article' )),
       'public' => true,
-      'has_archive' => true,
+      'has_archive' => false,
       'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt'),
     )
   );
@@ -78,13 +78,21 @@ function create_post_type() {
       'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt'),
       )
   );
+    register_post_type( 'projects',
+    array(
+      'labels' => array('name' => __( 'Projects' ), 'singular_name' => __( 'Project' )),
+      'public' => true,
+      'has_archive' => false,
+      'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt'),
+      )
+  );
 }
 
 function category_init() {
   // create a new taxonomy
   register_taxonomy(
     'connection',
-    array('news_feed','publications'),
+    array('news_feed','publications','projects'),
     array(
       'hierarchical'      => true,
       'label' => __( 'Connections' ),

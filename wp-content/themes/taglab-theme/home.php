@@ -13,61 +13,68 @@
 <!--The Content on Each Page-->
 <div class="content">
 	<section class='row'>
-		<div class='small-9 small-centered columns page-header'>
-			<center>
+		<section class='row'>
+		<!--PAGE CONTENT-->
+		<!--Purpose: Displays a small blurb about the Posts Page-->
+		<div class="row">
+			<div class="small-12 small-centered columns paragraph">
+				<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+					<!--The Title-->
+					<h1 class="small-12 paragraph-title"><?php the_title(); ?></h1>
+					<!--The Paragraph-->
+					<div class="small-12 large-9 small-centered columns paragraph-content">
+						<p><?php the_content(); ?></p>
+					</div>
+				<?php endwhile; endif;?>
+			</div>
+		</div>
+				<div class="row">					
+			<div class='small-12 small-centered columns page-content'>
 				<div id="primary" class="content-area">
 					<div id="content" class="site-content" role="main">
-						<div class="small-12 small-centered columns news" data-equalizer>
-							<!--The Title of the Blog Page-->
-							<h1><?php the_title(); ?></h1>
-							<div class="small-10 small-centered columns" >
-								<!--Loop for getting each Blog Post-->
-								<?php if ( have_posts() ) : while ( have_posts()) : the_post(); ?>
-									<div class='small-12 medium-4 columns end' data-equalizer-watch>
-										<!--Info Card-->
-										<div class="small-11 small-centered columns card">
-											<article class="post">
-											<!--Title-->
+						<!--The Grid of Posts-->
+						<div class="small-11 large-10 small-centered columns"  data-equalizer='grid'>
+							<!--THE LOOP-->
+							<!--Purpose: To loop through all given posts of the given Post Type (DEFAULT: posts)-->
+							<!--Condition: The loop will end when there are no more posts-->
+							<?php if ( have_posts() ) : while ( have_posts()) : the_post(); ?>
+								<!--Card Container-->
+								<div class="small-12 medium-6 large-4 columns end">
+									<div class="small-11 small-centered columns card" data-equalizer-watch='grid'>
+										<article class='post' data-equalizer-watch='grid'>
+										<!--THUMBNAIL-->
+										<!--Purpose: If there exists a thumbnail then display the thumbnail-->
+										<?php if (has_post_thumbnail()) : ?>
+											<?php $thumbnail = '';
+								        		$thumbnail = get_the_post_thumbnail($post->ID,'featured');
+    										?>
+											<div class="card-thumbnail">
+												<div class='card-thumbnail-img' >
+													 <?php echo $thumbnail; ?>
+												</div>
+											</div>	
+										<?php endif; ?>
+											
+										<!--CARD CONTENT-->
+										<!--Purpose: If there exists content display the content as an excerpt-->
+										<div class='card-content'>
+											<!--The Title-->
 											<h2> <?php the_title();?> </h2>
-											<!--Content-->
-											<p> <?php
-												if (is_sticky()) {
-  													global $more;    // Declare global $more (before the loop).
-  													$more = 1;       // Set (inside the loop) to display all content, including text below more.
-													the_content();
-												} else {
-  													global $more;
-  													$more = 0;
-  													the_content('Read the rest of this entry »');
-												}
-											?></p>	<a href='<?php echo get_permalink();?>'>Read the full article</a>
-											<ul class='post-meta no-bullet'>
-												<li class='author'>
-													<span class='wp-author small'>
-														<?php echo get_avatar(get_the_author_meta('ID'),24); ?>	
-													</span>
-													by <?php the_author_posts_link(); ?>
-												</li>
-												<li class='category'>in <?php the_category(', '); ?></li>
-												<li class='date'>on <?php the_time('F j, Y'); ?></li>	
-											</ul>
-											<?php if (get_the_post_thumbnail()) : ?>
-											<div class='img-container'>
-												<?php the_post_thumbnail('large'); ?>
-											</div>
-											<?php endif; ?>
+											<!--The Excerpt-->
+											<p> <?php the_excerpt(); ?></p>
+										</div>
 										</article>
 									</div>
-								</div>		
-								<?php endwhile; ?>
-								<?php else : ?>
-									<?php get_template_part( 'content', 'none' ); ?>
-								<?php endif; ?>
-							</div>
+								</div>
+							<?php endwhile; ?>
+							<!--If the page is blank-->
+							<?php else : ?>
+								<?php get_template_part( 'content', 'none' ); ?>
+							<?php endif; ?>
 						</div>
 					</div>
 				</div>
-			</center>
+			</div>
 		</div>
 	</section>
 </div>
