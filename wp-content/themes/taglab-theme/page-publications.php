@@ -35,11 +35,10 @@
 							<!--THE LOOP-->
 							<!--Purpose: To loop through all given posts of the given Post Type (publications)-->
 							<!--Condition: The loop will end when there are no more posts-->
-							<a href='<?php echo $loop->get_year_link( 2014 ); ?>'>2015</a> 
 							<?php if ( $loop -> have_posts() ) : while ( $loop -> have_posts()) : $loop -> the_post(); ?>
 								<!--Card Container-->
 								<div class="small-12 medium-6 large-4 columns end">
-									<div class="small-11 small-centered columns card" data-equalizer-watch='grid'>
+									<div class="small-11 small-centered columns card Publication" data-equalizer-watch='grid'>
 										<article class='post' data-equalizer-watch='grid'>
 										<!--THUMBNAIL-->
 										<!--Purpose: If there exists a thumbnail then display the thumbnail-->

@@ -8,21 +8,22 @@
 <!--The Content on Each Page-->
 <div class="content">
 	<section class='row'>
-		<div class='small-9 small-centered columns page-header'>
-			<center>
-				<div id="primary" class="content-area">
-					<div id="content" class="site-content" role="main">
-						<!--Loop to get the Title and Content from each Post-->
-						<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-							<h1> <?php the_title();?> </h1>
-							<p> <?php the_content();?> </p>
-						<?php endwhile; ?>
-						<?php else : ?>
-							<?php get_template_part( 'content', 'none' ); ?>
-						<?php endif; ?>
+		<!--PAGE CONTENT-->
+		<!--Purpose: Displays a small blurb about TAGlab-->
+		<div class="row">
+			<div class="small-12 small-centered columns paragraph">
+				<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+					<!--The Title-->
+					<h1 class="small-12 paragraph-title"><?php the_title(); ?></h1>
+					<!--The Paragraph-->
+					<div class="small-12 large-9 small-centered columns paragraph-content">
+						<p><?php the_content(); ?></p>
 					</div>
-				</div>
-			</center>
+				<?php endwhile;?>
+				<?php else : ?>
+					<?php get_template_part( 'content', 'none' ); ?>
+				<?php endif; ?>
+			</div>
 		</div>
 	</section>
 </div>

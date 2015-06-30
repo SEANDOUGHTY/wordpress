@@ -101,7 +101,7 @@
 											?></p>
 											<!--CARD LINK-->
 											<!--Purpose: Give the link to the full article-->
-											<a href='<?php the_permalink();?>'>Read Full Article</a>
+											<!--<a href='<?php the_permalink();?>'>Read Full Article</a>-->
 										</div>
 										</article>
 									</div>
@@ -121,7 +121,7 @@
 				<ul>
 					<?php $years = $wpdb->get_col("SELECT DISTINCT YEAR(post_date) FROM $wpdb->posts WHERE post_type = 'news_feed' AND post_status = 'publish' ORDER BY post_date DESC");?>
 					<?php foreach($years as $year) : ?>
-						<li><a href="<?php echo get_site_url() . '/news/' . $year; ?>"><?php echo $year; ?></a></li>
+						<li><a href="<?php echo get_site_url() . '/index.php/news/' . $year; ?>"><?php echo $year; ?></a></li>
 					<?php endforeach; ?>
 				</ul>
 			</div>
