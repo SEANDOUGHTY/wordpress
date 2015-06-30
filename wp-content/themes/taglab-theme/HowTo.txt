@@ -1,0 +1,62 @@
+How to use the Wordpress Theme:
+
+Index
+1.0.................The Important Files
+	1.1.......................index.php
+	1.2...................functions.php
+	1.3.......................style.css
+2.0.....................Header & Footer
+	2.1......................header.php
+	2.2......................footer.php
+3.0...........................The Posts
+	3.1........................home.php
+	3.2......................single.php
+	3.3.....................archive.php
+4.0............................The Page
+	4.1........................page.php
+5.0........................Custom Posts
+	5.1.............single-{custom}.php
+	5.2...............page-{custom}.php
+	5.3............archive-{custom}.php
+6.0..........................Extra Info
+	6.1..................screenshot.png
+
+
+1.0 Three Important Files:
+For any Wordpress theme to work we require the index.php, functions.php, and the style.css files to
+be located within the theme folder.
+
+	1.1 index.php:
+	The index.php file will be used as a default template for all Wordpress pages and posts.  There
+	are some key features of the index.php file that must be noted.
+	-> get_header(): 	A PHP fnction that will look for the header.php file and get is contents 
+						(Refer to 2.1)
+	-> The various DIVs:There are various divs found in the index.php which are used alongside the
+						styling sheets and scripts to produce the wanted functionality of the pages
+		-> have_posts():	Will return true or false whether or not there is a post/page which was
+							made in the Wordpress Dashboard
+		-> the_post():		Calls and returns an object of the post/page made by the Wordpress 
+							Dashboard
+		-> the_title():		Returns the title of the last post object returned
+		-> the_content():	Returns the content of the last post object returned 
+	-> get_footer(): 	A PHP fnction that will look for the footer.php file and get is contents 
+						(Refer to 2.2)
+	Look carefully at what we just made,
+	-> With the contents of the get_header we get,
+		<html>...<body>
+	-> With the contents of the various DIVs we get,
+		<div class='content'>...</div>
+	-> With the content of the get_footer we get,
+		</body>..</html>
+	Essetianly we just made an HTML template in which PHP functions will insert the contents of 
+	each page/post
+
+	1.2 functions.php:
+	The functions.php file will be used to get all external styling sheets/scripts, creating new
+	posts types and classes as well as enabling features of the Wordpress Dashboard.
+	(Review the documentation(comments) of the functions.php file to understand each feature)
+
+	1.3 style.css:
+	The style.css file will be used as the main css file for the website, however more css files 
+	can be appended to the website by using the functions.php file. Also the content found in the
+	initial /*...*/ comment will be used for the licensing and brief description of the theme

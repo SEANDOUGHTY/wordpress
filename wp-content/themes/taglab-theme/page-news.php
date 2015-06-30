@@ -6,6 +6,7 @@
 ?>
 <!--Loading the header.php above each file-->
 <?php get_header(); ?>
+<!--The Content on the News Page-->
 <div class="content">
 	<section class='row'>
 		<!--PAGE CONTENT-->
