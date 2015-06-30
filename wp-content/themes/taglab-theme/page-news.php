@@ -40,7 +40,7 @@
 								$args = array(
 									'post_type' => 'news_feed',
 									'orderby' => 'date',
-									'order' => 'ASC',
+									'order' => 'DESC',
 									'year' => $the_year_page,
 									'posts_per_page' => '-1'
 								);
@@ -50,7 +50,7 @@
 								$args = array(
 									'post_type' => 'news_feed',
 									'orderby' => 'date',
-									'order' => 'ASC',
+									'order' => 'DESC',
 									'year' => $today['year'],
 									'posts_per_page' => '-1'
 								);
