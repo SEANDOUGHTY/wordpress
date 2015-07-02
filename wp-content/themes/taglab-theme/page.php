@@ -14,7 +14,7 @@
 			<div class="small-12 small-centered columns paragraph">
 				<div id="primary" class="content-area">
 					<div id="content" class="site-content" role="main">
-						<div class="small-11 medium-10 large-8 small-centered columns">
+						<div class="small-11 medium-10 small-centered columns">
 							<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 								<!--The Title-->
 								<h1 class="small-12 paragraph-title"><?php the_title(); ?></h1>
