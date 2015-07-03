@@ -111,7 +111,6 @@ For all other boxes (mainly card elements)
 
 .tb-intouch {
 	background-image: url(img/ipad_2474245b.jpg);
-
 	height: 12em;
 }
 
@@ -279,6 +278,46 @@ For all other boxes (mainly card elements)
 	color: #0082d4;
 	line-height: 35px;
 }
+
+/* CONTACT PAGE */
+.contact-iconBox {
+	margin-top: 3em;
+}
+	.contact-iconCircle {
+		margin-top: .3em;
+		border: 1px solid #aaa;
+		border-radius: 50%;
+		height: 5em;
+		width: 5em;}
+	.contact-iconContent p {
+		text-align: left;
+		color: #0082d4;}
+
+.contact-mapBox {
+	margin-top: 13em;
+}
+	.contact-mapBox .card {
+		border-radius: 0;
+		margin: 0;
+		padding-top: 0;
+		padding-bottom: 0;
+	}
+	.contact-mapBox p {
+		font-size: .9em;
+		font-weight: 400;}
+
+	.tb-bahen {
+		background-color: #0082d4;
+		background-image: url(img/bahen.jpg);
+		height: 12em;
+	}
+
+	.contact-map {
+		overflow: hidden;
+	}
+
+
+
 
 /*
 .Title {
