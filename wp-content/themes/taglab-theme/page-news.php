@@ -89,20 +89,10 @@
 											<!--The Title-->
 											<h2> <?php the_title();?> </h2>
 											<!--The Content-->
-											<p> <?php
-													if (is_sticky()) {
-  														global $more;    // Declare global $more (before the loop).
-  														$more = 1;       // Set (inside the loop) to display all content, including text below more.
-  														the_content();
-													} else {
-  														global $more;
-  														$more = 0;
-  														the_content('Read the rest of this entry »');
-													}
-											?></p>
+											<p> <?php the_excerpt(); ?></p>
 											<!--CARD LINK-->
 											<!--Purpose: Give the link to the full article-->
-											<!--<a href='<?php the_permalink();?>'>Read Full Article</a>-->
+											<a class='card-link' href='<?php the_permalink();?>'>Read Full Article</a>
 										</div>
 										</article>
 									</div>

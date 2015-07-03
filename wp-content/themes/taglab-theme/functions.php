@@ -102,17 +102,6 @@ function category_init() {
  }
 add_action( 'init', 'category_init' );
 
-function template_chooser($template)
-{
-global $wp_query;
-$post_type = get_query_var(‘post_type’);
-if( $wp_query->is_search && $post_type == ‘news_feed’ )
-{
-return locate_template(‘archive-news.php’);
-}
-return $template;
-}
-add_filter(‘template_include’, ‘template_chooser’);
 
 /**IMPORTANT: If any menu item of the navigation bar is required to be an action button
   *           then add the button to the below code (Follow steps 1 and 2 below)
