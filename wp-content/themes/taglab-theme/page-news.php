@@ -118,11 +118,16 @@
 			</div>
 		</div>
 		<div class='row'>
-			<div class="small-11 large-10 small-centered columns">
+			<div class="small-11 large-10 small-centered columns archive">
 				<ul>
 					<?php $years = $wpdb->get_col("SELECT DISTINCT YEAR(post_date) FROM $wpdb->posts WHERE post_type = 'news_feed' AND post_status = 'publish' ORDER BY post_date DESC");?>
 					<?php foreach($years as $year) : ?>
-						<li><a href="<?php echo get_site_url() . '/index.php/news/' . $year; ?>"><?php echo $year; ?></a></li>
+						<li>
+							<a href="<?php echo get_site_url() . '/index.php/news/' . $year; ?>">
+								<h5><?php echo $year; ?></h5>
+								<h1>...</h1>
+							</a>
+					</li>
 					<?php endforeach; ?>
 				</ul>
 			</div>
