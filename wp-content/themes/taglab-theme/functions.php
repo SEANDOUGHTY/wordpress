@@ -11,8 +11,8 @@ add_filter('excerpt_length','wp_excerpt_length',999);
 function wp_theme_styles() {
 	wp_enqueue_style('foundation_css', get_template_directory_uri() . '/css/foundation.css');
 	wp_enqueue_style('fonts_css', 'http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,600italic,700italic,800,800italic,400italic,300,300italic');
-	wp_enqueue_style('main_css', get_template_directory_uri() . '/style.css');
 	wp_enqueue_style('typography_css', get_template_directory_uri() . '/css/typography.css');
+  wp_enqueue_style('main_css', get_template_directory_uri() . '/style.css');
 }
 //To add the wp_theme_styles() function to the wp_enqueue_scripts() function
 add_action('wp_enqueue_scripts', 'wp_theme_styles');
@@ -83,10 +83,12 @@ function create_post_type() {
       'labels' => array('name' => __( 'Projects' ), 'singular_name' => __( 'Project' )),
       'public' => true,
       'has_archive' => false,
-      'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt'),
+      'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt','custom-fields'),
       )
   );
 }
+
+add_post_meta('projects',);
 
 function category_init() {
   // create a new taxonomy
