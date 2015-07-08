@@ -102,6 +102,83 @@ For all other boxes (mainly card elements)
 		font-size: 1.3rem;
 	}
 
+
+.personcard {
+	background-color: #FFF;
+	background-image: linear-gradient(rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 65%, rgba(100, 100, 100, 0.03) 100%);
+	padding: 2em 0em;
+	text-align: left;
+	margin: auto;
+	margin-top: .8em;
+	margin-bottom: 1.5em;
+	/*min-height: 28em;*/
+	border-radius: 6px;
+	box-shadow: 2px 7px 29px 0 rgba(25, 25, 25, 0.1);
+		-webkit-box-shadow: 2px 7px 29px 0 rgba(25, 25, 25, 0.1);
+		-moz-box-shadow: 2px 7px 29px 0 rgba(25, 25, 25, 0.1);
+	max-width: 80%;
+}
+
+.personimage {
+	width: 30%;
+	float: left;
+	padding-right: 20px;
+}
+	
+
+.personimage img {
+	width: 100%;
+}
+
+.personcontent {
+	overflow: hidden;
+}
+
+.personcontent p {
+		color: #828b90;
+		margin-bottom: 1em;}
+
+.personcontent p a {
+	font-size: 1em;
+}
+
+.personcontent h2 {
+		font-size: 1.3rem;
+		margin-bottom: -1em;
+	}
+
+
+.personcontent p:nth-child(3) {
+	font-weight: 600;
+	font-size: 0.9em;
+	line-height: 18px;
+	color: #0082d4;
+	margin-bottom: -1px;
+
+}
+
+.personcontent p:nth-child(4) {
+	font-size: 0.9em;
+	font-weight: 400;
+	line-height: 18px;
+	color: #808080;
+}
+
+.personcontent p:nth-child(5) {
+	font-size: 1em;
+	font-weight: 400;
+	line-height: 18px;
+	opacity: 0.87;
+	margin-bottom: -6px;
+}
+
+.personcontent p:nth-child(6) {
+	font-size: 1em;
+	font-weight: 400;
+	line-height: 18px;
+	opacity: 0.87;
+}
+
 .card-content {
 	padding: 1.2em 2em;}
 
@@ -210,13 +287,12 @@ For all other boxes (mainly card elements)
 	text-align: left;
 	background-color: white;
 	font-family: Open Sans;
-	padding-bottom: 15px;
+	padding-bottom: 5px;
 	width: 90%;
-	min-height: 70%;
 }
 
 .Person p {
-	margin: 20px;
+	margin: 15px;
 }
 
 .Person p:nth-child(1) {
@@ -228,31 +304,47 @@ For all other boxes (mainly card elements)
 }
 
 .Person p:nth-child(2) {
-	font-size: 20px;
+	font-size: 1.2em;
 	font-weight: 400;
-	line-height:18px;
+	line-height:1em;
+	margin-bottom:-12px;
 }
 
 .Person p:nth-child(3) {
 	font-weight: 600;
-	font-size: 14px;
-	line-height: 18px;
+	font-size: 0.8em;
+	line-height: 1.1em;
 	color: #0082d4;
-	margin-bottom: -20px;
+	margin-bottom: -12px;
 }
 
 .Person p:nth-child(4) {
-	font-size: 13px;
+	font-size: 0.8em;
 	font-weight: 400;
-	line-height: 18px;
+	line-height: 1.1em;
 	color: #808080;
 }
 
+
 .Person p:nth-child(5) {
-	font-size: 14px;
+	margin-bottom: -20px;
+}
+
+.Person p:nth-child(5) a {
+	font-size: 0.8em;
 	font-weight: 400;
-	line-height: 18px;
+	line-height: 1.0em;
 	opacity: 0.87;
+	color: #0082d4;
+}
+
+
+.Person p:nth-child(6) a {
+	font-size: 0.8em;
+	font-weight: 400;
+	line-height: 1.2em;
+	opacity: 0.87;
+	color: #0082d4;
 }
 
 
@@ -343,44 +435,3 @@ For all other boxes (mainly card elements)
 
 
 
-
-/*
-.Title {
-	font-family: inherit;
-	text-align: center;
-	background-color: white;
-}
-
-
-.Title h2 {
-	font-size: 32px;
-	font-family: inherit;
-	font-weight: none;
-	line-height: 50px;
-	opacity: 0.87;	
-}
-
-.Title h3 {
-	font-size: 45px;
-	font-family: inherit;
-	font-weight: none;
-	line-height: 100px;
-	opacity: 0.87;	
-}
-
-.Title p {
-	font-size: 24px;
-	font-weight: 300;
-	margin-left: 7%;
-	margin-right: 7%;
-	line-height: 32px;
-	opacity: 0.45;
-}
-
-.Title p > a{
-	font-size: 28px;
-	font-weight: 300;
-	margin-left: 7%;
-	margin-right: 7%;
-	line-height: 32px;
-}*/
