@@ -88,8 +88,6 @@ function create_post_type() {
   );
 }
 
-add_post_meta('projects',);
-
 function category_init() {
   // create a new taxonomy
   register_taxonomy(
