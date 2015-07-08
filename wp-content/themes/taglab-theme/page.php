@@ -19,7 +19,7 @@
 								<!--The Title-->
 								<h1 class="small-12 paragraph-title"><?php the_title(); ?></h1>
 								<!--The Paragraph-->
-								<div class="small-12 large-9 small-centered columns paragraph-content">
+								<div class="small-12 medium-10 small-centered columns paragraph-content">
 									<p><?php the_content(); ?></p>
 								</div>
 							<?php endwhile;?>
