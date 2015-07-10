@@ -2,7 +2,7 @@
 Tags: bundle, widget, button, slider, image, carousel, price table
 Requires at least: 3.9
 Tested up to: 4.2
-Stable tag: 1.2.3
+Stable tag: 1.3
 License: GPLv3 or later
 Contributors: gpriday, braam-genis
 
@@ -30,7 +30,13 @@ The collection is growing, but here’s what we have so far.
 
 Once you enable a widget, you'll be able to use it anywhere standard widgets are used. You can manage your widgets by going to Plugins > SiteOrigin Widgets in your WordPress admin.
 
-[Documentation](https://siteorigin.com/widgets-bundle/) is available on SiteOrigin.
+== Documentation ==
+
+[Documentation](https://siteorigin.com/css/getting-started/) is available on SiteOrigin.
+
+== Support ==
+
+We offer free support on the [SiteOrigin support forums](https://siteorigin.com/thread/).
 
 = Create Custom Widgets =
 
@@ -43,6 +49,22 @@ The SiteOrigin Widgets Bundle is the perfect platform to build widgets for your 
 3. An example of the button widget.
 
 == Changelog ==
+
+= 1.3.1 =
+* Fix to TinyMCE field when moved in Customizer and Widgets interface.
+* Small developer level improvements.
+* Fixed autoplay in video widget.
+* Fixed behaviour of slides in slider widget.
+
+= 1.3 =
+* Added TinyMCE field type.
+* All fields now use classes to make them easier to extend.
+* Added SiteOrigin Editor widget.
+* Made it possible for other plugins to filter default widgets.
+* Fixed WordPress CLI compatibility.
+* Added unit tests.
+* Added networks to social networks widget.
+* Changed how repeater HTML is stored.
 
 = 1.2.4 =
 * Fixed reference to siteorigin_widgets_is_google_webfont.
