@@ -71,6 +71,7 @@ For all other boxes (mainly card elements)
 }
 
 .paragraph-content {
+	text-align: center;
 }
 
 .card {
@@ -80,7 +81,6 @@ For all other boxes (mainly card elements)
 	text-align: left;
 	margin-top: .8em;
 	margin-bottom: 1.5em;
-	/*min-height: 28em;*/
 	border-radius: 6px;
 	box-shadow: 2px 7px 29px 0 rgba(25, 25, 25, 0.1);
 		-webkit-box-shadow: 2px 7px 29px 0 rgba(25, 25, 25, 0.1);
@@ -200,7 +200,16 @@ For all other boxes (mainly card elements)
 	background-image: url(img/monument-valley.jpg);
 	height: 12em;
 }
-	
+
+.tb-tablet {
+	background-image: url(img/oldimg/tablet.jpg);
+	height: 12em;
+}
+.tb-banner-intouch {
+	background-image: url(img/monument-valley.jpg);
+	height: 5em;
+}
+
 
  p.date{
 	opacity: 0.4;
@@ -209,29 +218,46 @@ For all other boxes (mainly card elements)
 	 margin-bottom: 0;
 }
 
+.greybox {
+	background-color: #f2f2f2;
+	width: 100%;
+}
+
+.whitebox {
+	background-color: #FFF;
+}
 
 /* FOOTER */
 .footer-wrap{
-	background-color: #263542;
+	/*background-color: #263542;*/
 	/*margin-top: 3em;*/
+	background: rgb(22,40,77); /* Old browsers */
+		background: -moz-linear-gradient(top,  rgba(22,40,77,1) 0%, rgba(12,21,38,1) 100%); /* FF3.6+ */
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(22,40,77,1)), color-stop(100%,rgba(12,21,38,1))); /* Chrome,Safari4+ */
+		background: -webkit-linear-gradient(top,  rgba(22,40,77,1) 0%,rgba(12,21,38,1) 100%); /* Chrome10+,Safari5.1+ */
+		background: -o-linear-gradient(top,  rgba(22,40,77,1) 0%,rgba(12,21,38,1) 100%); /* Opera 11.10+ */
+		background: -ms-linear-gradient(top,  rgba(22,40,77,1) 0%,rgba(12,21,38,1) 100%); /* IE10+ */
+		background: linear-gradient(to bottom,  rgba(22,40,77,1) 0%,rgba(12,21,38,1) 100%); /* W3C */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#16284d', endColorstr='#0c1526',GradientType=0 ); /* IE6-9 */
 	padding-top: 4em;
 	padding-bottom: 2em;
 }
 	.footer-wrap p {
 		color: #FFF;
 		opacity: .65;
-		font-size: .8rem;
-	}
+		font-size: .8rem;}
 
-.social-icon{
-	background-color: white;
-	height: 4em;
-	width: 4em;
+.socialicon-container {
+	margin: 0 auto;
+	width: 15em;}
+.social-icon {
 	opacity: 0.70;
 	padding: 1em;
-	border-radius: 50%;
-	margin-bottom: 20%;
-}
+	margin-bottom: 2em;
+	transition: all .3s;
+	-webkit-transition: all .3s;}
+	.social-icon:hover {
+	opacity: 0.80;}
 
 
 /*** CHANGES BY PAGE ***/
@@ -239,22 +265,17 @@ For all other boxes (mainly card elements)
 /* HOME PAGE */
 .home-header {
 	background-color: #0082d4;
-	background-image: url(img/TAGlab_Header_Art-04.png);
+	background-image: url(img/taglab-header-large.png);
 	background-size: cover;
 	background-repeat: no-repeat;
 	height: 75%;
-	padding: 5em 12em;
 	margin-bottom: 5em;
-	min-width: 100%;
+	min-width: 100%;}
+@media only screen and (max-width: 40em) { 	.home-header {
+	background-image: url(img/taglab-header-mobile.png);}	
 }
-	.home-header img {
-		height: 16em;
-	}
 
-.home-header h4,
-.home-header h5 {
-	color: #FFF;
-}
+
 
 .highlights {
 	text-align: center;
@@ -277,6 +298,10 @@ For all other boxes (mainly card elements)
 }
 
 /* PROJECTS */
+.projectsbox .card {
+	padding-top: 0;
+}
+
 .People {
 	padding: 25px;
 	background-color: #F3F5F4;
@@ -376,6 +401,7 @@ For all other boxes (mainly card elements)
 	line-height: 35px;
 }
 
+
 /* NEWS PAGE */
 .archive ul {
 	list-style-type: none;
@@ -384,6 +410,7 @@ For all other boxes (mainly card elements)
 	text-align: center;
 	font-weight: 600;
 	color: #0082d4;}
+
 
 /* PARTNERS PAGE */
 .partners-logoBox {
@@ -395,6 +422,7 @@ For all other boxes (mainly card elements)
 .partners-logoBox li {
 	padding: 0 1em;
 }
+
 
 /* CONTACT PAGE */
 .contact-iconBox {
