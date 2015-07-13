@@ -433,6 +433,7 @@ For all other boxes (mainly card elements)
 	margin-bottom: 0;
 	background-color: #f2f2f2;
 	padding: 5em 10em;
+	margin: auto;
 }
 .partners-logoBox li {
 	padding: 0 1em;
@@ -477,4 +478,29 @@ For all other boxes (mainly card elements)
 	}
 
 
+
+.Title {
+	font-family: inherit;
+	text-align: center;
+	background-color: white;
+	margin: auto;
+	width: 65%;
+	margin-bottom: 3em;
+}
+
+.Subtitle {
+	margin: auto;
+	width: 60%;
+}
+
+.Subtitle h1 {
+	font-size: 1.75rem;
+        font-weight: 600;
+        line-height: 1.7;
+        opacity: 100%;
+}
+
+.Subtitle p {
+	text-align: left;
+}
 
