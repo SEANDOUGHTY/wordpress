@@ -131,7 +131,7 @@ For all other boxes (mainly card elements)
 }
 
 .personcontent {
-	overflow: hidden;
+/*	overflow: hidden;*/
 }
 
 .personcontent p {
