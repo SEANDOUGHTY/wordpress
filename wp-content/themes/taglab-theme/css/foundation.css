@@ -2577,6 +2577,11 @@ ul.pagination {
   padding: 2.5rem;
 	padding-top: 3.5rem;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.4); }
+.reveal-modal img {
+	display: block;
+	margin: 0 auto;
+	padding: 2em;
+}
   @media only screen and (max-width: 40em) {
     .reveal-modal {
       min-height: 100vh; } }
