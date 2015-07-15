@@ -7,19 +7,13 @@
 		<footer>
 			<div class='footer-wrap'>
 				<div class='row'>
-					<div class='small-12 columns'>
+					<div class='small-12 columns medium-4 small-centered columns'>
 						<!--Social Network Icons-->
-						<div class='small-12 medium-4 small-centered columns social-list'>
-							<div class='small-12 medium-4 columns'> <center> <div class='social-icon'><img src='./images/Facebook' alt=''></div> </cemter> </div> 
-							<div class='small-12 medium-4 columns'> <center> <div class='social-icon'><img src='./images/Twitter' alt=''></div> </center> </div>
-							<div class='small-12 medium-4 columns'> <center> <div class='social-icon'><img src='./images/Instagram' alt=''></div> </center> </div>
+						<div class='small-12 small-centered columns socialicon-container'>
+							<a href="https://www.facebook.com/taglab.hci" target="_blank"><img class="social-icon" src="<?php echo get_template_directory_uri() . '/img/socialmedia/facebook.png' ?>"></a>
+							<a href="https://twitter.com/tag_lab" target="_blank"><img class="social-icon" src="<?php echo get_template_directory_uri() . '/img/socialmedia/twitter.png' ?>"></a>
 						</div>
-					</div>
-				</div>
-				<div class='row'>
-					<!--Copyright Information-->
-					<div class='small-12 medium-4 small-centered columns footer-text'>
-						<center style='color: white';>40 St. George St. Toronto ON M5S 2E4 | inquiries@taglab.ca</center>
+						<center style='color: white';><p>40 St. George St. Toronto ON M5S 2E4 | inquiries@taglab.ca</p></center>
 					</div>
 				</div>
 			</div>
