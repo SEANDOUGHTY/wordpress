@@ -92,7 +92,22 @@
 											<p> <?php the_excerpt(); ?></p>
 											<!--CARD LINK-->
 											<!--Purpose: Give the link to the full article-->
-											<a class='card-link' href='<?php the_permalink();?>'>Read Full Article</a>
+											<a class='card-link' href='#' data-reveal-id="myModal">Read Full Article</a>
+											<div id="myModal" class="reveal-modal medium " data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+												<h2 id="modalTitle"><?php the_title(); ?></h2>
+												<p><?php
+													if (is_sticky()) {
+  														global $more;    // Declare global $more (before the loop).
+  														$more = 1;       // Set (inside the loop) to display all content, including text below more.
+  														the_content();
+													} else {
+  														global $more;
+  														$more = 0;
+  														the_content('Read the rest of this entry »');
+													}
+												?></p>
+												<a class="close-reveal-modal" aria-label="Close">&#215;</a>
+											</div>
 										</div>
 										</article>
 									</div>

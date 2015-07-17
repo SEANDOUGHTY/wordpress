@@ -1,7 +1,7 @@
 <!--The Name of the Template-->
 <?php
 /*
-	Template Name: Projects Page
+	Template Name: Project
 */
 ?>
 <!--Loading the header.php above each file-->
