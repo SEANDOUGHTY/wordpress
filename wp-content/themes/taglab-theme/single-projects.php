@@ -108,18 +108,21 @@
 									<!--Purpose: To loop through all given posts of the given Post Type-->
 									<!--Condition: The loop will end when there are no more posts-->
 									<?php if ($loop -> have_posts() ) : while ( $loop -> have_posts()) : $loop -> the_post(); ?>
-										<li>
-											<!--ICON-->
-											<!--Purpose: If there exists a icon then display the icon-->
-											<?php if (has_post_thumbnail()) : ?>
-												<?php $icon = '';
-									        		  $icon = get_the_post_thumbnail($post->ID,'featured');
-	    										?>
-												<?php echo $icon; ?>
-											<?php else: ?>
-												<h2><?php the_title(); ?></h2>
-											<?php endif; ?>
-										</li>
+										<!--If the Post is related to the project then Display-->
+										<?php if(has_term($title,'related_projects')): ?>
+											<li>
+												<!--ICON-->
+												<!--Purpose: If there exists a icon then display the icon-->
+												<?php if (has_post_thumbnail()) : ?>
+													<?php $icon = '';
+										        		  $icon = get_the_post_thumbnail($post->ID,'featured');
+	    											?>
+													<?php echo $icon; ?>
+												<?php else: ?>
+													<h2><?php the_title(); ?></h2>
+												<?php endif; ?>
+											</li>
+										<?php endif; ?>
 									<?php endwhile; endif; ?>
 									</ul>
 							</div>
@@ -139,7 +142,7 @@
 							<!--Condition: The loop will end when there are no more posts-->
 							<?php if ($loop -> have_posts() ) : while ( $loop -> have_posts()) : $loop -> the_post(); ?>
 								<!--If the Post is related to the project then Display-->
-								<?php if(has_term('<?php echo $title; ?>','related_projects')): ?>
+								<?php if(has_term($title,'related_projects')): ?>
 									<div class="small-4 columns ">
 										<div class="small-11 small-centered columns card" data-equalizer-watch='team'>
 											<!--SELFIE-->
