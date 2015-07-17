@@ -1,8 +1,4 @@
-<?php
-/*
-	Template Name: Publication
-*/
-?>
+<!--The Publication Page-->
 <?php get_header(); ?>
 <!--The Content on the Single Publications Page-->
 <div class="content">

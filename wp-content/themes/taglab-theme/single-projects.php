@@ -1,9 +1,4 @@
-<!--The Name of the Template-->
-<?php
-/*
-	Template Name: Project
-*/
-?>
+<!--The Project Page-->
 <!--Loading the header.php above each file-->
 <?php get_header(); ?>
 <!--The Content on the Publications Page-->

@@ -1,8 +1,4 @@
-<?php
-/*
-	Template Name: Person
-*/
-?>
+<!--The Person Page-->
 <?php get_header(); ?>
 <!--The Content on the Single Page-->
 <div>
