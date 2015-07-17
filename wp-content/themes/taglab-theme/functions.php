@@ -78,12 +78,20 @@ function create_post_type() {
       'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt'),
       )
   );
-    register_post_type( 'projects',
+  register_post_type( 'projects',
     array(
       'labels' => array('name' => __( 'Projects' ), 'singular_name' => __( 'Project' )),
       'public' => true,
       'has_archive' => false,
       'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt','custom-fields'),
+      )
+  );
+  register_post_type( 'sponsors',
+    array(
+      'labels' => array('name' => __( 'Sponsors' ), 'singular_name' => __( 'Sponsor' )),
+      'public' => true,
+      'has_archive' => false,
+      'supports' => array( 'title', 'thumbnail'),
       )
   );
 }
@@ -97,6 +105,15 @@ function category_init() {
       'hierarchical'      => true,
       'label' => __( 'Connections' ),
       'rewrite' => array( 'slug' => 'connection', 'hierarchical'      => true)
+      )
+    );
+    register_taxonomy(
+    'related_projects',
+    array('publications','people','sponsors'),
+    array(
+      'hierarchical'      => true,
+      'label' => __( 'Related Projects' ),
+      'rewrite' => array( 'slug' => 'related_projects', 'hierarchical'      => true)
       )
     );
  }
