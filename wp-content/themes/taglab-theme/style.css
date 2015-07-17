@@ -517,3 +517,6 @@ For all other boxes (mainly card elements)
 	text-align: left;
 }
 
+iframe {
+	width:100%;
+}
