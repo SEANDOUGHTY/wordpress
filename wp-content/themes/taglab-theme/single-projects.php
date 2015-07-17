@@ -73,18 +73,6 @@
 										<div class="small-12 medium-6 large-4 columns end">
 											<div class="small-11 small-centered columns card Publication" data-equalizer-watch='reel'>
 												<article class='post' data-equalizer-watch='reel'>
-													<!--THUMBNAIL-->
-													<!--Purpose: If there exists a thumbnail then display the thumbnail-->
-													<?php if (has_post_thumbnail()) : ?>
-														<?php $thumbnail = '';
-										    	    		  $thumbnail = get_the_post_thumbnail($post->ID,'featured');
-	    												?>
-														<div class="card-thumbnail">
-															<div class='card-thumbnail-img' >
-																 <?php echo $thumbnail; ?>
-															</div>
-														</div>	
-													<?php endif; ?>
 													<!--CARD CONTENT-->
 													<!--Purpose: If there exists content display the content as an excerpt-->
 													<div class='card-content'>
@@ -118,11 +106,27 @@
 							<h3>Sponsors</h3>
 							<div class="small-12 small-centered columns">
 								<ul class="small-block-grid-1 medium-block-grid-3 large-block-grid-4">
-									<li><img src="img/partners-logo/logo-christie-gardens.jpg"></li>
-									<li><img src="img/partners-logo/logo-christie-gardens.jpg"></li>
-									<li><img src="img/partners-logo/logo-christie-gardens.jpg"></li>
-									<li><img src="img/partners-logo/logo-christie-gardens.jpg"></li>
-								</ul>
+									<!--Accessing the Posts from sponsors-->
+									<?php $args = array( 'post_type' => array('sponsors')); ?>
+									<?php $loop = new WP_Query( $args ); ?>
+									<!--THE LOOP-->
+									<!--Purpose: To loop through all given posts of the given Post Type-->
+									<!--Condition: The loop will end when there are no more posts-->
+									<?php if ($loop -> have_posts() ) : while ( $loop -> have_posts()) : $loop -> the_post(); ?>
+										<li>
+											<!--ICON-->
+											<!--Purpose: If there exists a icon then display the icon-->
+											<?php if (has_post_thumbnail()) : ?>
+												<?php $icon = '';
+									        		  $icon = get_the_post_thumbnail($post->ID,'featured');
+	    										?>
+												<?php echo $icon; ?>
+											<?php else: ?>
+												<h2><?php the_title(); ?></h2>
+											<?php endif; ?>
+										</li>
+									<?php endwhile; endif; ?>
+									</ul>
 							</div>
 						</div>
 					</div>
@@ -143,15 +147,15 @@
 								<?php if(has_term('<?php echo $title; ?>','related_projects')): ?>
 									<div class="small-4 columns ">
 										<div class="small-11 small-centered columns card" data-equalizer-watch='team'>
-											<!--THUMBNAIL-->
-											<!--Purpose: If there exists a thumbnail then display the thumbnail-->
+											<!--SELFIE-->
+											<!--Purpose: If there exists a selfie then display the selfie-->
 											<?php if (has_post_thumbnail()) : ?>
-												<?php $thumbnail = '';
-									        		  $thumbnail = get_the_post_thumbnail($post->ID,'featured');
+												<?php $selfie = '';
+									        		  $selfie = get_the_post_thumbnail($post->ID,'featured');
 	    										?>
 												<div class="card-thumbnail">
 													<div class='card-thumbnail-img' >
-														 <?php echo $thumbnail; ?>
+														 <?php echo $selfie; ?>
 													</div>
 												</div>	
 											<?php endif; ?>
@@ -180,9 +184,7 @@
 							<!--Condition: The loop will end when there are no more posts-->
 							<?php if ( $loop -> have_posts() ) : while ( $loop -> have_posts() && $c < 3) : $loop -> the_post(); ?>
 								<?php $T = get_the_title();?>
-								<?php echo $title; ?>
-								<?php echo $T; ?>
-								<?php if($title==$T):?>
+								<?php if($title!=$T):?>
 									<!--Card Container-->
 									<div class="small-12 medium-6 large-4 columns end">
 										<div class="small-11 small-centered columns card" data-equalizer-watch='projects'>
@@ -190,12 +192,12 @@
 												<!--THUMBNAIL-->
 												<!--Purpose: If there exists a thumbnail then display the thumbnail-->
 												<?php if (has_post_thumbnail()) : ?>
-													<?php $thumbnail = '';
-								        				$thumbnail = get_the_post_thumbnail($post->ID,'featured');
+													<?php $other = '';
+								        				  $other = get_the_post_thumbnail($post->ID,'featured');
     												?>
 													<div class="card-thumbnail">
 														<div class='card-thumbnail-img' >
-															 <?php echo $thumbnail; ?>
+															 <?php echo $other; ?>
 														</div>
 													</div>	
 												<?php endif; ?>
