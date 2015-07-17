@@ -62,7 +62,9 @@
 							<!--THE LOOP-->
 							<!--Purpose: To loop through all given posts of the given Post Type (news_feed)-->
 							<!--Condition: The loop will end when there are no more posts-->
+							<?php $cardNum = 0;?>
 							<?php if ( $loop -> have_posts() ) : while ( $loop -> have_posts()) : $loop -> the_post(); ?>
+								<?php $cardNum= $cardNum +1;?>
 								<!--Card Container-->
 								<div class="small-12 medium-6 large-4 columns end">
 									<div class="small-11 small-centered columns card" data-equalizer-watch='grid'>
@@ -92,9 +94,9 @@
 											<p> <?php the_excerpt(); ?></p>
 											<!--CARD LINK-->
 											<!--Purpose: Give the link to the full article-->
-											<a class='card-link' href='#' data-reveal-id="myModal">Read Full Article</a>
-											<div id="myModal" class="reveal-modal medium " data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
-												<h2 id="modalTitle"><?php the_title(); ?></h2>
+											<a class='card-link' href='#' data-reveal-id="myModal<?php echo $cardNum; ?>">Read Full Article</a>
+											<div id="myModal<?php echo $cardNum; ?>" class="reveal-modal medium " data-reveal aria-labelledby="modalTitle<?php echo $cardNum; ?>" aria-hidden="true" role="dialog">
+												<h2 id="modalTitle<?php echo $cardNum; ?>"><?php the_title(); ?></h2>
 												<p><?php
 													if (is_sticky()) {
   														global $more;    // Declare global $more (before the loop).
