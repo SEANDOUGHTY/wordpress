@@ -42,8 +42,8 @@
 				<!--HIGHLIGHTS TITLE-->
 				<h1>Highlights</h1>
 				<div class="small-12 large-10 small-centered columns" >
-					<!--Accessing the Posts from news_feed, publications, and projects-->
-					<?php $args = array( 'post_type' => array('news_feed','publications','projects')); ?>
+					<!--Accessing the Posts from news, publications, and projects-->
+					<?php $args = array( 'post_type' => array('news','publications','projects')); ?>
 					<?php $loop = new WP_Query( $args ); ?>
 					<?php $c = 0; ?>
 					<!--THE LOOP-->
@@ -78,7 +78,7 @@
 										<div class='card-content'>
 											<!--The Title-->
 											<h2> <?php the_title();?> </h2>
-											<?php if ('news_feed'==$type): ?>
+											<?php if ('news'==$type): ?>
 												<!--The Content-->
 												<p> <?php the_excerpt(); ?></p>
 												<!--CARD LINK-->

@@ -143,24 +143,27 @@
 							<?php if ($loop -> have_posts() ) : while ( $loop -> have_posts()) : $loop -> the_post(); ?>
 								<!--If the Post is related to the project then Display-->
 								<?php if(has_term($title,'related_projects')): ?>
-									<div class="small-4 columns ">
+									<div class="small-6 medium-4 columns">
+										<a href='<?php the_permalink(); ?>'>
 										<div class="small-11 small-centered columns card" data-equalizer-watch='team'>
-											<!--SELFIE-->
-											<!--Purpose: If there exists a selfie then display the selfie-->
-											<?php if (has_post_thumbnail()) : ?>
-												<?php $selfie = '';
-									        		  $selfie = get_the_post_thumbnail($post->ID,'featured');
-	    										?>
-												<div class="card-thumbnail">
-													<div class='card-thumbnail-img' >
-														 <?php echo $selfie; ?>
-													</div>
-												</div>	
-											<?php endif; ?>
-											<div class='card-content'>
-												<h2><?php the_title(); ?></h2>
-											</div>
+											<article class='post' data-equalizer-watch='team'>
+												<!--SELFIE-->
+												<!--Purpose: If there exists a selfie then display the selfie-->
+												<?php if (has_post_thumbnail()) : ?>
+													<?php $selfie = '';
+									        			  $selfie = get_the_post_thumbnail($post->ID,'featured');
+	    											?>
+	    											<div class='card-thumbnail'>
+														<div class='card-thumbnail-img'>
+															<?php echo $selfie; ?>
+														</div>
+													</div>	
+												<?php endif; ?>
+												<!--The Title-->
+												<center><h2><?php the_title(); ?></h2></center>
+											</article>
 										</div>
+										</a>
 									</div>
 								<?php endif; ?>
 							<?php endwhile; endif; ?>
@@ -186,7 +189,7 @@
 									<!--Card Container-->
 									<div class="small-12 medium-6 large-4 columns end">
 										<div class="small-11 small-centered columns card" data-equalizer-watch='projects'>
-											<article class='post' data-equalizer-watch='grid'>
+											<article class='post' data-equalizer-watch='projects'>
 												<!--THUMBNAIL-->
 												<!--Purpose: If there exists a thumbnail then display the thumbnail-->
 												<?php if (has_post_thumbnail()) : ?>
