@@ -33,7 +33,7 @@
 						<!--The Grid of Posts-->
 						<div class="small-12 large-10 small-centered columns projectsbox">
 							<!--Accessing the Posts from projects-->
-							<?php $args = array( 'post_type' => 'projects'); ?>
+							<?php $args = array( 'post_type' => 'projects', 'orderby'   => 'menu_order', 'order' => 'ASC'); ?>
 							<?php $loop = new WP_Query( $args ); ?>
 							<!--THE LOOP-->
 							<!--Purpose: To loop through all given posts of the given Post Type (projects)-->
