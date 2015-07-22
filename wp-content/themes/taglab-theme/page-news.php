@@ -73,11 +73,11 @@
 										<!--Purpose: If there exists a thumbnail then display the thumbnail-->
 										<?php if (has_post_thumbnail()) : ?>
 											<?php $thumbnail = '';
-								        		$thumbnail = get_the_post_thumbnail($post->ID,'featured');
-    										?>
+								        		  $thumbnail = wp_get_attachment_url(get_post_thumbnail_id($post->ID,'featured'));
+	    									?>
 											<div class="card-thumbnail">
-												<div class='card-thumbnail-img' >
-													 <?php echo $thumbnail; ?>
+												<div class='card-thumbnail-img' style='background-image: url(<?php echo $thumbnail; ?>); height:12em; '>
+													 
 												</div>
 											</div>	
 										<?php endif; ?>

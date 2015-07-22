@@ -51,7 +51,7 @@
 					<!--Condition: The loop will end when there are no more posts or there are 3 highlights -->
 					<?php if ($loop -> have_posts() ) : while ( $loop -> have_posts() && $c < 3) : $loop -> the_post(); ?>
 						<!--If the Post is a Highlight then Display-->
-						<?php if(has_term('highlight','connection')): ?>
+						<?php if(has_term('HomePageCards','connection')): ?>
 							<?php $c = $c + 1; ?> 
 							<div class="small-12 medium-6 large-4 columns end">
 								<?php $type = get_post_type(); ?>
@@ -65,11 +65,11 @@
 										<!--Purpose: If there exists a thumbnail then display the thumbnail-->
 										<?php if (has_post_thumbnail()) : ?>
 											<?php $thumbnail = '';
-									        	  $thumbnail = get_the_post_thumbnail($post->ID,'featured');
-    										?>
+								        		  $thumbnail = wp_get_attachment_url(get_post_thumbnail_id($post->ID,'featured'));
+	    									?>
 											<div class="card-thumbnail">
-												<div class='card-thumbnail-img' >
-													 <?php echo $thumbnail; ?>
+												<div class='card-thumbnail-img' style='background-image: url(<?php echo $thumbnail; ?>); height:12em; '>
+													 
 												</div>
 											</div>	
 										<?php endif; ?>
