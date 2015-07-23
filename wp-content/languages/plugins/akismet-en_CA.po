@@ -454,7 +454,7 @@ msgstr "Akismet cleared this comment during an automatic retry."
 msgid "View comment history"
 msgstr "View comment history"
 
-#. #-#-#-#-#  akismet.pot (Akismet 3.1.3a1)  #-#-#-#-#
+#. #-#-#-#-#  akismet.pot (Akismet 3.1.4a1)  #-#-#-#-#
 #. Plugin Name of the plugin/theme
 #: class.akismet-admin.php:76 class.akismet-admin.php:78
 #: class.akismet-admin.php:842 views/config.php:3
