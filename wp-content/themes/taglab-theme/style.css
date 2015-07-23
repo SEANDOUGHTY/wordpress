@@ -490,6 +490,34 @@ For all other boxes (mainly card elements)
 		overflow: hidden;
 	}
 
+.contact-description {
+	margin-top: -1.9em;
+	padding-left: 1.5em;
+}
+
+.contact-description img:nth-child(1) {
+	width: 100%;
+	height: auto;
+}
+
+.contact-description p:nth-child(2){
+	font-size: 1.3rem;
+	color: black;
+	margin-bottom: -0.2em;	
+}
+
+.contact-description p:nth-child(3) {
+}
+
+.contact-map {
+	margin-top: -2em;
+	margin-right: -0.6em;
+}
+
+.contact-map img {
+	height: inherit;
+	width: auto;
+}
 
 
 .Title {
