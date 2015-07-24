@@ -54,12 +54,22 @@ add_action( 'init', 'create_post_type' );
   *);
   */
 function create_post_type() {
- register_post_type( 'news',
+  register_post_type( 'news',
+    array(
+      'labels' => array('name' => __( 'News Blog Bad' ), 'singular_name' => __( 'Article' )),
+      'public' => true,
+      'has_archive' => true,
+      'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt'),
+      'rewrite' => true,
+    )
+  );
+  register_post_type( 'news_feed',
     array(
       'labels' => array('name' => __( 'News Blog' ), 'singular_name' => __( 'Article' )),
       'public' => true,
-      'has_archive' => false,
+      'has_archive' => true,
       'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt'),
+      'rewrite' => true,
     )
   );
   register_post_type( 'publications',

@@ -1,12 +1,12 @@
 <!--The Name of the Template-->
 <?php
 /*
-	Template Name: News Page
+	Template Name: news_feed Page
 */
 ?>
 <!--Loading the header.php above each file-->
 <?php get_header(); ?>
-<!--The Content on the News Page-->
+<!--The Content on the news_feed Page-->
 <div class="content">
 	<section class='row'>
 		<!--PAGE CONTENT-->
@@ -36,10 +36,11 @@
 							if (!empty($wp_query->query_vars['page'])) {
 								$the_year_page = $wp_query->query_vars['page'];
 							}
+							echo $the_year_page;
 							//There exists a year ('YYYY') in the url
 							if ( $the_year_page != '' ) : 
 								$args = array(
-									'post_type' => 'news',
+									'post_type' => 'news_feed',
 									'orderby' => 'date',
 									'order' => 'DESC',
 									'year' => $the_year_page,
@@ -49,7 +50,7 @@
 							else : 
 								$today = getdate(); /* we will only want to get current year */
 								$args = array(
-									'post_type' => 'news',
+									'post_type' => 'news_feed',
 									'orderby' => 'date',
 									'order' => 'DESC',
 									'year' => $today['year'],
@@ -57,10 +58,10 @@
 								);
 							endif;
 							?>
-							<!--Accessing the Posts from news-->
+							<!--Accessing the Posts from news_feed-->
 							<?php $loop = new WP_Query( $args ); ?>
 							<!--THE LOOP-->
-							<!--Purpose: To loop through all given posts of the given Post Type (news)-->
+							<!--Purpose: To loop through all given posts of the given Post Type (news_feed)-->
 							<!--Condition: The loop will end when there are no more posts-->
 							<?php $cardNum = 0;?>
 							<?php if ( $loop -> have_posts() ) : while ( $loop -> have_posts()) : $loop -> the_post(); ?>
@@ -89,7 +90,7 @@
 										<!--Purpose: If there exists content display the content as an excerpt-->
 										<div class='card-content'>
 											<!--The Title-->
-											<h2> <?php the_title();?> </h2>
+											<h2> <?php echo $the_year_page; the_title();?> </h2>
 											<!--The Content-->
 											<p> <?php the_excerpt(); ?></p>
 											<!--CARD LINK-->
@@ -127,7 +128,7 @@
 		<div class='row'>
 			<div class="small-11 large-10 small-centered columns archive">
 				<ul>
-					<?php $years = $wpdb->get_col("SELECT DISTINCT YEAR(post_date) FROM $wpdb->posts WHERE post_type = 'news' AND post_status = 'publish' ORDER BY post_date DESC");?>
+					<?php $years = $wpdb->get_col("SELECT DISTINCT YEAR(post_date) FROM $wpdb->posts WHERE post_type = 'news_feed' AND post_status = 'publish' ORDER BY post_date DESC");?>
 					<?php foreach($years as $year) : ?>
 						<li>
 							<a href="<?php echo get_site_url() . '/index.php/news/' . $year; ?>">

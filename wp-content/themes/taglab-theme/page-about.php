@@ -38,7 +38,7 @@
 				<!--EXPLORE TITLE-->
 				<h1>Explore</h1>
 				<div class='small-12 large-10 small-centered columns'>
-					<!--Accessing the Posts from Projects, Publications, News Feed, People-->
+					<!--Accessing the Posts from Projects, Publications, news_feed Feed, People-->
 					<?php $args = array( 'post_type' => array('projects','publications','news_feed','people')); ?>
 					<?php $loop = new WP_Query( $args ); ?>
 					<!--THE LOOP-->
