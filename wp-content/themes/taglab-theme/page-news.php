@@ -36,7 +36,6 @@
 							if (!empty($wp_query->query_vars['page'])) {
 								$the_year_page = $wp_query->query_vars['page'];
 							}
-							echo $the_year_page;
 							//There exists a year ('YYYY') in the url
 							if ( $the_year_page != '' ) : 
 								$args = array(
