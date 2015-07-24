@@ -58,10 +58,9 @@ function create_post_type() {
     array(
       'labels' => array('name' => __( 'News Blog' ), 'singular_name' => __( 'Article' )),
       'public' => true,
-      'has_archive' => true,
+      'has_archive' => false,
       'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt'),
-      'rewrite' => true,
-    )
+     )
   );
   register_post_type( 'publications',
     array(
@@ -93,7 +92,7 @@ function category_init() {
   // create a new taxonomy
   register_taxonomy(
     'connection',
-    array('news_feed','news','publications','projects','people'),
+    array('news_feed','publications','projects','people'),
     array(
       'hierarchical'      => true,
       'label' => __( 'Connections' ),
