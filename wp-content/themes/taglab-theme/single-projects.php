@@ -53,7 +53,7 @@
 						<?php the_content(); ?>
 					</div>
 
-					<div class="small-9 small-centered columns paragraph">
+					<div class="small-11 medium-9 small-centered columns paragraph">
 						<div class='row'>
 							<h3>Publications</h3>
 							<!-- Publications Content -->
@@ -68,7 +68,7 @@
 									<!--If the Post is related to the project then Display-->
 									<?php if(has_term($title,'related_projects')): ?>
 										<div class="small-12 medium-6 large-4 columns end">
-											<div class="small-11 small-centered columns card Publication" data-equalizer-watch='reel'>
+											<div class="small-12 medium-11 small-centered columns card Publication" data-equalizer-watch='reel'>
 												<article class='post' data-equalizer-watch='reel'>
 													<!--CARD CONTENT-->
 													<!--Purpose: If there exists content display the content as an excerpt-->
@@ -99,7 +99,7 @@
 					
 										<!-- Sponsors Content -->
 					<div class='row'>
-						<div class="small-9 small-centered columns paragraph">
+						<div class="small-11 medium-9 small-centered columns paragraph">
 							<h3>Sponsors</h3>
 							<div class="small-12 small-centered columns">
 								<ul class="small-block-grid-1 medium-block-grid-3 large-block-grid-4">
@@ -121,7 +121,7 @@
 
 
 					<!-- People Content -->
-					<div class="small-9 small-centered columns paragraph">
+					<div class="small-11 medium-9 small-centered columns paragraph">
 						<div class='row'>
 							<h3>The Team</h3>
 							<div class="small-12 small-centered columns" data-equalizer='team'>
@@ -136,7 +136,7 @@
 								<?php if(has_term($title,'related_projects')): ?>
 									<div class="small-12 medium-6 large-4 columns">
 										<a href='<?php the_permalink(); ?>'>
-										<div class="small-11 small-centered columns card" data-equalizer-watch='team'>
+										<div class="small-12 medium-11 small-centered columns card" data-equalizer-watch='team'>
 											<article class='post' data-equalizer-watch='team'>
 												<!--SELFIE-->
 												<!--Purpose: If there exists a selfie then display the selfie-->
@@ -163,10 +163,10 @@
 			</div><!-- End Large White Box -->
 			
 			<!-- Other Projects -->
-			<div class="small-9 small-centered columns paragraph">
+			<div class="small-11 medium-9 small-centered columns paragraph">
 				<div class='row'>
 					<h3>Other Projects</h3>
-					<div class="small-12 large-12 small-centered columns projectsbox" data-equalizer='projects'>
+					<div class="small-12 small-centered columns projectsbox" data-equalizer='projects'>
 						<!--Accessing the Posts from projects-->
 						<?php $args = array( 'post_type' => 'projects'); ?>
 						<?php $loop = new WP_Query( $args ); ?>
