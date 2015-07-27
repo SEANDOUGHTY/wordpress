@@ -6,7 +6,7 @@
 ?>
 <!--Loading the header.php above each file-->
 <?php get_header(); ?>
-<!--The Content on the Publications Page-->
+<!--The Content on the Projects Page-->
 <div class="content">
 	<section class='row'>
 		<!--PAGE CONTENT-->
@@ -33,7 +33,8 @@
 						<!--The Grid of Posts-->
 						<div class="small-12 large-10 small-centered columns projectsbox">
 							<!--Accessing the Posts from projects-->
-							<?php $args = array( 'post_type' => 'projects', 'orderby'   => 'menu_order', 'order' => 'ASC'); ?>
+							<?php $args = array( 'post_type' => 'projects', 'posts_per_page' => '-1', 'orderby'   => 'menu_order', 'order' => 'ASC'); ?>
+							
 							<?php $loop = new WP_Query( $args ); ?>
 							<!--THE LOOP-->
 							<!--Purpose: To loop through all given posts of the given Post Type (projects)-->

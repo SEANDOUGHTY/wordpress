@@ -59,7 +59,7 @@
 							<!-- Publications Content -->
 							<div class="small-12 small-centered columns paragraph" data-equalizer='reel'>
 								<!--Accessing the Posts from publications-->
-								<?php $args = array( 'post_type' => array('publications')); ?>
+								<?php $args = array( 'post_type' => array('publications',	'posts_per_page' => '-1')); ?>
 								<?php $loop = new WP_Query( $args ); ?>
 								<!--THE LOOP-->
 								<!--Purpose: To loop through all given posts of the given Post Type-->
@@ -126,7 +126,7 @@
 							<h3>The Team</h3>
 							<div class="small-12 small-centered columns" data-equalizer='team'>
 							<!--Accessing the Posts from people-->
-							<?php $args = array( 'post_type' => array('people')); ?>
+							<?php $args = array( 'post_type' => array('people',	'posts_per_page' => '-1')); ?>
 							<?php $loop = new WP_Query( $args ); ?>
 							<!--THE LOOP-->
 							<!--Purpose: To loop through all given posts of the given Post Type-->

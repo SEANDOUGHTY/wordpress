@@ -31,7 +31,7 @@
 						<!--The Grid of Posts-->
 						<div class="small-11 large-10 small-centered columns"  data-equalizer='grid'>
 							<!--Accessing the Posts from publications-->
-							<?php $args = array( 'post_type' => 'publications'); ?>
+							<?php $args = array( 'post_type' => 'publications',	'posts_per_page' => '-1'); ?>
 							<?php $loop = new WP_Query( $args ); ?>
 							<!--THE LOOP-->
 							<!--Purpose: To loop through all given posts of the given Post Type (publications)-->

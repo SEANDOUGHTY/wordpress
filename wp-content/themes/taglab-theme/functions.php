@@ -92,7 +92,7 @@ function category_init() {
   // create a new taxonomy
   register_taxonomy(
     'connection',
-    array('news_feed','publications','projects','people'),
+    array('news_feed','publications','projects'),
     array(
       'hierarchical'      => true,
       'label' => __( 'Connections' ),
