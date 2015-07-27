@@ -59,7 +59,7 @@
 							<!-- Publications Content -->
 							<div class="small-12 small-centered columns paragraph" data-equalizer='reel'>
 								<!--Accessing the Posts from publications-->
-								<?php $args = array( 'post_type' => array('publications',	'posts_per_page' => '-1')); ?>
+								<?php $args = array( 'post_type' => 'publications',	'posts_per_page' => '-1'); ?>
 								<?php $loop = new WP_Query( $args ); ?>
 								<!--THE LOOP-->
 								<!--Purpose: To loop through all given posts of the given Post Type-->
@@ -126,7 +126,7 @@
 							<h3>The Team</h3>
 							<div class="small-12 small-centered columns" data-equalizer='team'>
 							<!--Accessing the Posts from people-->
-							<?php $args = array( 'post_type' => array('people',	'posts_per_page' => '-1')); ?>
+							<?php $args = array( 'post_type' => 'people',	'posts_per_page' => '-1'); ?>
 							<?php $loop = new WP_Query( $args ); ?>
 							<!--THE LOOP-->
 							<!--Purpose: To loop through all given posts of the given Post Type-->
@@ -134,7 +134,7 @@
 							<?php if ($loop -> have_posts() ) : while ( $loop -> have_posts()) : $loop -> the_post(); ?>
 								<!--If the Post is related to the project then Display-->
 								<?php if(has_term($title,'related_projects')): ?>
-									<div class="small-6 medium-4 columns">
+									<div class="small-12 medium-6 large-4 columns">
 										<a href='<?php the_permalink(); ?>'>
 										<div class="small-11 small-centered columns card" data-equalizer-watch='team'>
 											<article class='post' data-equalizer-watch='team'>
