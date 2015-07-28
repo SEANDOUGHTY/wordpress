@@ -368,7 +368,7 @@ For all other boxes (mainly card elements)
 
 
 .Person p:nth-child(5) {
-	margin-bottom: -20px;
+	margin-bottom: -0.5em;
 }
 
 .Person p:nth-child(5) a {
@@ -454,6 +454,71 @@ For all other boxes (mainly card elements)
 
 
 /* CONTACT PAGE */
+.contact{
+	max-width: 80%;
+	margin: auto;
+}
+
+
+.contact-card1{
+	 background-color: #FFF;
+        background-image: linear-gradient(rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 65%, rgba(100, 100, 100, 0.03) 100%);
+        text-align: left;
+        margin-top: .8em;
+        margin-bottom: 1.5em;
+        border-radius: 6px;
+        box-shadow: 2px 7px 29px 0 rgba(25, 25, 25, 0.1);
+                -webkit-box-shadow: 2px 7px 29px 0 rgba(25, 25, 25, 0.1);
+                -moz-box-shadow: 2px 7px 29px 0 rgba(25, 25, 25, 0.1);
+	min-height: 90%;
+}
+
+.contact-card1 img:nth-child(1){
+	border-radius: 6px 6px 0px 0px;
+	width: 100%;
+	height: auto;
+}
+
+
+.contact-card1 p:nth-child(2){
+	font-size: 1.3rem;
+	color: black;
+	padding-left: 1em;
+}
+
+.contact-card1 p:nth-child(3){
+	padding-left: 1em;
+}
+
+.contact-card2 img{
+	background-color: #FFF;
+        padding: 1em;
+        text-align: left;
+        margin-top: .8em;
+        margin-bottom: 1.5em;
+        border-radius: 6px;
+        box-shadow: 2px 7px 29px 0 rgba(25, 25, 25, 0.1);
+                -webkit-box-shadow: 2px 7px 29px 0 rgba(25, 25, 25, 0.1);
+                -moz-box-shadow: 2px 7px 29px 0 rgba(25, 25, 25, 0.1);
+	overflow: hidden;
+	height: 90%;
+	width: auto;
+}
+
+.contact-card3 img{
+	background-color: #FFF;
+        text-align: left;
+        border-radius: 6px;
+        box-shadow: 2px 7px 29px 0 rgba(25, 25, 25, 0.1);
+                -webkit-box-shadow: 2px 7px 29px 0 rgba(25, 25, 25, 0.1);
+                -moz-box-shadow: 2px 7px 29px 0 rgba(25, 25, 25, 0.1);
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+}
+
+
+/*
 .contact-iconBox {
 	margin-top: 3em;
 }
@@ -518,7 +583,7 @@ For all other boxes (mainly card elements)
 	height: inherit;
 	width: auto;
 }
-
+*/
 
 .Title {
 	font-family: inherit;
