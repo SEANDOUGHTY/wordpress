@@ -22,7 +22,6 @@
 							$s = strtok($title, ":");
 							$e = strtok("");
 							$postID = get_the_ID();
-							the_meta();
 					?>	
 				<?php endwhile; endif; ?>
 														
@@ -53,7 +52,7 @@
 						<?php the_content(); ?>
 					</div>
 
-					<div class="small-11 medium-9 small-centered columns paragraph">
+					<div class="small-11 large-9 small-centered columns paragraph">
 						<div class='row'>
 							<h3>Publications</h3>
 							<!-- Publications Content -->
@@ -99,7 +98,7 @@
 					
 										<!-- Sponsors Content -->
 					<div class='row'>
-						<div class="small-11 medium-9 small-centered columns paragraph">
+						<div class="small-11 large-9 small-centered columns paragraph">
 							<h3>Sponsors</h3>
 							<div class="small-12 small-centered columns">
 								<ul class="small-block-grid-1 medium-block-grid-3 large-block-grid-4">
@@ -121,7 +120,7 @@
 
 
 					<!-- People Content -->
-					<div class="small-11 medium-9 small-centered columns paragraph">
+					<div class="small-11 large-9 small-centered columns paragraph">
 						<div class='row'>
 							<h3>The Team</h3>
 							<div class="small-12 small-centered columns" data-equalizer='team'>
@@ -136,7 +135,7 @@
 								<?php if(has_term($title,'related_projects')): ?>
 									<div class="small-12 medium-6 large-4 columns">
 										<a href='<?php the_permalink(); ?>'>
-										<div class="small-12 medium-11 small-centered columns card" data-equalizer-watch='team'>
+										<div class="small-12 medium-11 small-centered columns card" data-equalizer-watch='team' style='padding: 0em 0em;'>
 											<article class='post' data-equalizer-watch='team'>
 												<!--SELFIE-->
 												<!--Purpose: If there exists a selfie then display the selfie-->
@@ -144,13 +143,14 @@
 													<?php $selfie = '';
 							 							  $selfie = wp_get_attachment_url(get_post_thumbnail_id($post->ID,'featured'));
 	    											?>
-													<div class="card-thumbnail">
-														<div class='card-thumbnail-img' style='background-image: url(<?php echo $selfie; ?>); height: 15em;'>
+													<div style='width: 100%;'>
+														<div class='card-thumbnail-img'>
+															<img src='<?php echo $selfie; ?>' style='background-size: contain;'>
 														</div>
 													</div>	
 												<?php endif; ?>
 												<!--The Title-->
-												<div><center><h2><?php the_title(); ?></h2></center></div>
+												<div style='padding: 0em 0.2em;'><center><h2><?php the_title(); ?></h2></center></div>
 											</article>
 										</div>
 										</a>
@@ -163,7 +163,7 @@
 			</div><!-- End Large White Box -->
 			
 			<!-- Other Projects -->
-			<div class="small-11 medium-9 small-centered columns paragraph">
+			<div class="small-11 large-9 small-centered columns paragraph">
 				<div class='row'>
 					<h3>Other Projects</h3>
 					<div class="small-12 small-centered columns projectsbox" data-equalizer='projects'>
