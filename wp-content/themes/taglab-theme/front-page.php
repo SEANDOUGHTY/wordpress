@@ -43,7 +43,7 @@
 				<h1>Highlights</h1>
 				<div class="small-12 large-10 small-centered columns" >
 					<!--Accessing the Posts from news_feed, publications, and projects-->
-					<?php $args = array( 'post_type' => array('news_feed','publications','projects')); ?>
+					<?php $args = array( 'post_type' => array('news_feed','publications','projects'), 'posts_per_page' => '-1'); ?>
 					<?php $loop = new WP_Query( $args ); ?>
 					<?php $c = 0; ?>
 					<!--THE LOOP-->

@@ -39,14 +39,14 @@
 				<h1>Explore</h1>
 				<div class='small-12 large-10 small-centered columns'>
 					<!--Accessing the Posts from Projects, Publications, news_feed Feed, People-->
-					<?php $args = array( 'post_type' => array('projects','publications','news_feed','people')); ?>
+					<?php $args = array( 'post_type' => array('projects','publications','news_feed','people'), 'posts_per_page' => '-1'); ?>
 					<?php $loop = new WP_Query( $args ); ?>
 					<!--THE LOOP-->
 					<!--Purpose: To loop through all given posts of the given Post Type-->
 					<!--Condition: The loop will end when there are no more posts-->
 					<?php if ($loop -> have_posts() ) : while ( $loop -> have_posts() && $c < 3) : $loop -> the_post(); ?>
 						<!--If the Post is a Explore then Display-->
-						<?php if(has_term('AboutPageCards','connection')): ?>
+						<?php if(has_term('aboutpagecards','connection')): ?>
 							<?php $c = $c + 1; ?> 
 							<div class="small-12 medium-6 large-4 columns end">
 								<div class="small-11 small-centered columns card" data-equalizer-watch='reel'>

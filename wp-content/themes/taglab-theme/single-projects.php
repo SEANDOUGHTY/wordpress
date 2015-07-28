@@ -41,7 +41,7 @@
 					
 					<!-- Project Intro -->
 					<div class="small-11 medium-10 large-8 small-centered columns about-intro">
-						<h1 class="small-12 paragraph-title"><?php echo $s; ?></h1>
+						<h1 class="small-12 paragraph-title" style='font-weight: 600;'><?php echo $s; ?></h1>
 						<div class="small-12 medium-9 small-centered columns paragraph-content">
 							<h3><?php echo $e; ?></h3>
 						</div>
@@ -135,7 +135,7 @@
 								<?php if(has_term($title,'related_projects')): ?>
 									<div class="small-12 medium-6 large-4 columns">
 										<a href='<?php the_permalink(); ?>'>
-										<div class="small-12 medium-11 small-centered columns card" data-equalizer-watch='team' style='padding: 0em 0em;'>
+										<div class="small-12 medium-11 small-centered columns card" data-equalizer-watch='team' style='padding: 2em 0em 0em 0em;'>
 											<article class='post' data-equalizer-watch='team'>
 												<!--SELFIE-->
 												<!--Purpose: If there exists a selfie then display the selfie-->
@@ -150,7 +150,7 @@
 													</div>	
 												<?php endif; ?>
 												<!--The Title-->
-												<div style='padding: 0em 0.2em;'><center><h2><?php the_title(); ?></h2></center></div>
+												<div style='padding: 0em 0em;'><center><h2><?php the_title(); ?></h2></center></div>
 											</article>
 										</div>
 										</a>
