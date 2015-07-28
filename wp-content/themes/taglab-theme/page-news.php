@@ -89,7 +89,7 @@
 										<!--Purpose: If there exists content display the content as an excerpt-->
 										<div class='card-content'>
 											<!--The Title-->
-											<h2> <?php echo $the_year_page; the_title();?> </h2>
+											<h2> <?php echo the_title();?> </h2>
 											<!--The Content-->
 											<p> <?php the_excerpt(); ?></p>
 											<!--CARD LINK-->
