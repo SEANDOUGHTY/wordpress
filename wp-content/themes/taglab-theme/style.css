@@ -190,6 +190,7 @@ For all other boxes (mainly card elements)
 	.card-thumbnail-img {
 		background-repeat: no-repeat;
 		background-size: cover;
+		border-radius: 6px 6px 0px 0px;
 	}
 
 .tb-intouch {
