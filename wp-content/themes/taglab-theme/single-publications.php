@@ -10,13 +10,13 @@
 						<!--The Grid of Posts-->
 						<div class="small-11 large-10 small-centered columns">
 							<!--THE LOOP-->
-							<!--Purpose: To loop through all given posts of the given Post Type (publications)-->
+							<!--Purpose: To loop through all given posts of the given Post Type (publication)-->
 							<!--Condition: The loop will end when there are no more posts-->
 							<?php if ( have_posts() ) : while ( have_posts()) : the_post(); ?>
 								<!--Card Container-->
 								<div class="small-12 medium-6 large-4 small-centered columns">
-									<div class="small-11 small-centered columns card Publication">
-										<article class='post' data-equalizer-watch='grid'>
+									<div class="small-11 small-centered columns card">
+										<article class='post'>
 										<!--THUMBNAIL-->
 										<!--Purpose: If there exists a thumbnail then display the thumbnail-->
 										<?php if (has_post_thumbnail()) : ?>

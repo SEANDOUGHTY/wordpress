@@ -33,10 +33,10 @@
 						<?php $thumbnail = '';
 							  $thumbnail = wp_get_attachment_url(get_post_thumbnail_id($post->ID,'featured'));
 	    				?>
-						<div class="card-thumbnail">
+					<!--<div class="card-thumbnail">
 							<div class='card-thumbnail-img' style='background-image: url(<?php echo $thumbnail; ?>); height: 12em;'>
 							</div>
-						</div>	
+						</div>-->	
 					<?php endif; ?>
 					
 					<!-- Project Intro -->
@@ -52,6 +52,7 @@
 						<?php the_content(); ?>
 					</div>
 
+					<!-- Project Related Contents -->
 					<div class="small-11 large-9 small-centered columns paragraph">
 						<div class='row'>
 							<h3>Publications</h3>
@@ -96,28 +97,42 @@
 						</div><!-- End Publications Content -->
 					</div>
 					
-										<!-- Sponsors Content -->
+					<!-- Sponsors Content -->
 					<div class='row'>
 						<div class="small-11 large-9 small-centered columns paragraph">
 							<h3>Sponsors</h3>
 							<div class="small-12 small-centered columns">
 								<ul class="small-block-grid-1 medium-block-grid-3 large-block-grid-4">
+									<!--Accessing the Posts from sponsors-->
+									<?php $args = array( 'post_type' => 'sponsors',	'posts_per_page' => '-1'); ?>
+									<?php $loop = new WP_Query( $args ); ?>
 									<!--THE LOOP-->
 									<!--Purpose: To loop through all given posts of the given Post Type-->
 									<!--Condition: The loop will end when there are no more posts-->			 
-  									<?php foreach( get_post_custom_values( 'image', $postID ) as $key => $value) { ?>
-									<!--If the Post is related to the project then Display-->
-										<li>
-											<!--ICON-->
-											<!--Purpose: If there exists a icon then display the icon-->
-											<img src='<?php echo $value ?>' style='height:12em;'>
-										</li>
-									<?php } ?>
+  									<!--If the Post is related to the project then Display-->
+									<?php if ( $loop -> have_posts() ) : while ( $loop -> have_posts()) : $loop -> the_post(); ?>
+										<!--If the Post is related to the project then Display-->
+										<?php if(has_term($title,'related_projects')): ?>
+											<li>
+												<!--ICON-->
+												<!--Purpose: If there exists a icon then display the icon-->
+												<?php if (has_post_thumbnail()) : ?>
+													<?php $sponsor = '';
+							 							  $sponsor = wp_get_attachment_url(get_post_thumbnail_id($post->ID,'featured'));
+	    											?>
+													<div style='width: 100%;'>
+														<div class='card-thumbnail-img'>
+															<img src='<?php echo $sponsor; ?>' style='background-size: contain;'>
+														</div>
+													</div>	
+												<?php endif; ?>
+											</li>
+										<?php endif; ?>
+									<?php endwhile; endif; ?>
 								</ul>
 							</div>
 						</div>
 					</div>
-
 
 					<!-- People Content -->
 					<div class="small-11 large-9 small-centered columns paragraph">
