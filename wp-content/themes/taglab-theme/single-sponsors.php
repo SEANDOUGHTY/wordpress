@@ -27,7 +27,7 @@
 												<div class='card-thumbnail-img'>
 													<img src='<?php echo $sponsor; ?>' style='background-size: contain;'>
 												</div>
-											</div>
+											</div>	
 										</center> 	
 									<?php endif; ?>
 										
@@ -35,9 +35,19 @@
 									<!--Purpose: If there exists content display the content as an excerpt-->
 									<div class='card-content'>
 										<!--The Title-->
-										<h2> <?php the_title();?> </h2>
+										<h2 style='padding-top: 0; padding-bottom: 0; margin-top: 0; margin-bottom: 0;'> <?php the_title();?> </h2>
 										<!--The Content-->
-										<p> <?php the_excerpt(); ?></p>
+										<p style='padding-top: 0; padding-bottom: 0; margin-top: 0; margin-bottom: 0;'> <?php
+														if (is_sticky()) {
+  															global $more;    // Declare global $more (before the loop).
+  															$more = 1;       // Set (inside the loop) to display all content, including text below more.
+  															the_content();
+														} else {
+  															global $more;
+  															$more = 0;
+  															the_content('Read the rest of this entry »');
+														}
+												?></p>
 									</div>
 									</article>
 								</div>

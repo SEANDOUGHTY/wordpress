@@ -91,7 +91,7 @@ function create_post_type() {
       'labels' => array('name' => __( 'Sponsors' ), 'singular_name' => __( 'Sponsor' )),
       'public' => true,
       'has_archive' => false,
-      'supports' => array( 'title', 'thumbnail', 'excerpt'),
+      'supports' => array( 'title', 'thumbnail', 'editor'),
       )
   );
 }
