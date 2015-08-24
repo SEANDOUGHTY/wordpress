@@ -16,19 +16,6 @@
 								<!--Card Container-->
 								<div class="small-11 small-centered columns card">
 									<article class='post' data-equalizer-watch='grid'>
-									<!--THUMBNAIL-->
-									<!--Purpose: If there exists a thumbnail then display the thumbnail-->
-									<?php if (has_post_thumbnail()) : ?>
-										<?php $thumbnail = '';
-								   	   		$thumbnail = get_the_post_thumbnail($post->ID,'featured');
-    									?>
-										<div class="card-thumbnail">
-											<div class='card-thumbnail-img' >
-												 <?php echo $thumbnail; ?>
-											</div>
-										</div>	
-									<?php endif; ?>
-									
 									<!--CARD CONTENT-->
 									<!--Purpose: If there exists content display the content as an excerpt-->
 									<div class='card-content'>

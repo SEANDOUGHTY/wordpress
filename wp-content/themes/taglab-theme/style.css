@@ -59,7 +59,11 @@ For all other boxes (mainly card elements)
 	padding-top: .5em;
 	z-index: 999;
 }
-
+.social-icon{
+	height: 3.2em;
+	padding-top: .5em;
+	z-index: 999;	
+}
 .paragraph {
 	text-align: center;
 	margin-bottom: 4em;
@@ -177,6 +181,7 @@ For all other boxes (mainly card elements)
 	font-size: 1em;
 	font-weight: 400;
 	line-height: 18px;
+	height: 100px;
 	opacity: 0.87;
 }
 
@@ -252,7 +257,7 @@ For all other boxes (mainly card elements)
 .socialicon-container {
 	margin: 0 auto;
 	width: 15em;}
-.social-icon {
+.social-icon-footer {
 	opacity: 0.70;
 	padding: 1em;
 	margin-bottom: 2em;

@@ -56,7 +56,7 @@ add_action( 'init', 'create_post_type' );
 function create_post_type() {
   register_post_type( 'news_feed',
     array(
-      'labels' => array('name' => __( 'News Blog' ), 'singular_name' => __( 'Article' )),
+      'labels' => array('name' => __( 'News' ), 'singular_name' => __( 'Article' )),
       'public' => true,
       'has_archive' => false,
       'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt'),
@@ -83,7 +83,23 @@ function create_post_type() {
       'labels' => array('name' => __( 'Projects' ), 'singular_name' => __( 'Project' )),
       'public' => true,
       'has_archive' => false,
+      'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'custom-fields')
+      )
+  );
+  register_post_type( 'blog',
+    array(
+      'labels' => array('name' => __( 'Blog' ), 'singular_name' => __( 'Blog' )),
+      'public' => true,
+      'has_archive' => false,
       'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'custom-fields'),
+      )
+  );
+  register_post_type( 'sponsors',
+    array(
+      'labels' => array('name' => __( 'Sponsors' ), 'singular_name' => __( 'Sponsor' )),
+      'public' => true,
+      'has_archive' => false,
+      'supports' => array( 'title', 'thumbnail', 'editor'),
       )
   );
 }
@@ -101,7 +117,7 @@ function category_init() {
     );
     register_taxonomy(
     'related_projects',
-    array('publications','people'),
+    array('publications','people','sponsors'),
     array(
       'hierarchical'      => true,
       'label' => __( 'Related Projects' ),
