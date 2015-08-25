@@ -41,16 +41,17 @@ META-BOX: STORAGE -->
 				</tr>
 				<tr>
 					<td colspan="4">
-						<p class="description">
+						<!-- <p class="description">
 							<?php _e("All packages including the archive, installer and SQL script are stored in the location above. ", 'wpduplicator'); ?>
 							<br/>
-						<!--small>
-							<?php _e("Dropbox, FTP and other multiple storage options available in ", 'wpduplicator'); ?>
-							<a href="http://duplicatorpro.com/?from_free_storage" target="_blank">
-								<?php _e("Duplicator Pro", 'wpduplicator'); ?>
-							</a>
-						</small-->
-						</p>
+                        </p>-->
+						<p style="font-size:12px;">                          
+                            <i class="fa fa-dropbox"></i>
+                            <span style="font-style:italic; ">
+							<?php echo sprintf(__('%1$s, %2$s, and other storage options available in', 'wpduplicator'), 'Dropbox', 'FTP'); ?>
+                            <a href="http://snapcreek.com/duplicator/?free-storage" target="_blank">Duplicator Pro</a>
+                            </span>
+                        </p>                            
 					</td>
 				</tr>
 			</tbody>
@@ -178,7 +179,7 @@ META-BOX: STORAGE -->
     </div>			
 
     <div class="dup-box-panel" id="dup-pack-installer-panel" style="<?php echo $ui_css_installer ?>">
-        <div class="dup-installer-header-1"><?php echo _e('STEP 1 - INPUTS'); ?></div><br/>
+        <div class="dup-installer-header-1"><?php echo _e('STEP 1 - INPUTS', 'wpduplicator'); ?></div><br/>
         <table class="dup-installer-tbl">
             <tr>
                 <td colspan="2"><div class="dup-installer-header-2"><?php _e("MySQL Server", 'wpduplicator') ?></div></td>
@@ -232,7 +233,7 @@ META-BOX: STORAGE -->
             </tr>
         </table><br />
 
-        <div class="dup-installer-header-1"><?php echo _e('STEP 2 - INPUTS'); ?></div>
+        <div class="dup-installer-header-1"><?php echo _e('STEP 2 - INPUTS', 'wpduplicator'); ?></div>
 
         <table class="dup-installer-tbl">
             <tr>

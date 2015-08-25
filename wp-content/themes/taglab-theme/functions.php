@@ -83,6 +83,14 @@ function create_post_type() {
       'labels' => array('name' => __( 'Projects' ), 'singular_name' => __( 'Project' )),
       'public' => true,
       'has_archive' => false,
+      'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'custom-fields')
+      )
+  );
+  register_post_type( 'blog',
+    array(
+      'labels' => array('name' => __( 'Blog' ), 'singular_name' => __( 'Blog' )),
+      'public' => true,
+      'has_archive' => false,
       'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'custom-fields'),
       )
   );

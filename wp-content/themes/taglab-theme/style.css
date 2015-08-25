@@ -181,6 +181,7 @@ For all other boxes (mainly card elements)
 	font-size: 1em;
 	font-weight: 400;
 	line-height: 18px;
+	height: 100px;
 	opacity: 0.87;
 }
 
