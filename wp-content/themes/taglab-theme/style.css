@@ -181,7 +181,6 @@ For all other boxes (mainly card elements)
 	font-size: 1em;
 	font-weight: 400;
 	line-height: 18px;
-	height: 100px;
 	opacity: 0.87;
 }
 
@@ -451,7 +450,6 @@ For all other boxes (mainly card elements)
 	margin-top: 5em;
 	margin-bottom: 0;
 	background-color: #f2f2f2;
-	padding: 5em 10em;
 	margin: auto;
 }
 .partners-logoBox li {
@@ -494,6 +492,10 @@ For all other boxes (mainly card elements)
 
 .contact-card1 p:nth-child(3){
 	padding-left: 1em;
+}
+
+.contact-card1 > .floorPlan {
+	margin: auto;
 }
 
 .contact-card2 img{

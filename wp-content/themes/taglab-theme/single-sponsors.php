@@ -1,4 +1,4 @@
-<!--The Sponnsor Page-->
+<!--The Sponsor Page-->
 <?php get_header(); ?>
 <!--The Content on the Single Sponsors Page-->
 <div class="content">
