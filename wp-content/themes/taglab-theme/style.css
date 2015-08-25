@@ -335,6 +335,32 @@ For all other boxes (mainly card elements)
                 -moz-box-shadow: 2px 7px 29px 0 rgba(25, 25, 25, 0.1);  
 }
 
+
+/*Person Styling Using Theme*/
+.person-image {
+	margin: -2.1em;
+	margin-top: -3.1em;
+}
+
+
+
+.person-title {
+	font-size: 1.2em;
+	font-weight: 400;
+	line-height:1em;
+	margin-bottom:-2em;
+
+}
+
+.person-content P:nth-child(2) {
+	font-size: 1.2em;
+	font-weight: 400;
+	line-height: 1em;
+	margin-bottom: -12px;
+}
+
+/* person styling using page builder */
+
 .Person p {
 	margin: 15px;
 }
@@ -356,6 +382,8 @@ For all other boxes (mainly card elements)
 	line-height:1em;
 	margin-bottom:-12px;
 }
+
+
 
 .Person p:nth-child(3) {
 	font-weight: 600;
