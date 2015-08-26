@@ -18,7 +18,7 @@
 						<div class="small-11 medium-10 small-centered columns">
 							<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 								<!--The Title-->
-								<h1 class="small-12 paragraph-title"><?php the_title(); ?></h1>
+								<h1 class="small-12 paragraph-title">Contact Us</h1>
 								<!--The Paragraph-->
 								<div class="small-12 medium-10 small-centered columns paragraph-content">
 									<p><?php the_content(); ?></p>
@@ -37,7 +37,7 @@
 			<div class="small-11 small-centered columns highlights"  data-equalizer='reel'>
 				<div class='small-12 large-10 small-centered columns'>
 					<div class="small-12 medium-6 columns end">
-						<div class="small-11 small-centered columns card" data-equalizer-watch='reel'>
+						<div class="small-11 small-centered columns card">
 						<article class='post' data-equalizer-watch='reel'>
 							<!--THUMBNAIL-->
 							<!--Purpose: If there exists a thumbnail then display the thumbnail-->
@@ -69,7 +69,7 @@
 						</div>
 					</div>
 					<div class="small-12 medium-6 columns end">
-						<div class="small-11 small-centered columns card" data-equalizer-watch='reel'>
+						<div class="small-11 small-centered columns card">
 						<article class='post' data-equalizer-watch='reel'>
 							<!--THUMBNAIL-->
 							<!--Purpose: If there exists a thumbnail then display the thumbnail-->
