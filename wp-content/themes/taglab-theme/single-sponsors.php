@@ -26,7 +26,9 @@
 										<center>
 											<div style='width: 100%;'>
 												<div class='card-thumbnail-img'>
-													<a href='<?php echo $link; ?>'><img src='<?php echo $sponsor; ?>' style='background-size: contain;'></a>
+													<a href='<?php echo $link; ?>'>
+														<img src='<?php echo $sponsor; ?>' style='background-size: contain;'>
+													</a>
 												</div>
 											</div>	
 										</center> 	
