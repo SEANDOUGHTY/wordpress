@@ -80,7 +80,7 @@
 								<?php get_template_part( 'content', 'none' ); ?>
 							<?php endif; ?>
 							<?php if($CurrentProjectCounter == 0): ?>
-								<center><p> No Projects </p></center>
+								<center><p> None </p></center>
 							<?php endif; ?>
 						</div>
 					</div>
@@ -142,7 +142,7 @@
 								<?php get_template_part( 'content', 'none' ); ?>
 							<?php endif; ?>
 							<?php if($PastProjectCounter == 0): ?>
-								<center><p> No Projects </p></center>
+								<center><p> None </p></center>
 							<?php endif; ?>
 						</div>
 					</div>

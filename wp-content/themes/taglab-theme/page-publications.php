@@ -13,14 +13,16 @@
 		<!--Purpose: Displays a small blurb about the Page-->
 		<div class="row">
 			<div class="small-12 small-centered columns paragraph">
-				<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-					<!--The Title-->
-					<h1 class="small-12 paragraph-title"><?php the_title(); ?></h1>
-					<!--The Paragraph-->
-					<div class="small-12 large-9 small-centered columns paragraph-content">
-						<p><?php the_content(); ?></p>
-					</div>
-				<?php endwhile; endif;?>
+				<div class="small-11 medium-10 large-8 small-centered columns">
+					<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+						<!--The Title-->
+						<h1 class="small-12 paragraph-title"><?php the_title(); ?></h1>
+						<!--The Paragraph-->
+						<div class="small-12 large-9 small-centered columns paragraph-content">
+							<p><?php the_content(); ?></p>
+						</div>
+					<?php endwhile; endif;?>
+				</div>
 			</div>
 		</div>
 

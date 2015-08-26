@@ -13,23 +13,16 @@
 		<!--Purpose: Displays a small blurb about TAGlab-->
 		<div class="row">
 			<div class="small-12 small-centered columns paragraph">
-				<div id="primary" class="content-area">
-					<div id="content" class="site-content" role="main">
-						<div class="small-11 medium-10 small-centered columns">
-							<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-								<!--The Title-->
-								<h1 class="small-12 paragraph-title">Contact Us</h1>
-								<!--The Paragraph-->
-								<div class="small-12 medium-10 small-centered columns paragraph-content">
-									<p><?php the_content(); ?></p>
-								</div>
-							<?php endwhile;?>
-							<?php else : ?>
-								<?php get_template_part( 'content', 'none' ); ?>
-							<?php endif; ?>
-						</div>				
-					</div><!-- #content -->
-				</div><!-- #primary -->
+				<div class="small-11 medium-10 small-centered columns">
+					<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+						<!--The Title-->
+						<h1 class="small-12 paragraph-title">Contact Us</h1>
+						<!--The Paragraph-->
+						<div class="small-12 large-9 small-centered columns paragraph-content">
+							<p><?php the_content(); ?></p>
+						</div>
+					<?php endwhile; endif; ?>
+				</div>
 			</div>
 		</div>
 
@@ -70,11 +63,11 @@
 					</div>
 					<div class="small-12 medium-6 columns end">
 						<div class="small-11 small-centered columns card">
-						<article class='post' data-equalizer-watch='reel'>
+						<article class='post' data-equalizer-watch='reel' >
 							<!--THUMBNAIL-->
 							<!--Purpose: If there exists a thumbnail then display the thumbnail-->
-							<div style="width: 100%">
-								<div class='card-thumbnail-img'> 
+							<div style='width: 100%; '>
+								<div class='card-thumbnail-img' style='margin: auto; '> 
 									<img src='<?php echo $floorPlan; ?>'>		 
 								</div>
 							</div>	
