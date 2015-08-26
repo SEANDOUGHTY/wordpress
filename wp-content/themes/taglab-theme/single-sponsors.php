@@ -1,4 +1,4 @@
-<!--The Sponsor Page-->
+<!--The Sponnsor Page-->
 <?php get_header(); ?>
 <!--The Content on the Single Sponsors Page-->
 <div class="content">
@@ -22,10 +22,11 @@
 										<?php $sponsor = '';
 							 				  $sponsor = wp_get_attachment_url(get_post_thumbnail_id($post->ID,'featured'));
 	    								?>
-	    								<center>
+	    								<?php $link = get_post_custom_values( 'Link' )[0]; ?>
+										<center>
 											<div style='width: 100%;'>
 												<div class='card-thumbnail-img'>
-													<img src='<?php echo $sponsor; ?>' style='background-size: contain;'>
+													<a href='<?php echo $link; ?>'><img src='<?php echo $sponsor; ?>' style='background-size: contain;'></a>
 												</div>
 											</div>	
 										</center> 	
