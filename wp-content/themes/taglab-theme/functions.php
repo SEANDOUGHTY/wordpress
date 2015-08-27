@@ -78,12 +78,9 @@ function create_post_type() {
       'labels' => array('name' => __( 'People' ), 'singular_name' => __( 'Person' )),
       'public' => true,
       'has_archive' => false,
-      'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt'),
+      'supports' => array( 'title', 'author', 'thumbnail'),
       )
   );
-
-//adding customs fields for people
-
   register_post_type( 'projects',
     array(
       'labels' => array('name' => __( 'Projects' ), 'singular_name' => __( 'Project' )),

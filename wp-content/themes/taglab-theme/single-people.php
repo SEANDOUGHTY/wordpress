@@ -29,14 +29,53 @@
 											<div class='personcontent'>
 												<h2> <?php the_title();?> </h2>
 												<!--The Content-->
-												<p class="personpage"> <?php the_content();?> </p>
+
+												                                                                                       <?php $position = get_field( "position" ); ?>
+                                                                                        <p class='personposition'> <?php echo $position ?> </p>
+
+                                                                                        <?php $secondary_position = get_field( "secondary_position" ); ?>
+                                                                                        <p class='personsecondary_position'>
+                                                                                                <?php
+                                                                                                if( $secondary_position ) {
+                                                                                                        echo $secondary_position;
+                                                                                                }
+                                                                                                else {
+                                                                                                        echo null;
+                                                                                                }
+                                                                                                ?>
+                                                                                        <p/>
+
+
+                                                                                        <?php $email = get_field( "email" ); ?>
+                                                                                        <p><a class='personemail' href= <?php echo 'mailto:', $email?>><?php echo $email?></a>
+
+                                                                                        </br>
+                                                                                        <?php $website = get_field( "website" ); ?>
+                                                                                        <a class='personwebsite' href= <?php echo $website ?>>
+                                                                                                <?php
+                                                                                                if( $website ) {
+                                                                                                        echo $website;
+                                                                                                }
+                                                                                                else {
+                                                                                                        echo null;
+                                                                                                }
+                                                                                                ?>
+                                                                                        </a></p>
 											</div>
-										</div>
-
-										</div>
-
-										</article>
-								</div>
+											
+											<div class='personbio'>
+												<?php $bio = get_field( "biography" ); ?>
+												<p>
+													<?php
+													if( $bio ) {
+														echo  $bio;
+													}
+													else {
+														echo null;
+													}
+													?>
+												</p>
+											</div>
 							<?php endwhile; ?>
 							<!--If the page is blank-->
 							<?php else : ?>

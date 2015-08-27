@@ -60,7 +60,7 @@
 
 
 
-										<div class='card-content'>
+										<div class='person-card'>
 										<!--The Content-->
 											<p class='person-image'> <?php echo $thumbnail; ?> </p>
 											<h2 class='person-title'> <?php the_title();?> </h2>
@@ -117,23 +117,23 @@
 			</div>
 		</div>
 		<!-- Alumni -->
+		<center><h2>Alumni</h2></center>
 		<div class="row">					
 			<div class='small-12 small-centered columns page-content'>
 				<div id="primary" class="content-area">
 					<div id="content" class="site-content" role="main">
-						<center><h3> Alumni </h3></center>
 						<!--The Grid of Posts-->
 						<div class="small-11 large-10 small-centered columns"  data-equalizer='grid'>
 							<!--Accessing the Posts from people-->
 							<?php $args = array( 'post_type' => 'people',	'posts_per_page' => '-1'); ?>
 							<?php $loop = new WP_Query( $args ); ?>
-							<?php $AlumniCounter = 0; ?>
+							<?php $CurrentPeopleCounter = 0; ?>
 							<!--THE LOOP-->
-							<!--Purpose: To loop through all given posts of the given Post Type (publications)-->
+							<!--Purpose: To loop through all given posts of the given Post Type (people)-->
 							<!--Condition: The loop will end when there are no more posts-->
 							<?php if ( $loop -> have_posts() ) : while ( $loop -> have_posts()) : $loop -> the_post(); ?>
-								<?php if(!has_term("alumni",'type')): ?>
-									<?php $AlumniCounter = $AlumniCounter + 1; ?>
+								<?php if(has_term("alumni",'type')): ?>
+									<?php $CurrentPeopleCounter = $CurrentPeopleCounter + 1; ?>
 									<!--Card Container-->
 									<div class="small-12 medium-4 large-3 columns end">
 										<div class="small-11 small-centered columns card" data-equalizer-watch='grid'>
@@ -202,15 +202,13 @@
 								<?php endif; ?>
 							<?php endwhile; ?>
 							<?php endif; ?>
-							<?php if($AlumniCounter == 0): ?>
-								<center><p> There were no past alumni </p></center>
+							<?php if($CurrentPeopleCounter == 0): ?>
+								<center><p> The team went missing!! </p></center>
 							<?php endif; ?>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</section>
-</div>
 <!--Loading the footer.php above each file-->
 <?php get_footer(); ?><!--The Name of the Template-->

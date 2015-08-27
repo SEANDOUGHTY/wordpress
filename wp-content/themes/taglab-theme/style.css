@@ -88,7 +88,7 @@ For all other boxes (mainly card elements)
 	border-radius: 6px;
 	box-shadow: 2px 7px 29px 0 rgba(25, 25, 25, 0.1);
 		-webkit-box-shadow: 2px 7px 29px 0 rgba(25, 25, 25, 0.1);
-		-moz-box-shadow: 2px 7px 29px 0 rgba(25, 25, 25, 0.1);	}
+		 -moz-box-shadow: 2px 7px 29px 0 rgba(25, 25, 25, 0.1);	}
 	.card p {
 		color: #828b90;
 		margin-bottom: 3em;
@@ -107,82 +107,6 @@ For all other boxes (mainly card elements)
 		font-size: 1.3rem;
 	}
 
-
-.personcard {
-	background-color: #FFF;
-	background-image: linear-gradient(rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 65%, rgba(100, 100, 100, 0.03) 100%);
-	padding: 2em 0em;
-	text-align: left;
-	margin: auto;
-	margin-top: .8em;
-	margin-bottom: 1.5em;
-	/*min-height: 28em;*/
-	border-radius: 6px;
-	box-shadow: 2px 7px 29px 0 rgba(25, 25, 25, 0.1);
-		-webkit-box-shadow: 2px 7px 29px 0 rgba(25, 25, 25, 0.1);
-		-moz-box-shadow: 2px 7px 29px 0 rgba(25, 25, 25, 0.1);
-	max-width: 80%;
-}
-
-.personimage {
-	width: 30%;
-	float: left;
-	padding-right: 20px;
-}
-	
-
-.personimage img {
-	width: 100%;
-}
-
-.personcontent {
-/*	overflow: hidden;*/
-}
-
-.personcontent p {
-		color: #828b90;
-		margin-bottom: 1em;}
-
-.personcontent p a {
-	font-size: 1em;
-}
-
-.personcontent h2 {
-		font-size: 1.3rem;
-		margin-bottom: -1em;
-	}
-
-
-.personcontent p:nth-child(3) {
-	font-weight: 600;
-	font-size: 0.9em;
-	line-height: 18px;
-	color: #0082d4;
-	margin-bottom: -1px;
-
-}
-
-.personcontent p:nth-child(4) {
-	font-size: 0.9em;
-	font-weight: 400;
-	line-height: 18px;
-	color: #808080;
-}
-
-.personcontent p:nth-child(5) {
-	font-size: 1em;
-	font-weight: 400;
-	line-height: 18px;
-	opacity: 0.87;
-	margin-bottom: -6px;
-}
-
-.personcontent p:nth-child(6) {
-	font-size: 1em;
-	font-weight: 400;
-	line-height: 18px;
-	opacity: 0.87;
-}
 
 .card-content {
 	padding: 1.2em 2em;}
@@ -336,12 +260,16 @@ For all other boxes (mainly card elements)
 
 
 /*Person Styling Using Theme*/
+
+.person-card {
+	padding: 1.2em 2em;
+	margin-bottom: -5em;
+}
+
 .person-image {
 	margin: -2.2em;
 	margin-top: -3.2em;
 	min-width: 100%;
-background-size: cover;
-
 
 }
 
@@ -358,7 +286,7 @@ background-size: cover;
 	font-size: 0.8em;
 	line-height: 1;
 	color: #0082d4 !important;
-	margin-top: -0.8em;
+	margin-top: -1.8em;
 }	
 
 .person-secondary_position {
@@ -366,7 +294,7 @@ background-size: cover;
 	font-weight: 400;
 	line-height: 1;
 	color: #808080 !important;
-	margin-top: -1.5em;
+	margin-top: -2.4em;
 	margin-bottom: -1.5em !important;
 }
 
@@ -400,8 +328,86 @@ background-size: cover;
 	opacity: 0.87;
 	color: #0082d4;
 }
-/* person styling using page builder */
 
+/* Individual Person Page*/
+
+
+.personcard {
+	background-color: #FFF;
+	background-image: linear-gradient(rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 65%, rgba(100, 100, 100, 0.03) 100%);
+	padding: 2em 0em;
+	text-align: left;
+	margin: auto;
+	margin-top: .8em;
+	margin-bottom: 1.5em;
+	/*min-height: 28em;*/
+	border-radius: 6px;
+	box-shadow: 2px 7px 29px 0 rgba(25, 25, 25, 0.1);
+		-webkit-box-shadow: 2px 7px 29px 0 rgba(25, 25, 25, 0.1);
+		-moz-box-shadow: 2px 7px 29px 0 rgba(25, 25, 25, 0.1);
+	max-width: 80%;
+	overflow: auto;
+}
+
+.personimage {
+	width: 30%;
+	min-width: 12em;
+	float: left;
+	padding-right: 20px;
+}
+	
+
+
+.personposition {
+	font-weight: 600;
+	font-size: 0.9em;
+	line-height: 1;
+	color: #0082d4 !important;
+	margin-top: -2.5em;
+}	
+
+.personsecondary_position {
+	font-size: 0.9em;
+	font-weight: 400;
+	line-height: 1;
+	color: #808080 !important;
+	margin-top: -1.2em;
+/*	margin-bottom: -1.5em !important;*/
+}
+
+
+.personemail{
+	-ms-word-break: break-all;
+     word-break: break-all;
+     word-break: break-word;
+	-webkit-hyphens: auto;
+	   -moz-hyphens: auto;
+        hyphens: auto;
+	font-size: 1em;
+	font-weight: 400;
+	line-height: 1em;
+	opacity: 0.87;
+	color: #0082d4;
+;
+}
+
+
+.personwebsite {
+	-ms-word-break: break-all;
+     word-break: break-all;
+     word-break: break-word;
+	-webkit-hyphens: auto;
+	   -moz-hyphens: auto;
+        hyphens: auto;
+	font-size: 1em;
+	font-weight: 400;
+	line-height: 1em;
+	opacity: 0.87;
+	color: #0082d4;
+}
+
+/* person styling using page builder */
+/*
 .Person p {
 	margin: 15px;
 }
@@ -503,7 +509,7 @@ background-size: cover;
 	color: #0082d4;
 	line-height: 35px;
 }
-
+*/
 
 /* NEWS PAGE */
 .archive ul {
