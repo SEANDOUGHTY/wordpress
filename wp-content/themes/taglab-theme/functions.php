@@ -40,6 +40,9 @@ function register_theme_menus(){
   );
 }
 
+
+
+
 //To add the wp_theme_js() function to the wp_enqueue_scripts() function
 add_action('wp_enqueue_scripts','wp_theme_js');
 //To add the create_post_type() function to the init() function
@@ -78,6 +81,9 @@ function create_post_type() {
       'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt'),
       )
   );
+
+//adding customs fields for people
+
   register_post_type( 'projects',
     array(
       'labels' => array('name' => __( 'Projects' ), 'singular_name' => __( 'Project' )),
@@ -133,6 +139,15 @@ function category_init() {
       'rewrite' => array( 'slug' => 'status', 'hierarchical'      => true)
     )
   );
+  register_taxonomy(
+    'type',
+    array('people'),
+    array(
+      'hierarchical'      => true,
+      'label' => __( 'Status' ),
+      'rewrite' => array( 'slug' => 'status', 'hierarchical'      => true)
+    )
+  ); 
 }
 add_action( 'init', 'category_init' );
 
@@ -186,4 +201,6 @@ class button_walker extends Walker_Nav_Menu {
 }
 
   add_theme_support('post-thumbnails');
+
+
 ?>

@@ -30,15 +30,15 @@
 					<div id="content" class="site-content" role="main">
 						<!--The Grid of Posts-->
 						<div class="small-11 large-10 small-centered columns"  data-equalizer='grid'>
-							<!--Accessing the Posts from publications-->
+							<!--Accessing the Posts from people-->
 							<?php $args = array( 'post_type' => 'people',	'posts_per_page' => '-1'); ?>
 							<?php $loop = new WP_Query( $args ); ?>
 							<?php $CurrentPeopleCounter = 0; ?>
 							<!--THE LOOP-->
-							<!--Purpose: To loop through all given posts of the given Post Type (publications)-->
+							<!--Purpose: To loop through all given posts of the given Post Type (people)-->
 							<!--Condition: The loop will end when there are no more posts-->
 							<?php if ( $loop -> have_posts() ) : while ( $loop -> have_posts()) : $loop -> the_post(); ?>
-								<?php if(has_term("current",'status')): ?>
+								<?php if(has_term("current",'type')): ?>
 									<?php $CurrentPeopleCounter = $CurrentPeopleCounter + 1; ?>
 									<!--Card Container-->
 									<div class="small-12 medium-4 large-3 columns end">
@@ -124,7 +124,7 @@
 						<center><h3> Alumni </h3></center>
 						<!--The Grid of Posts-->
 						<div class="small-11 large-10 small-centered columns"  data-equalizer='grid'>
-							<!--Accessing the Posts from publications-->
+							<!--Accessing the Posts from people-->
 							<?php $args = array( 'post_type' => 'people',	'posts_per_page' => '-1'); ?>
 							<?php $loop = new WP_Query( $args ); ?>
 							<?php $AlumniCounter = 0; ?>
@@ -132,7 +132,7 @@
 							<!--Purpose: To loop through all given posts of the given Post Type (publications)-->
 							<!--Condition: The loop will end when there are no more posts-->
 							<?php if ( $loop -> have_posts() ) : while ( $loop -> have_posts()) : $loop -> the_post(); ?>
-								<?php if(!has_term("current",'status')): ?>
+								<?php if(!has_term("alumni",'type')): ?>
 									<?php $AlumniCounter = $AlumniCounter + 1; ?>
 									<!--Card Container-->
 									<div class="small-12 medium-4 large-3 columns end">
@@ -203,7 +203,7 @@
 							<?php endwhile; ?>
 							<?php endif; ?>
 							<?php if($AlumniCounter == 0): ?>
-								<center><p> There were no past alumni </p></center
+								<center><p> There were no past alumni </p></center>
 							<?php endif; ?>
 						</div>
 					</div>
