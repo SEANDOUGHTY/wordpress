@@ -50,7 +50,7 @@
 							<?php $c = $c + 1; ?> 
 							<div class="small-12 medium-6 large-4 columns end">
 								<?php $type = get_post_type(); ?>
-								<?php if ($type == 'Publications'): ?>
+								<?php if ($type == 'publications'): ?>
 									<div class="small-11 small-centered columns card Publication" data-equalizer-watch='reel'>
 								<?php else: ?>
 									<div class="small-11 small-centered columns card" data-equalizer-watch='reel'>

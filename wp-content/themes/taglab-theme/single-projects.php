@@ -192,6 +192,7 @@
 						<?php if ( $loop -> have_posts() ) : while ( $loop -> have_posts() && $c < 3) : $loop -> the_post(); ?>
 							<?php $T = get_the_title();?>
 							<?php if($title!=$T):?>
+								<?php $c = $c + 1; ?>
 								<!--Card Container-->
 								<div class="small-12 medium-6 large-4 columns end">
 									<div class="small-11 small-centered columns card" data-equalizer-watch='projects'>

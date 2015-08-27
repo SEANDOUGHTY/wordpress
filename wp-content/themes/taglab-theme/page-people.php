@@ -56,7 +56,7 @@
     										?>											
 										<?php endif; ?>
 
-	i									<?php $slug = basename(get_permalink()); ?>	
+										<?php $slug = basename(get_permalink()); ?>	
 
 										<!--CARD CONTENT-->
 										<!--Purpose: If there exists content display the content as an excerpt-->
@@ -95,7 +95,7 @@
 											<a class='person-website' href= <?php echo $website ?>>
 												<?php 
 												if( $website ) {
-													echo $website;
+													echo  $website;
 												}
 												else {
 													echo null;
@@ -140,7 +140,7 @@
 							<!--Purpose: To loop through all given posts of the given Post Type (people)-->
 							<!--Condition: The loop will end when there are no more posts-->
 							<?php if ( $loop -> have_posts() ) : while ( $loop -> have_posts()) : $loop -> the_post(); ?>
-								<?php if(has_term("alumni",'type')): ?>
+								<?php if (!has_term("current",'type')): ?>
 									<?php $CurrentPeopleCounter = $CurrentPeopleCounter + 1; ?>
 									<!--Card Container-->
 									<div class="small-12 medium-4 large-3 columns end">
@@ -153,7 +153,8 @@
 								        		$thumbnail = get_the_post_thumbnail($post->ID,'featured');
     										?>											
 										<?php endif; ?>
-
+										
+										<?php $slug = basename(get_permalink()); ?>	
 
 										<!--CARD CONTENT-->
 										<!--Purpose: If there exists content display the content as an excerpt-->
@@ -197,11 +198,13 @@
 													echo null;
 												}
 												?>
-											</a></p>
-	
+											</a>
+											
 
+											</br></br>
+											<a class='person-readmore' href=<?php echo $page_url, $slug; ?>>Read more</a>
 
-
+											</p>
 
 										</div>
 										</article>

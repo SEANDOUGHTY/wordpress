@@ -358,6 +358,8 @@ For all other boxes (mainly card elements)
 	min-width: 12em;
 	float: left;
 	padding-right: 20px;
+	text-align: center;
+	margin: auto;
 }
 	
 
