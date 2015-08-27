@@ -267,10 +267,12 @@ For all other boxes (mainly card elements)
 }
 
 .person-image {
-	margin: -2.2em;
-	margin-top: -3.2em;
+	margin: -2.4em;
+	margin-top: -5.3em;
 	min-width: 100%;
-
+	text-align: center;
+	border-radius: 6px 6px 0px 0px;
+	overflow: hidden;
 }
 
 
@@ -329,19 +331,21 @@ For all other boxes (mainly card elements)
 	color: #0082d4;
 }
 
+
+
+
 /* Individual Person Page*/
 
 
 .personcard {
 	background-color: #FFF;
 	background-image: linear-gradient(rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 65%, rgba(100, 100, 100, 0.03) 100%);
-	padding: 2em 0em;
+	padding: 0.8em 0em;*/
 	text-align: left;
 	margin: auto;
-	margin-top: .8em;
 	margin-bottom: 1.5em;
-	/*min-height: 28em;*/
 	border-radius: 6px;
+	/*min-height: 28em;*/
 	box-shadow: 2px 7px 29px 0 rgba(25, 25, 25, 0.1);
 		-webkit-box-shadow: 2px 7px 29px 0 rgba(25, 25, 25, 0.1);
 		-moz-box-shadow: 2px 7px 29px 0 rgba(25, 25, 25, 0.1);
@@ -388,7 +392,6 @@ For all other boxes (mainly card elements)
 	line-height: 1em;
 	opacity: 0.87;
 	color: #0082d4;
-;
 }
 
 

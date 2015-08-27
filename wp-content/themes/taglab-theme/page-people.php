@@ -6,6 +6,10 @@
 ?>
 <!--Loading the header.php above each file-->
 <?php get_header(); ?>
+
+<!--Storing page URL-->
+<?php $page_url = get_the_permalink(); ?>
+
 <!--The Content on the Publications Page-->
 <div class="content">
 	<section class='row'>
@@ -52,6 +56,7 @@
     										?>											
 										<?php endif; ?>
 
+	i									<?php $slug = basename(get_permalink()); ?>	
 
 										<!--CARD CONTENT-->
 										<!--Purpose: If there exists content display the content as an excerpt-->
@@ -62,7 +67,8 @@
 
 										<div class='person-card'>
 										<!--The Content-->
-											<p class='person-image'> <?php echo $thumbnail; ?> </p>
+											<p class='person-image'><a href=<?php echo $page_url, $slug?>> <?php echo $thumbnail; ?> </a></p>
+						
 											<h2 class='person-title'> <?php the_title();?> </h2>
 
 											<?php $position = get_field( "position" ); ?>
@@ -95,11 +101,12 @@
 													echo null;
 												}
 												?>
-											</a></p>
-	
-
-
-
+											</a>
+											
+											</br></br>
+											<a class='person-readmore' href=<?php echo $page_url, $slug; ?>>Read more</a>
+											</p>
+											
 
 										</div>
 										</article>
@@ -117,6 +124,7 @@
 			</div>
 		</div>
 		<!-- Alumni -->
+		</br>
 		<center><h2>Alumni</h2></center>
 		<div class="row">					
 			<div class='small-12 small-centered columns page-content'>
