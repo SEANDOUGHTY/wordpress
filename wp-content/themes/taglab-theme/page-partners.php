@@ -48,13 +48,17 @@
 								<article class='post' data-equalizer-watch='grid'>
 									<!--THUMBNAIL-->
 									<!--Purpose: If there exists a thumbnail then display the thumbnail-->
-									<?php if (has_post_thumbnail()) : ?>
-										<?php $sponsor = '';
-					 						  $sponsor = wp_get_attachment_url(get_post_thumbnail_id($post->ID,'featured'));
-	    								?>
-	    								<?php $link = get_post_custom_values( 'Link' )[0]; ?>
-										<center>
+									<center>
+										<?php if (has_post_thumbnail()) : ?>
+											<?php $sponsor = '';
+					 							  $sponsor = wp_get_attachment_url(get_post_thumbnail_id($post->ID,'featured'));
+	    									?>
+	    									<?php $link = get_post_custom_values( 'Link' )[0]; ?>										
 											<a href='#' data-reveal-id="myModal<?php echo $cardNum; ?>"><img src='<?php echo $sponsor; ?>' style='background-size: contain;'></a>
+										<?php else: ?>
+											<a href='#' data-reveal-id="myModal<?php echo $cardNum; ?>"><p><?php the_title(); ?></p></a>
+										<?php endif; ?>
+
 											<div id="myModal<?php echo $cardNum; ?>" class="reveal-modal medium " data-reveal aria-labelledby="modalTitle<?php echo $cardNum; ?>" aria-hidden="true" role="dialog">
 												<h2 id="modalTitle<?php echo $cardNum; ?>"><?php the_title(); ?></h2>
 												<p><?php
@@ -72,7 +76,6 @@
 												<a class="close-reveal-modal" aria-label="Close">&#215;</a>
 											</div>	
 										</center>
-									<?php endif; ?>
 								</article>
 							</div>
 						</li>
@@ -88,6 +91,7 @@
 					<?php endif; ?>
 				</div>
 			</div>
+
 			<!--Past Sponsors-->
 			<div class="row">					
 				<div class="small-11 medium-8 small-centered columns card-past-sponsors"  data-equalizer='past'> 
@@ -109,15 +113,10 @@
 								<article class='post' data-equalizer-watch='past'>
 									<!--THUMBNAIL-->
 									<!--Purpose: If there exists a thumbnail then display the thumbnail-->
-									<?php if (has_post_thumbnail()) : ?>
-										<?php $sponsor = '';
-					 						  $sponsor = wp_get_attachment_url(get_post_thumbnail_id($post->ID,'featured'));
-	    								?>
-	    								<?php $link = get_post_custom_values( 'Link' )[0]; ?>
-										<center>
-												<a href='<?php echo $link; ?>'><?php the_title(); ?></a>
-										</center>
-									<?php endif; ?>
+									<?php $link = get_post_custom_values( 'Link' )[0]; ?>
+									
+											<a href='<?php echo $link; ?>'><?php the_title(); ?></a>
+									
 								</article>
 							</div>
 						</li>

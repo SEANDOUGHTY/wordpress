@@ -341,7 +341,24 @@ For all other boxes (mainly card elements)
 	color: #0082d4;
 }
 
+.alumni-name {
+	padding: 0.5em;
+}
 
+
+.alumni-card {
+	background-color: #FFF;
+	background-image: linear-gradient(rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 65%, rgba(100, 100, 100, 0.03) 100%);
+	padding: 2em 0em;
+	text-align: left;
+	margin-top: .8em;
+	margin-bottom: 1.5em;
+	border-radius: 6px;
+	box-shadow: 2px 7px 29px 0 rgba(25, 25, 25, 0.1);
+		-webkit-box-shadow: 2px 7px 29px 0 rgba(25, 25, 25, 0.1);
+		 -moz-box-shadow: 2px 7px 29px 0 rgba(25, 25, 25, 0.1);
+	overflow: auto;
+}
 
 
 /* Individual Person Page*/
