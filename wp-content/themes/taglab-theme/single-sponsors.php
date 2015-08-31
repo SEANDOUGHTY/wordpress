@@ -14,7 +14,7 @@
 							<!--Condition: The loop will end when there are no more posts-->
 							<?php if ( have_posts() ) : while ( have_posts()) : the_post(); ?>
 								<!--Card Container-->
-								<div class="small-12 medium-6 large-4 small-centered columns card Publication">
+								<div class="small-12 medium-6 large-4 small-centered columns card">
 									<article class='post'>
 									<!--THUMBNAIL-->
 									<!--Purpose: If there exists a thumbnail then display the thumbnail-->

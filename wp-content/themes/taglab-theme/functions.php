@@ -129,7 +129,7 @@ function category_init() {
   );
   register_taxonomy(
     'status',
-    array('projects'),
+    array('projects', 'sponsors'),
     array(
       'hierarchical'      => true,
       'label' => __( 'Status' ),

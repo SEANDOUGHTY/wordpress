@@ -120,7 +120,16 @@ For all other boxes (mainly card elements)
 		background-size: cover;
 		border-radius: 6px 6px 0px 0px;
 	}
-
+.card-past-sponsors {
+	background-color: #FFF;
+	background-image: linear-gradient(rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 65%, rgba(100, 100, 100, 0.03) 100%);
+	padding: 2em 0em;
+	margin-top: .8em;
+	margin-bottom: 1.5em;
+	border-radius: 6px;
+	box-shadow: 2px 7px 29px 0 rgba(25, 25, 25, 0.1);
+		-webkit-box-shadow: 2px 7px 29px 0 rgba(25, 25, 25, 0.1);
+		-moz-box-shadow: 2px 7px 29px 0 rgba(25, 25, 25, 0.1);	}
 .tb-intouch {
 	background-image: url(img/ipad_2474245b.jpg);
 	height: 12em;
@@ -267,12 +276,13 @@ For all other boxes (mainly card elements)
 }
 
 .person-image {
-	margin: -2.4em;
+	margin: -2.25em;
 	margin-top: -5.3em;
 	min-width: 100%;
 	text-align: center;
 	border-radius: 6px 6px 0px 0px;
 	overflow: hidden;
+	position: relative;
 }
 
 

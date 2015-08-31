@@ -23,7 +23,7 @@
 										<!--Purpose: If there exists content display the content as an excerpt-->
 											<div class='card-content'>
 											<!--The Title-->
-											<div class='personimage'> 
+											<div class='small- 12 medium-4 large-3 columns personimage'> 
 												<?php the_post_thumbnail(); ?> 
 											</div>
 											<div class='personcontent'>

@@ -29,7 +29,7 @@
 		<div class="row">					
 			<div class="small-11 small-centered columns highlights"  data-equalizer='reel'>
 				<div class='small-12 large-10 small-centered columns'>
-					<div class="small-12 medium-6 columns end">
+					<div class="small-12 large-6 columns end">
 						<div class="small-11 small-centered columns card">
 						<article class='post' data-equalizer-watch='reel'>
 							<!--THUMBNAIL-->
@@ -61,14 +61,14 @@
 						</article>
 						</div>
 					</div>
-					<div class="small-12 medium-6 columns end">
+					<div class="small-12 large-6 columns end">
 						<div class="small-11 small-centered columns card">
 						<article class='post' data-equalizer-watch='reel' >
 							<!--THUMBNAIL-->
 							<!--Purpose: If there exists a thumbnail then display the thumbnail-->
 							<div style='width: 100%; '>
 								<div class='card-thumbnail-img' style='margin: auto; '> 
-									<img src='<?php echo $floorPlan; ?>'>		 
+									<img src='<?php echo $floorPlan; ?>' style='height: 100%;'>		 
 								</div>
 							</div>	
 						</article>
@@ -85,8 +85,9 @@
 							<!--THUMBNAIL-->
 							<!--Purpose: If there exists a thumbnail then display the thumbnail-->
 							<div style="width: 100%">
-								<div class='card-thumbnail-img'> 
-									<img src='<?php echo $map; ?>'>		 
+								<div class='card-thumbnail-img' style='background-size: cover;'>	
+									<img src='<?php echo $map; ?>' style='width: 100%' >
+								 
 								</div>
 							</div>	
 						</article>
